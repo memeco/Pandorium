@@ -1,0 +1,349 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A04FEBD1220A05B00DAEAC1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A04FEBC1220A05B00DAEAC1 /* Cocoa.framework */; };
+		9A04FEC21220A05B00DAEAC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEC01220A05B00DAEAC1 /* InfoPlist.strings */; };
+		9A04FEC41220A05B00DAEAC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04FEC31220A05B00DAEAC1 /* main.m */; };
+		9A04FEC71220A05B00DAEAC1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEC51220A05B00DAEAC1 /* MainMenu.xib */; };
+		9A04FECA1220A05B00DAEAC1 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEC81220A05B00DAEAC1 /* Credits.rtf */; };
+		9A04FECD1220A05B00DAEAC1 /* PandoriumAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04FECC1220A05B00DAEAC1 /* PandoriumAppDelegate.m */; };
+		9A04FED41220A07400DAEAC1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A04FED31220A07400DAEAC1 /* WebKit.framework */; };
+		9A04FEDE1220A0DD00DAEAC1 /* HotKeyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04FED91220A0DD00DAEAC1 /* HotKeyController.m */; };
+		9A04FEDF1220A0DD00DAEAC1 /* NSEvent+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04FEDB1220A0DD00DAEAC1 /* NSEvent+Additions.m */; };
+		9A04FEE01220A0DD00DAEAC1 /* WebView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04FEDD1220A0DD00DAEAC1 /* WebView+Additions.m */; };
+		9A04FEE91220A11100DAEAC1 /* NSObject+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04FEE41220A11100DAEAC1 /* NSObject+GKAdditions.m */; };
+		9A04FEEA1220A11100DAEAC1 /* status_icon_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEE61220A11100DAEAC1 /* status_icon_disabled.png */; };
+		9A04FEEB1220A11100DAEAC1 /* status_icon_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEE71220A11100DAEAC1 /* status_icon_highlighted.png */; };
+		9A04FEEC1220A11100DAEAC1 /* status_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEE81220A11100DAEAC1 /* status_icon.png */; };
+		9A04FEEF1220A12D00DAEAC1 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEEE1220A12D00DAEAC1 /* Icon.icns */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9A04FEB91220A05B00DAEAC1 /* Pandorium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pandorium.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A04FEBC1220A05B00DAEAC1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9A04FEBE1220A05B00DAEAC1 /* Pandorium-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pandorium-Info.plist"; sourceTree = "<group>"; };
+		9A04FEBF1220A05B00DAEAC1 /* Pandorium_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pandorium_Prefix.pch; sourceTree = "<group>"; };
+		9A04FEC11220A05B00DAEAC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9A04FEC31220A05B00DAEAC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9A04FEC61220A05B00DAEAC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9A04FEC91220A05B00DAEAC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		9A04FECB1220A05B00DAEAC1 /* PandoriumAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PandoriumAppDelegate.h; sourceTree = "<group>"; };
+		9A04FECC1220A05B00DAEAC1 /* PandoriumAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PandoriumAppDelegate.m; sourceTree = "<group>"; };
+		9A04FED31220A07400DAEAC1 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /Xcode4/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		9A04FED81220A0DD00DAEAC1 /* HotKeyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotKeyController.h; sourceTree = "<group>"; };
+		9A04FED91220A0DD00DAEAC1 /* HotKeyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotKeyController.m; sourceTree = "<group>"; };
+		9A04FEDA1220A0DD00DAEAC1 /* NSEvent+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEvent+Additions.h"; sourceTree = "<group>"; };
+		9A04FEDB1220A0DD00DAEAC1 /* NSEvent+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEvent+Additions.m"; sourceTree = "<group>"; };
+		9A04FEDC1220A0DD00DAEAC1 /* WebView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebView+Additions.h"; sourceTree = "<group>"; };
+		9A04FEDD1220A0DD00DAEAC1 /* WebView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebView+Additions.m"; sourceTree = "<group>"; };
+		9A04FEE21220A11100DAEAC1 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = debug.h; path = Resources/debug.h; sourceTree = "<group>"; };
+		9A04FEE31220A11100DAEAC1 /* NSObject+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+GKAdditions.h"; path = "Resources/NSObject+GKAdditions.h"; sourceTree = "<group>"; };
+		9A04FEE41220A11100DAEAC1 /* NSObject+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+GKAdditions.m"; path = "Resources/NSObject+GKAdditions.m"; sourceTree = "<group>"; };
+		9A04FEE51220A11100DAEAC1 /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = singleton.h; path = Resources/singleton.h; sourceTree = "<group>"; };
+		9A04FEE61220A11100DAEAC1 /* status_icon_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon_disabled.png; path = Resources/status_icon_disabled.png; sourceTree = "<group>"; };
+		9A04FEE71220A11100DAEAC1 /* status_icon_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon_highlighted.png; path = Resources/status_icon_highlighted.png; sourceTree = "<group>"; };
+		9A04FEE81220A11100DAEAC1 /* status_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon.png; path = Resources/status_icon.png; sourceTree = "<group>"; };
+		9A04FEEE1220A12D00DAEAC1 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Icon.icns; path = Resources/Icon.icns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A04FEB61220A05B00DAEAC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A04FEBD1220A05B00DAEAC1 /* Cocoa.framework in Frameworks */,
+				9A04FED41220A07400DAEAC1 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A04FEAA1220A05B00DAEAC1 = {
+			isa = PBXGroup;
+			children = (
+				9A04FEB11220A05B00DAEAC1 /* Classes */,
+				9A04FEE11220A0EC00DAEAC1 /* Categories */,
+				9A04FEED1220A11500DAEAC1 /* GKKit */,
+				9A04FEB21220A05B00DAEAC1 /* Other Sources */,
+				9A04FEB31220A05B00DAEAC1 /* Resources */,
+				9A04FEB41220A05B00DAEAC1 /* Frameworks */,
+				9A04FEBA1220A05B00DAEAC1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A04FEB11220A05B00DAEAC1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9A04FECB1220A05B00DAEAC1 /* PandoriumAppDelegate.h */,
+				9A04FECC1220A05B00DAEAC1 /* PandoriumAppDelegate.m */,
+				9A04FED81220A0DD00DAEAC1 /* HotKeyController.h */,
+				9A04FED91220A0DD00DAEAC1 /* HotKeyController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9A04FEB21220A05B00DAEAC1 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9A04FEEE1220A12D00DAEAC1 /* Icon.icns */,
+				9A04FEE61220A11100DAEAC1 /* status_icon_disabled.png */,
+				9A04FEE71220A11100DAEAC1 /* status_icon_highlighted.png */,
+				9A04FEE81220A11100DAEAC1 /* status_icon.png */,
+				9A04FEBF1220A05B00DAEAC1 /* Pandorium_Prefix.pch */,
+				9A04FEC31220A05B00DAEAC1 /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		9A04FEB31220A05B00DAEAC1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9A04FEBE1220A05B00DAEAC1 /* Pandorium-Info.plist */,
+				9A04FEC01220A05B00DAEAC1 /* InfoPlist.strings */,
+				9A04FEC51220A05B00DAEAC1 /* MainMenu.xib */,
+				9A04FEC81220A05B00DAEAC1 /* Credits.rtf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9A04FEB41220A05B00DAEAC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A04FEBC1220A05B00DAEAC1 /* Cocoa.framework */,
+				9A04FED31220A07400DAEAC1 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A04FEBA1220A05B00DAEAC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A04FEB91220A05B00DAEAC1 /* Pandorium.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A04FEE11220A0EC00DAEAC1 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				9A04FEDA1220A0DD00DAEAC1 /* NSEvent+Additions.h */,
+				9A04FEDB1220A0DD00DAEAC1 /* NSEvent+Additions.m */,
+				9A04FEDC1220A0DD00DAEAC1 /* WebView+Additions.h */,
+				9A04FEDD1220A0DD00DAEAC1 /* WebView+Additions.m */,
+			);
+			name = Categories;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9A04FEED1220A11500DAEAC1 /* GKKit */ = {
+			isa = PBXGroup;
+			children = (
+				9A04FEE21220A11100DAEAC1 /* debug.h */,
+				9A04FEE31220A11100DAEAC1 /* NSObject+GKAdditions.h */,
+				9A04FEE41220A11100DAEAC1 /* NSObject+GKAdditions.m */,
+				9A04FEE51220A11100DAEAC1 /* singleton.h */,
+			);
+			name = GKKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A04FEB81220A05B00DAEAC1 /* Pandorium */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A04FED01220A05B00DAEAC1 /* Build configuration list for PBXNativeTarget "Pandorium" */;
+			buildPhases = (
+				9A04FEB51220A05B00DAEAC1 /* Sources */,
+				9A04FEB61220A05B00DAEAC1 /* Frameworks */,
+				9A04FEB71220A05B00DAEAC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pandorium;
+			productName = Pandorium;
+			productReference = 9A04FEB91220A05B00DAEAC1 /* Pandorium.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A04FEAC1220A05B00DAEAC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "GK Apps";
+			};
+			buildConfigurationList = 9A04FEAF1220A05B00DAEAC1 /* Build configuration list for PBXProject "Pandorium" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9A04FEAA1220A05B00DAEAC1;
+			productRefGroup = 9A04FEBA1220A05B00DAEAC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A04FEB81220A05B00DAEAC1 /* Pandorium */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A04FEB71220A05B00DAEAC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A04FEC21220A05B00DAEAC1 /* InfoPlist.strings in Resources */,
+				9A04FEC71220A05B00DAEAC1 /* MainMenu.xib in Resources */,
+				9A04FECA1220A05B00DAEAC1 /* Credits.rtf in Resources */,
+				9A04FEEA1220A11100DAEAC1 /* status_icon_disabled.png in Resources */,
+				9A04FEEB1220A11100DAEAC1 /* status_icon_highlighted.png in Resources */,
+				9A04FEEC1220A11100DAEAC1 /* status_icon.png in Resources */,
+				9A04FEEF1220A12D00DAEAC1 /* Icon.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A04FEB51220A05B00DAEAC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A04FEC41220A05B00DAEAC1 /* main.m in Sources */,
+				9A04FECD1220A05B00DAEAC1 /* PandoriumAppDelegate.m in Sources */,
+				9A04FEDE1220A0DD00DAEAC1 /* HotKeyController.m in Sources */,
+				9A04FEDF1220A0DD00DAEAC1 /* NSEvent+Additions.m in Sources */,
+				9A04FEE01220A0DD00DAEAC1 /* WebView+Additions.m in Sources */,
+				9A04FEE91220A11100DAEAC1 /* NSObject+GKAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9A04FEC01220A05B00DAEAC1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A04FEC11220A05B00DAEAC1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9A04FEC51220A05B00DAEAC1 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A04FEC61220A05B00DAEAC1 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		9A04FEC81220A05B00DAEAC1 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A04FEC91220A05B00DAEAC1 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A04FECE1220A05B00DAEAC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		9A04FECF1220A05B00DAEAC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		9A04FED11220A05B00DAEAC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Pandorium_Prefix.pch;
+				INFOPLIST_FILE = "Pandorium-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Pandorium;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9A04FED21220A05B00DAEAC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Pandorium_Prefix.pch;
+				INFOPLIST_FILE = "Pandorium-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Pandorium;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A04FEAF1220A05B00DAEAC1 /* Build configuration list for PBXProject "Pandorium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A04FECE1220A05B00DAEAC1 /* Debug */,
+				9A04FECF1220A05B00DAEAC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A04FED01220A05B00DAEAC1 /* Build configuration list for PBXNativeTarget "Pandorium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A04FED11220A05B00DAEAC1 /* Debug */,
+				9A04FED21220A05B00DAEAC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A04FEAC1220A05B00DAEAC1 /* Project object */;
+}

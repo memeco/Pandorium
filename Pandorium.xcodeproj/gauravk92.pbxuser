@@ -1,0 +1,90 @@
+// !$*UTF8*$!
+{
+	9A04FEAC1220A05B00DAEAC1 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 9A04FEBB1220A05B00DAEAC1 /* Pandorium */;
+		activeTarget = 9A04FEB81220A05B00DAEAC1 /* Pandorium */;
+		codeSenseManager = 9A04FEB01220A05B00DAEAC1 /* Code sense */;
+		executables = (
+			9A04FEBB1220A05B00DAEAC1 /* Pandorium */,
+		);
+		ignoreBreakpointsInProjectsDict = {
+		};
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					364,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 304128357;
+			PBXWorkspaceStateSaveDate = 304128357;
+		};
+		sourceControlManager = 9A7155F41220A0C90046F0B8 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	9A04FEB01220A05B00DAEAC1 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	9A04FEB81220A05B00DAEAC1 /* Pandorium */ = {
+		activeExec = 0;
+		executables = (
+			9A04FEBB1220A05B00DAEAC1 /* Pandorium */,
+		);
+	};
+	9A04FEBB1220A05B00DAEAC1 /* Pandorium */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Pandorium;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	9A7155F41220A0C90046F0B8 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+}

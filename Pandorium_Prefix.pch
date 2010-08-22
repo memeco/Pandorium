@@ -1,0 +1,9 @@
+//
+// Prefix header for all source files of the 'Pandorium' target in the 'Pandorium' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+    #import "debug.h"
+#endif
+
