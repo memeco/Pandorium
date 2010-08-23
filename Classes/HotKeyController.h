@@ -28,33 +28,15 @@
 #import "singleton.h"
 #import <IOKit/hidsystem/ev_keymap.h>
 
-//
-// Media key constants
-//
-typedef enum {	
-	PlayPauseKeyDown    = 0x100A00,		// … 1 0000 0000 1010 0000 0000 
-	PlayPauseKeyUp      = 0x100B00,		// … 1 0000 0000 1011 0000 0000
-	NextKeyDown         = 0x130A00,		// … 1 0011 0000 1010 0000 0000
-	NextKeyUp           = 0x130B00,		// … 1 0011 0000 1011 0000 0000
-	PreviousKeyDown     = 0x140A00,		// … 1 0100	0000 1010 0000 0000
-	PreviousKeyUp       = 0x140B00		// … 1 0100 0000 1011 0000 0000
-} MediaKeys;
-
-#define MediaKeyPlayPauseMask   (PlayPauseKeyDown | PlayPauseKeyUp)
-#define MediaKeyNextMask        (NextKeyDown | NextKeyUp)
-#define MediaKeyPreviousMask    (PreviousKeyDown | PreviousKeyUp)
-#define MediaKeyMask            (MediaKeyPlayPauseMask | MediaKeyNextMask | MediaKeyPreviousMask)
-
-//
-// Notifications
-//
 extern NSString * const MediaKeyPlayPauseNotification;
 extern NSString * const MediaKeyNextNotification;
 extern NSString * const MediaKeyPreviousNotification;
 
 @interface HotKeyController : NSObject {
-
+    CFMachPortRef _eventPort;
 }
+
+@property(nonatomic, assign, readonly) CFMachPortRef eventPort;
 
 + (id)sharedController;
 

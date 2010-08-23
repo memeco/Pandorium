@@ -4,6 +4,7 @@
 //
 //  Modified by Gaurav Khanna on 8/17/10.
 //  SOURCE: http://github.com/sweetfm/SweetFM/blob/master/Source/HMediaKeys.m
+//  SOURCE2: http://stackoverflow.com/questions/2969110/cgeventtapcreate-breaks-down-mysteriously-with-key-down-events
 //
 //
 //  Permission is hereby granted, free of charge, to any person 
@@ -34,13 +35,18 @@ NSString * const MediaKeyPreviousNotification = @"MediaKeyPreviousNotification";
 #define NX_KEYSTATE_UP      0x0A
 #define NX_KEYSTATE_DOWN    0x0B
 
-#define ASSERT(cond) if(!(cond)) return event;
-
 @implementation HotKeyController
+
+@synthesize eventPort = _eventPort;
 
 MAKE_SINGLETON(HotKeyController, sharedController)
 
+#define ASSERT(cond) if(!(cond)) return event;
+
 CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void *refcon) {
+    if(type == kCGEventTapDisabledByTimeout)
+        CGEventTapEnable([[HotKeyController sharedController] eventPort], TRUE);
+    
     ASSERT(type == NX_SYSDEFINED)
 
 	NSEvent *nsEvent = [NSEvent eventWithCGEvent:event];
@@ -81,7 +87,6 @@ CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef 
 
 - (id)init {
 	if(self = [super init]) {
-        CFMachPortRef eventPort;
         CFRunLoopSourceRef eventSrc;
         CFRunLoopRef runLoop;
         
@@ -92,35 +97,26 @@ CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef 
             //opts = kCGEventTapOptionListenOnly;
 #endif
             
-            eventPort = CGEventTapCreate (kCGSessionEventTap,
+            _eventPort = CGEventTapCreate(kCGSessionEventTap,
                                           kCGHeadInsertEventTap,
                                           opts,
                                           CGEventMaskBit(NX_SYSDEFINED) | CGEventMaskBit(NX_KEYUP),
                                           tapEventCallback,
                                           self);
             
-            if (eventPort == NULL)
+            if(_eventPort == NULL)
                 NSLog(@"Event port is null");
             
-            //
-            // Get the event source from port
-            //
-            eventSrc = CFMachPortCreateRunLoopSource(kCFAllocatorSystemDefault, eventPort, 0);
+            eventSrc = CFMachPortCreateRunLoopSource(kCFAllocatorSystemDefault, _eventPort, 0);
             
-            if (eventSrc == NULL)
+            if(eventSrc == NULL)
                 NSLog(@"No event run loop source found");
             
-            //
-            // Get the current threads run loop
-            //
             runLoop = CFRunLoopGetCurrent();
             
-            if (eventSrc == NULL)
+            if(eventSrc == NULL)
                 NSLog(@"No event run loop");
             
-            //
-            // Add the runloop source
-            //
             CFRunLoopAddSource(runLoop, eventSrc, kCFRunLoopCommonModes);
             
             //while ([[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]]);
@@ -132,8 +128,6 @@ CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef 
 }
 
 - (void)dealloc {
-    // Clean-up code here.
-    
     [super dealloc];
 }
 
