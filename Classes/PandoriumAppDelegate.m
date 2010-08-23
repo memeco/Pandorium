@@ -63,11 +63,9 @@
     [webView stringByEvaluatingJavaScriptFromString:@"                                                      \
          var sheet = document.createElement('style');                                                       \
          sheet.innerHTML = '#footer {display:none !important;}                                              \
-                            #container {background:none !important;background-repeat:none !important;}      \
+                            #container {height: 661px;left: -44px;top: -27px;width:683px;}                  \
                             #enhanced_skin_container {display:none;}                                        \
                             body {background: none !important;}                                             \
-                            #content {left: 0px !important;top:0px !important;}                             \
-                            #container {height:inherit !important;}                                         \
                            ';                                                                               \
          document.body.appendChild(sheet);                                                                  \
      "];
