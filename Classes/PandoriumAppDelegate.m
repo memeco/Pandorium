@@ -22,6 +22,7 @@
     
     [_webView setMainFrameURL:@"http://pandora.com"];
     [_webView setResourceLoadDelegate:self];
+    [_webView setShouldUpdateWhileOffscreen:TRUE];
     
     [HotKeyController sharedController];
     
@@ -63,9 +64,9 @@
     [webView stringByEvaluatingJavaScriptFromString:@"                                                      \
          var sheet = document.createElement('style');                                                       \
          sheet.innerHTML = '#footer {display:none !important;}                                              \
-                            #container {height: 661px;left: -44px;top: -27px;width:683px;}                  \
+                            #container {height:661px;left:-44px;top:-27px;width:683px;}                     \
                             #enhanced_skin_container {display:none;}                                        \
-                            body {background: none !important;}                                             \
+                            body {background:none !important;}                                              \
                            ';                                                                               \
          document.body.appendChild(sheet);                                                                  \
      "];
@@ -74,13 +75,19 @@
 #pragma mark -
 #pragma mark HotKey Actions
 
+#define SPACE_KEYCODE 49
+#define RIGHT_KEYCODE 124
+#define PLUS_KEYCODE 24 //Shift?
+#define MINUS_KEYCODE 27
+#define UP_KEYCODE 126
+#define DOWN_KEYCODE 125
+
 - (void)playPauseKeyNotification {
-    [[self.webView webHTMLView] mouseClickAtLocation:NSMakePoint(525.0,540.0)];
-    //[[self.webView webHTMLView] keyClickWithKeyCode:57];
+    [self.webView keyClickWithKeyCode:SPACE_KEYCODE];
 }
 
 - (void)nextKeyNotification {
-    [[self.webView webHTMLView] mouseClickAtLocation:NSMakePoint(555.0, 540.0)];
+    [self.webView keyClickWithKeyCode:RIGHT_KEYCODE];
 }
 
 - (void)previousKeyNotification {

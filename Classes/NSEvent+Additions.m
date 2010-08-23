@@ -33,13 +33,13 @@
 
 + (id)keyEventWithType:(NSEventType)type keyCode:(unsigned short)keyCode { 
     return [NSEvent keyEventWithType:type 
-                            location:NSMakePoint(0,0) 
-                       modifierFlags:0 
-                           timestamp:0 
+                            location:NSMakePoint(490, 540)
+                       modifierFlags:0x100
+                           timestamp:[NSDate timeIntervalSinceReferenceDate]
                         windowNumber:[[[NSApp delegate] window] windowNumber] 
-                             context:0 
-                          characters:nil 
-         charactersIgnoringModifiers:nil 
+                             context:0
+                          characters:@" "
+         charactersIgnoringModifiers:@" "
                            isARepeat:FALSE 
                              keyCode:keyCode];
 }

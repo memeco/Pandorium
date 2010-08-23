@@ -9,32 +9,30 @@
 
 @implementation WebView (Additions)
 
-- (id)webHTMLView {
-    NSView *webHTMLView = nil;
+- (void)keyClickWithKeyCode:(unsigned short)keyCode {
+    NSEvent *fakeClickDown = [[NSEvent keyEventWithType:NSKeyDown keyCode:keyCode] retain];
+    NSEvent *fakeClickUp = [[NSEvent keyEventWithType:NSKeyUp keyCode:keyCode] retain];
     
-    //FIXME: recurse through entire hierarchy to get WebHTMLView instance
-    //preprogrammed traversal can cause problems
-    NSView *view = [[[[[self.subviews objectAtIndex:0] subviews] objectAtIndex:0] subviews] objectAtIndex:0];
+    NSView *respondingView = [self hitTest:NSMakePoint(490.0, 540.0)];
     
-    for(NSView *subview in view.subviews) {
-        if([subview isKindOfClass:[WebHTMLView class]])
-            webHTMLView = subview;
-    }
-    return webHTMLView;
+    if([respondingView isMemberOfClass:NSClassFromString(@"WebHTMLView")])
+        respondingView = [(WebHTMLView*)respondingView _hitViewForEvent:fakeClickDown];
+    
+    [respondingView keyDown:fakeClickDown];
+    [respondingView keyUp:fakeClickUp];
+    
+    [fakeClickDown release];
+    [fakeClickUp release];
 }
 
-@end
-
-@implementation WebHTMLView (Additions)
-
-/*- (void)mouseClickAtLocation:(NSPoint)point {
+- (void)mouseClickAtLocation:(NSPoint)point {
     NSEvent *fakeMouseDown = nil;
     NSEvent *fakeMouseUp   = nil;
     
     fakeMouseDown = [[NSEvent mouseEventWithType:NSLeftMouseDown point:point] retain];
     fakeMouseUp   = [[NSEvent mouseEventWithType:NSLeftMouseUp point:point] retain];
     
-    NSView *respondingView = [self _hitViewForEvent:fakeMouseDown];
+    NSView *respondingView = [self hitTest:point];
     
     [respondingView becomeFirstResponder];
     
@@ -64,134 +62,17 @@
     [NSObject scheduleRunAfterDelay:0.5 forBlock:^{
         [[NSCursor arrowCursor] set]; 
     }];
-}*/
-
-- (void)keyClickWithKeyCode:(unsigned short)keyCode {
-    NSEvent *fakeClickDown = nil;
-    NSEvent *fakeClickUp = nil;
-    
-    fakeClickDown = [[NSEvent keyEventWithType:NSKeyDown keyCode:keyCode] retain];
-    fakeClickUp = [[NSEvent keyEventWithType:NSKeyUp keyCode:keyCode] retain];
-    
-    NSEvent *fakeMouseDown = [[NSEvent mouseEventWithType:NSLeftMouseDown point:NSMakePoint(525.0,540.0)] retain];
-    
-    NSView *respondingView = [self _hitViewForEvent:fakeMouseDown];
-    
-    [respondingView lockFocus];
-    
-    [respondingView keyDown:fakeClickDown];
-    [respondingView keyUp:fakeClickUp];
-    
-    [respondingView unlockFocus];
-    
-    [fakeClickDown release];
-    [fakeClickUp release];
-    
-    [fakeMouseDown release];
 }
-
-- (void)mouseClickAtLocation:(NSPoint)point {
-    NSEvent *fakeMouseDown = nil;
-    NSEvent *fakeMouseUp   = nil;
-    //DLogFunc();
-    fakeMouseDown = [[NSEvent mouseEventWithType:NSLeftMouseDown point:point] retain];
-    fakeMouseUp   = [[NSEvent mouseEventWithType:NSLeftMouseUp point:point] retain];
-    //DLogFunc();
-    NSView *respondingView = [self _hitViewForEvent:fakeMouseDown];
-    //DLogObject(respondingView);
-    //respondingView = self;
-    //DLogCGRect(respondingView.frame);
-    //[self dump];
-    
-    //DLogObject([NSView focusView]);
-    //[respondingView lockFocus];
-    
-    //DLogObject([self window]);
-    //DLogObject([respondingView window]);
-    
-    //[[self window] setActivateFakeScreenCoordinates:TRUE];
-    
-    //DLogBOOL([respondingView acceptsFirstResponder]);
-    //[respondingView becomeFirstResponder];
-    //[respondingView sendActivateEvent:YES];
-    //[respondingView invalidatePluginContentRect:[self bounds]];
-    //[respondingView restartTimers];
-    //[respondingView becomeFirstResponder];
-    //[respondingView windowFocusChanged:TRUE];
-    //[[[self superview] window] windowFocusChanged:TRUE];
-    
-    //[NSApp sendEvent:fakeMouseDown];
-    //[NSApp postEvent:fakeMouseDown atStart:YES];
-    
-    //DLog(@" %i %@ ", respondingCView->_eventHandler, respondingCView->_eventHandler);
-    
-    [respondingView mouseDown:fakeMouseDown];
-    //[NSApp sendEvent:fakeMouseUp];
-    [respondingView mouseUp:fakeMouseUp];
-    
-    [fakeMouseDown release];
-    [fakeMouseUp release];
-    
-    //FIXME: requires a second set of mouseDown/mouseUp to take effect
-    // shouldn't be neccesary, need to figure out proper workaround
-    fakeMouseDown = [[NSEvent mouseEventWithType:NSLeftMouseDown point:point] retain];
-    fakeMouseUp   = [[NSEvent mouseEventWithType:NSLeftMouseUp point:point] retain];
-    
-    [respondingView mouseDown:fakeMouseDown];
-    [respondingView mouseUp:fakeMouseUp];
-    
-    [fakeMouseDown release];
-    [fakeMouseUp release];
-    
-    //[respondingView unlockFocus];
-    
-    //DLogBOOL([respondingView acceptsFirstResponder]);
-    
-    //[[self window] setActivateFakeScreenCoordinates:FALSE];
-    
-    //FIXME: stupid flash/Pandora changes the cursor to the hand,
-    // need now and delayed 'set's to make sure hand doesn't stay
-    /*[[NSCursor arrowCursor] set];
-    [NSObject scheduleRunAfterDelay:0.1 forBlock:^{
-        [[NSCursor arrowCursor] set]; 
-    }];
-    [NSObject scheduleRunAfterDelay:0.5 forBlock:^{
-        [[NSCursor arrowCursor] set]; 
-    }];*/
-    //DLogFunc();
-}
-
-#ifdef TEST
-
-- (void)mouseDown:(NSEvent *)event {
-    DLogFunc();
-    DLogObject([self _hitViewForEvent:event]);
-    DLogBOOL([self acceptsFirstResponder]);
-    DLogObject(self);
-    DLogObject(event);
-    DLog(@" ----------------- ");
-}
-
-- (void)mouseUp:(NSEvent *)event {
-    DLogFunc();
-    DLogObject([self _hitViewForEvent:event]);
-    DLogBOOL([self acceptsFirstResponder]);
-    DLogObject(self);
-    DLogObject(event);
-    DLog(@" ----------------- ");
-}
-
-#endif
 
 @end
 
-#ifdef TEST1
+#ifdef TEST
 
-@implementation WebHostedNetscapePluginView (Additions)
+@implementation WebHTMLView (Additions)
 
 - (void)mouseDown:(NSEvent *)event {
     DLogFunc();
-    //DLogObject([self _hitViewForEvent:event]);
+    DLogObject([self _hitViewForEvent:event]);
     DLogBOOL([self acceptsFirstResponder]);
     DLogObject(self);
     DLogObject(event);
@@ -200,12 +81,31 @@
 
 - (void)mouseUp:(NSEvent *)event {
     DLogFunc();
-    //DLogObject([self _hitViewForEvent:event]);
+    DLogObject([self _hitViewForEvent:event]);
     DLogBOOL([self acceptsFirstResponder]);
     DLogObject(self);
     DLogObject(event);
     DLog(@" ----------------- ");
 }
+
+- (void)keyDown:(NSEvent *)event {
+    DLogFunc();
+    DLogObject([self _hitViewForEvent:event]);
+    DLogBOOL([self acceptsFirstResponder]);
+    DLogObject(self);
+    DLogObject(event);
+    DLog(@" ----------------- ");
+}
+
+- (void)keyUp:(NSEvent *)event {
+    DLogFunc();
+    DLogObject([self _hitViewForEvent:event]);
+    DLogBOOL([self acceptsFirstResponder]);
+    DLogObject(self);
+    DLogObject(event);
+    DLog(@" ----------------- ");
+}
+
 
 @end
 
