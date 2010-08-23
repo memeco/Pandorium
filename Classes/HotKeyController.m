@@ -1,10 +1,9 @@
 //
 //  HotKeyController.m
-//  Pandorium
 //
 //  Modified by Gaurav Khanna on 8/17/10.
 //  SOURCE: http://github.com/sweetfm/SweetFM/blob/master/Source/HMediaKeys.m
-//  SOURCE2: http://stackoverflow.com/questions/2969110/cgeventtapcreate-breaks-down-mysteriously-with-key-down-events
+//  SOURCE: http://stackoverflow.com/questions/2969110/cgeventtapcreate-breaks-down-mysteriously-with-key-down-events
 //
 //
 //  Permission is hereby granted, free of charge, to any person 
@@ -41,17 +40,17 @@ NSString * const MediaKeyPreviousNotification = @"MediaKeyPreviousNotification";
 
 MAKE_SINGLETON(HotKeyController, sharedController)
 
-#define ASSERT(cond) if(!(cond)) return event;
-
 CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void *refcon) {
     if(type == kCGEventTapDisabledByTimeout)
         CGEventTapEnable([[HotKeyController sharedController] eventPort], TRUE);
     
-    ASSERT(type == NX_SYSDEFINED)
+    if(type != NX_SYSDEFINED) 
+        return event;
 
 	NSEvent *nsEvent = [NSEvent eventWithCGEvent:event];
     
-    ASSERT([nsEvent subtype] == 8)
+    if([nsEvent subtype] != 8) 
+        return event;
     
     int data = [nsEvent data1];
     int keyCode = (data & 0xFFFF0000) >> 16;
@@ -59,9 +58,10 @@ CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef 
     int keyState = (keyFlags & 0xFF00) >> 8;
     BOOL keyIsRepeat = (keyFlags & 0x1) > 0;
     
-    ASSERT(!keyIsRepeat)
+    if(keyIsRepeat) 
+        return event;
     
-	NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     switch (keyCode) {
         case NX_KEYTYPE_PLAY:
             if(keyState == NX_KEYSTATE_DOWN)
@@ -86,48 +86,43 @@ CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef 
 }
 
 - (id)init {
-	if(self = [super init]) {
-        CFRunLoopSourceRef eventSrc;
+    if(self = [super init]) {
         CFRunLoopRef runLoop;
-        
-        @try {	
-            CGEventTapOptions opts = kCGEventTapOptionDefault;
-            
-#ifdef TEST
-            //opts = kCGEventTapOptionListenOnly;
-#endif
-            
-            _eventPort = CGEventTapCreate(kCGSessionEventTap,
-                                          kCGHeadInsertEventTap,
-                                          opts,
-                                          CGEventMaskBit(NX_SYSDEFINED) | CGEventMaskBit(NX_KEYUP),
-                                          tapEventCallback,
-                                          self);
-            
-            if(_eventPort == NULL)
-                NSLog(@"Event port is null");
-            
-            eventSrc = CFMachPortCreateRunLoopSource(kCFAllocatorSystemDefault, _eventPort, 0);
-            
-            if(eventSrc == NULL)
-                NSLog(@"No event run loop source found");
-            
-            runLoop = CFRunLoopGetCurrent();
-            
-            if(eventSrc == NULL)
-                NSLog(@"No event run loop");
-            
-            CFRunLoopAddSource(runLoop, eventSrc, kCFRunLoopCommonModes);
-            
-            //while ([[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]]);
-        } @catch (NSException *e) {
-            NSLog(@"Exception caught while attempting to create run loop for hotkey: %@", e);
+
+        _eventPort = CGEventTapCreate(kCGSessionEventTap,
+                                      kCGHeadInsertEventTap,
+                                      kCGEventTapOptionDefault,
+                                      CGEventMaskBit(NX_SYSDEFINED),
+                                      tapEventCallback,
+                                      self);
+
+        if(_eventPort == NULL) {
+            NSLog(@"Fatal Error: Event Tap could not be created");
+            return self;
         }
-	}
-	return self;
+
+        _runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorSystemDefault, _eventPort, 0);
+
+        if(_runLoopSource == NULL) {
+            NSLog(@"Fatal Error: Run Loop Source could not be created");
+            return self;
+        }
+
+        runLoop = CFRunLoopGetCurrent();
+
+        if(runLoop == NULL) {
+            NSLog(@"Fatal Error: Couldn't get current threads Run Loop");
+            return self;
+        }
+
+        CFRunLoopAddSource(runLoop, _runLoopSource, kCFRunLoopCommonModes);
+    }
+    return self;
 }
 
 - (void)dealloc {
+    CFRelease(_eventPort);
+    CFRelease(_runLoopSource);
     [super dealloc];
 }
 
