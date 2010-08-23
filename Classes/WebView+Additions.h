@@ -9,6 +9,13 @@
 #import "NSObject+GKAdditions.h"
 #import "NSEvent+Additions.h"
 
+#define NX_KEYTYPE_SPACE 57
+#define NX_KEYTYPE_RIGHTARROW 132
+#define NX_KEYTYPE_PLUS 32 //Shift?
+#define NX_KEYTYPE_MINUS 35
+#define NX_KEYTYPE_UPARROW 134
+#define NX_KEYTYPE_DOWNARROW 133
+
 //#define TEST
 
 @interface WebHTMLView : NSControl {
@@ -35,6 +42,7 @@
 
 @interface WebHTMLView (Additions)
 
+- (void)keyClickWithKeyCode:(unsigned short)keyCode;
 - (void)mouseClickAtLocation:(NSPoint)point;
 
 #ifdef TEST

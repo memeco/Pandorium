@@ -64,19 +64,19 @@ CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef 
 	NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     switch (keyCode) {
         case NX_KEYTYPE_PLAY:
-            if(keyState == NX_KEYSTATE_UP)
+            if(keyState == NX_KEYSTATE_DOWN)
                 [center postNotificationName:MediaKeyPlayPauseNotification object:(HotKeyController *)refcon];
             if(keyState == NX_KEYSTATE_UP || keyState == NX_KEYSTATE_DOWN)
                 return NULL;
         break;
         case NX_KEYTYPE_FAST:
-            if(keyState == NX_KEYSTATE_UP)
+            if(keyState == NX_KEYSTATE_DOWN)
                 [center postNotificationName:MediaKeyNextNotification object:(HotKeyController *)refcon];
             if(keyState == NX_KEYSTATE_UP || keyState == NX_KEYSTATE_DOWN)
                 return NULL;
         break;
         case NX_KEYTYPE_REWIND:
-            if(keyState == NX_KEYSTATE_UP)
+            if(keyState == NX_KEYSTATE_DOWN)
                 [center postNotificationName:MediaKeyPreviousNotification object:(HotKeyController *)refcon];
             if(keyState == NX_KEYSTATE_UP || keyState == NX_KEYSTATE_DOWN)
                 return NULL;

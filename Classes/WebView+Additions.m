@@ -66,6 +66,30 @@
     }];
 }*/
 
+- (void)keyClickWithKeyCode:(unsigned short)keyCode {
+    NSEvent *fakeClickDown = nil;
+    NSEvent *fakeClickUp = nil;
+    
+    fakeClickDown = [[NSEvent keyEventWithType:NSKeyDown keyCode:keyCode] retain];
+    fakeClickUp = [[NSEvent keyEventWithType:NSKeyUp keyCode:keyCode] retain];
+    
+    NSEvent *fakeMouseDown = [[NSEvent mouseEventWithType:NSLeftMouseDown point:NSMakePoint(525.0,540.0)] retain];
+    
+    NSView *respondingView = [self _hitViewForEvent:fakeMouseDown];
+    
+    [respondingView lockFocus];
+    
+    [respondingView keyDown:fakeClickDown];
+    [respondingView keyUp:fakeClickUp];
+    
+    [respondingView unlockFocus];
+    
+    [fakeClickDown release];
+    [fakeClickUp release];
+    
+    [fakeMouseDown release];
+}
+
 - (void)mouseClickAtLocation:(NSPoint)point {
     NSEvent *fakeMouseDown = nil;
     NSEvent *fakeMouseUp   = nil;

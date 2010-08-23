@@ -31,4 +31,17 @@
                               pressure:( type == NSLeftMouseDown ? 1 : 0 )];*/
 }
 
++ (id)keyEventWithType:(NSEventType)type keyCode:(unsigned short)keyCode { 
+    return [NSEvent keyEventWithType:type 
+                            location:NSMakePoint(0,0) 
+                       modifierFlags:0 
+                           timestamp:0 
+                        windowNumber:[[[NSApp delegate] window] windowNumber] 
+                             context:0 
+                          characters:nil 
+         charactersIgnoringModifiers:nil 
+                           isARepeat:FALSE 
+                             keyCode:keyCode];
+}
+
 @end

@@ -76,7 +76,8 @@
 
 - (void)playPauseKeyNotification {
     DLogObject(self.webView);
-    [[self.webView webHTMLView] mouseClickAtLocation:NSMakePoint(525.0,540.0)];
+    //[[self.webView webHTMLView] mouseClickAtLocation:NSMakePoint(525.0,540.0)];
+    [[self.webView webHTMLView] keyClickWithKeyCode:57];
 }
 
 - (void)nextKeyNotification {

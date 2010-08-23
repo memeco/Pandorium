@@ -8,5 +8,6 @@
 @interface NSEvent (Additions)
 
 + (id)mouseEventWithType:(NSEventType)type point:(NSPoint)point;
++ (id)keyEventWithType:(NSEventType)type keyCode:(unsigned short)keyCode;
 
 @end
