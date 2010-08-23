@@ -27,54 +27,60 @@
 
 #import "HotKeyController.h"
 
-NSString * const MediaKeyPlayPauseUpNotification = @"MediaKeyPlayPauseUpNotification";
-NSString * const MediaKeyNextUpNotification = @"MediaKeyNextUpNotification";
-NSString * const MediaKeyPreviousUpNotification = @"MediaKeyPreviousUpNotification";
+NSString * const MediaKeyPlayPauseNotification = @"MediaKeyPlayPauseNotification";
+NSString * const MediaKeyNextNotification = @"MediaKeyNextNotification";
+NSString * const MediaKeyPreviousNotification = @"MediaKeyPreviousNotification";
+
+#define NX_KEYSTATE_UP      0x0A
+#define NX_KEYSTATE_DOWN    0x0B
+
+#define ASSERT(cond) if(!(cond)) return event;
 
 @implementation HotKeyController
 
 MAKE_SINGLETON(HotKeyController, sharedController)
 
 CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void *refcon) {
+    ASSERT(type == NX_SYSDEFINED)
+
+	NSEvent *nsEvent = [NSEvent eventWithCGEvent:event];
     
-	NSAutoreleasePool *pool = [NSAutoreleasePool new];
+    ASSERT([nsEvent subtype] == 8)
     
-	NSEvent* nsEvent = [NSEvent eventWithCGEvent:event];
-	NSInteger eventData = 0;
+    int data = [nsEvent data1];
+    int keyCode = (data & 0xFFFF0000) >> 16;
+    int keyFlags = (data & 0xFFFF);
+    int keyState = (keyFlags & 0xFF00) >> 8;
+    BOOL keyIsRepeat = (keyFlags & 0x1) > 0;
     
-	if([nsEvent type] == NSSystemDefined)
-		eventData = [nsEvent data1];
-    
-	[pool release];
+    ASSERT(!keyIsRepeat)
     
 	NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    
-	if(type==NX_SYSDEFINED && eventData==PlayPauseKeyUp)
-	{
-		[center postNotificationName:MediaKeyPlayPauseUpNotification object:(HotKeyController *)refcon];
-		return NULL;
-	}
-	else if(type==NX_SYSDEFINED && eventData==NextKeyUp)
-	{
-		[center postNotificationName:MediaKeyNextUpNotification object:(HotKeyController *)refcon];
-		return NULL;
-	}
-	else if(type==NX_SYSDEFINED && eventData==PreviousKeyUp)
-	{
-		[center postNotificationName:MediaKeyPreviousUpNotification object:(HotKeyController *)refcon];
-		return NULL;
-	}
-    
-	if(type==NX_SYSDEFINED && (eventData==PlayPauseKeyDown || eventData==NextKeyDown || eventData==PreviousKeyDown))
-		return NULL;
-    
-	return event;
+    switch (keyCode) {
+        case NX_KEYTYPE_PLAY:
+            if(keyState == NX_KEYSTATE_UP)
+                [center postNotificationName:MediaKeyPlayPauseNotification object:(HotKeyController *)refcon];
+            if(keyState == NX_KEYSTATE_UP || keyState == NX_KEYSTATE_DOWN)
+                return NULL;
+        break;
+        case NX_KEYTYPE_FAST:
+            if(keyState == NX_KEYSTATE_UP)
+                [center postNotificationName:MediaKeyNextNotification object:(HotKeyController *)refcon];
+            if(keyState == NX_KEYSTATE_UP || keyState == NX_KEYSTATE_DOWN)
+                return NULL;
+        break;
+        case NX_KEYTYPE_REWIND:
+            if(keyState == NX_KEYSTATE_UP)
+                [center postNotificationName:MediaKeyPreviousNotification object:(HotKeyController *)refcon];
+            if(keyState == NX_KEYSTATE_UP || keyState == NX_KEYSTATE_DOWN)
+                return NULL;
+        break;
+    }
+    return event;
 }
 
 - (id)init {
 	if(self = [super init]) {
-		//[NSThread detachNewThreadSelector:@selector(initOnThread) toTarget:self withObject:nil];
-        
         CFMachPortRef eventPort;
         CFRunLoopSourceRef eventSrc;
         CFRunLoopRef runLoop;
@@ -123,9 +129,6 @@ CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef 
         }
 	}
 	return self;
-}
-
-- (void)initOnThread {
 }
 
 - (void)dealloc {

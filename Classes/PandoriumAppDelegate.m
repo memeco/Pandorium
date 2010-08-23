@@ -26,9 +26,9 @@
     [HotKeyController sharedController];
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(playPauseKeyUpNotification) name:MediaKeyPlayPauseUpNotification object:nil];
-    [center addObserver:self selector:@selector(nextKeyUpNotification) name:MediaKeyNextUpNotification object:nil];
-    [center addObserver:self selector:@selector(previousKeyUpNotification) name:MediaKeyPreviousUpNotification object:nil];
+    [center addObserver:self selector:@selector(playPauseKeyNotification) name:MediaKeyPlayPauseNotification object:nil];
+    [center addObserver:self selector:@selector(nextKeyNotification) name:MediaKeyNextNotification object:nil];
+    [center addObserver:self selector:@selector(previousKeyNotification) name:MediaKeyPreviousNotification object:nil];
 }
 
 -(void)awakeFromNib{
@@ -76,17 +76,17 @@
 #pragma mark -
 #pragma mark HotKey Actions
 
-- (void)playPauseKeyUpNotification {
+- (void)playPauseKeyNotification {
     DLogObject(self.webView);
     [[self.webView webHTMLView] mouseClickAtLocation:NSMakePoint(525.0,540.0)];
 }
 
-- (void)nextKeyUpNotification {
+- (void)nextKeyNotification {
     //DLogFunc();
     [[self.webView webHTMLView] mouseClickAtLocation:NSMakePoint(555.0, 540.0)];
 }
 
-- (void)previousKeyUpNotification {
+- (void)previousKeyNotification {
     //DLogFunc();
 }
 

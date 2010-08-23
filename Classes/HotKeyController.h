@@ -26,6 +26,7 @@
 //
 
 #import "singleton.h"
+#import <IOKit/hidsystem/ev_keymap.h>
 
 //
 // Media key constants
@@ -47,9 +48,9 @@ typedef enum {
 //
 // Notifications
 //
-extern NSString * const MediaKeyPlayPauseUpNotification;
-extern NSString * const MediaKeyNextUpNotification;
-extern NSString * const MediaKeyPreviousUpNotification;
+extern NSString * const MediaKeyPlayPauseNotification;
+extern NSString * const MediaKeyNextNotification;
+extern NSString * const MediaKeyPreviousNotification;
 
 @interface HotKeyController : NSObject {
 
