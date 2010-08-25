@@ -17,6 +17,8 @@
     
     if([respondingView isMemberOfClass:NSClassFromString(@"WebHTMLView")])
         respondingView = [(WebHTMLView*)respondingView _hitViewForEvent:fakeClickDown];
+        
+    DLogObject(respondingView);
     
     [respondingView keyDown:fakeClickDown];
     [respondingView keyUp:fakeClickUp];

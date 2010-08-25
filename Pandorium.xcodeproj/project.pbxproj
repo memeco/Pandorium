@@ -17,7 +17,6 @@
 		9A04FEDE1220A0DD00DAEAC1 /* HotKeyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04FED91220A0DD00DAEAC1 /* HotKeyController.m */; };
 		9A04FEDF1220A0DD00DAEAC1 /* NSEvent+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04FEDB1220A0DD00DAEAC1 /* NSEvent+Additions.m */; };
 		9A04FEE01220A0DD00DAEAC1 /* WebView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04FEDD1220A0DD00DAEAC1 /* WebView+Additions.m */; };
-		9A04FEE91220A11100DAEAC1 /* NSObject+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04FEE41220A11100DAEAC1 /* NSObject+GKAdditions.m */; };
 		9A04FEEA1220A11100DAEAC1 /* status_icon_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEE61220A11100DAEAC1 /* status_icon_disabled.png */; };
 		9A04FEEB1220A11100DAEAC1 /* status_icon_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEE71220A11100DAEAC1 /* status_icon_highlighted.png */; };
 		9A04FEEC1220A11100DAEAC1 /* status_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEE81220A11100DAEAC1 /* status_icon.png */; };
@@ -42,10 +41,6 @@
 		9A04FEDB1220A0DD00DAEAC1 /* NSEvent+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEvent+Additions.m"; sourceTree = "<group>"; };
 		9A04FEDC1220A0DD00DAEAC1 /* WebView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebView+Additions.h"; sourceTree = "<group>"; };
 		9A04FEDD1220A0DD00DAEAC1 /* WebView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebView+Additions.m"; sourceTree = "<group>"; };
-		9A04FEE21220A11100DAEAC1 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = debug.h; path = Resources/debug.h; sourceTree = "<group>"; };
-		9A04FEE31220A11100DAEAC1 /* NSObject+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+GKAdditions.h"; path = "Resources/NSObject+GKAdditions.h"; sourceTree = "<group>"; };
-		9A04FEE41220A11100DAEAC1 /* NSObject+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+GKAdditions.m"; path = "Resources/NSObject+GKAdditions.m"; sourceTree = "<group>"; };
-		9A04FEE51220A11100DAEAC1 /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = singleton.h; path = Resources/singleton.h; sourceTree = "<group>"; };
 		9A04FEE61220A11100DAEAC1 /* status_icon_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon_disabled.png; path = Resources/status_icon_disabled.png; sourceTree = "<group>"; };
 		9A04FEE71220A11100DAEAC1 /* status_icon_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon_highlighted.png; path = Resources/status_icon_highlighted.png; sourceTree = "<group>"; };
 		9A04FEE81220A11100DAEAC1 /* status_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon.png; path = Resources/status_icon.png; sourceTree = "<group>"; };
@@ -70,7 +65,6 @@
 			children = (
 				9A04FEB11220A05B00DAEAC1 /* Classes */,
 				9A04FEE11220A0EC00DAEAC1 /* Categories */,
-				9A04FEED1220A11500DAEAC1 /* GKKit */,
 				9A04FEB21220A05B00DAEAC1 /* Other Sources */,
 				9A04FEB31220A05B00DAEAC1 /* Resources */,
 				9A04FEB41220A05B00DAEAC1 /* Frameworks */,
@@ -140,17 +134,6 @@
 			);
 			name = Categories;
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		9A04FEED1220A11500DAEAC1 /* GKKit */ = {
-			isa = PBXGroup;
-			children = (
-				9A04FEE21220A11100DAEAC1 /* debug.h */,
-				9A04FEE31220A11100DAEAC1 /* NSObject+GKAdditions.h */,
-				9A04FEE41220A11100DAEAC1 /* NSObject+GKAdditions.m */,
-				9A04FEE51220A11100DAEAC1 /* singleton.h */,
-			);
-			name = GKKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,7 +208,6 @@
 				9A04FEDE1220A0DD00DAEAC1 /* HotKeyController.m in Sources */,
 				9A04FEDF1220A0DD00DAEAC1 /* NSEvent+Additions.m in Sources */,
 				9A04FEE01220A0DD00DAEAC1 /* WebView+Additions.m in Sources */,
-				9A04FEE91220A11100DAEAC1 /* NSObject+GKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
