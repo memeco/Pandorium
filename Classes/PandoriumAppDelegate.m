@@ -67,6 +67,7 @@
                             #container {height:661px;left:-44px;top:-27px;width:683px;}                     \
                             #enhanced_skin_container {display:none;}                                        \
                             body {background:none !important;}                                              \
+                            html {overflow:auto !important;}                                                \
                            ';                                                                               \
          document.body.appendChild(sheet);                                                                  \
      "];
