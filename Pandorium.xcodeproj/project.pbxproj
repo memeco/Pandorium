@@ -21,13 +21,13 @@
 		9A04FEEB1220A11100DAEAC1 /* status_icon_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEE71220A11100DAEAC1 /* status_icon_highlighted.png */; };
 		9A04FEEC1220A11100DAEAC1 /* status_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEE81220A11100DAEAC1 /* status_icon.png */; };
 		9A04FEEF1220A12D00DAEAC1 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEEE1220A12D00DAEAC1 /* Icon.icns */; };
-		9A7E6A1C1225927700A47C85 /* GKDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E69F91225927700A47C85 /* GKDataRequest.m */; };
-		9A7E6A1D1225927700A47C85 /* GKSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E69FB1225927700A47C85 /* GKSearchController.m */; };
-		9A7E6A1E1225927700A47C85 /* NSDate+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E69FD1225927700A47C85 /* NSDate+GKAdditions.m */; };
-		9A7E6A1F1225927700A47C85 /* NSObject+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E69FF1225927700A47C85 /* NSObject+GKAdditions.m */; };
-		9A7E6A201225927700A47C85 /* NSString+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A011225927700A47C85 /* NSString+GKAdditions.m */; };
-		9A7E6A211225927700A47C85 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 9A7E6A021225927700A47C85 /* README */; };
-		9A7E6A221225927700A47C85 /* View+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A051225927700A47C85 /* View+GKAdditions.m */; };
+		9A7E6AA51225B64300A47C85 /* GKDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A721225B64300A47C85 /* GKDataRequest.m */; };
+		9A7E6AA61225B64300A47C85 /* GKSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A741225B64300A47C85 /* GKSearchController.m */; };
+		9A7E6AA71225B64300A47C85 /* NSDate+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A761225B64300A47C85 /* NSDate+GKAdditions.m */; };
+		9A7E6AA81225B64300A47C85 /* NSObject+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A781225B64300A47C85 /* NSObject+GKAdditions.m */; };
+		9A7E6AA91225B64300A47C85 /* NSString+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A7A1225B64300A47C85 /* NSString+GKAdditions.m */; };
+		9A7E6AAA1225B64300A47C85 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9A7E6A7B1225B64300A47C85 /* README.md */; };
+		9A7E6AAB1225B64300A47C85 /* View+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A7E1225B64300A47C85 /* View+GKAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,22 +52,22 @@
 		9A04FEE71220A11100DAEAC1 /* status_icon_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon_highlighted.png; path = Resources/status_icon_highlighted.png; sourceTree = "<group>"; };
 		9A04FEE81220A11100DAEAC1 /* status_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon.png; path = Resources/status_icon.png; sourceTree = "<group>"; };
 		9A04FEEE1220A12D00DAEAC1 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Icon.icns; path = Resources/Icon.icns; sourceTree = "<group>"; };
-		9A7E69F61225927700A47C85 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
-		9A7E69F71225927700A47C85 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
-		9A7E69F81225927700A47C85 /* GKDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDataRequest.h; sourceTree = "<group>"; };
-		9A7E69F91225927700A47C85 /* GKDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDataRequest.m; sourceTree = "<group>"; };
-		9A7E69FA1225927700A47C85 /* GKSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKSearchController.h; sourceTree = "<group>"; };
-		9A7E69FB1225927700A47C85 /* GKSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKSearchController.m; sourceTree = "<group>"; };
-		9A7E69FC1225927700A47C85 /* NSDate+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+GKAdditions.h"; sourceTree = "<group>"; };
-		9A7E69FD1225927700A47C85 /* NSDate+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+GKAdditions.m"; sourceTree = "<group>"; };
-		9A7E69FE1225927700A47C85 /* NSObject+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GKAdditions.h"; sourceTree = "<group>"; };
-		9A7E69FF1225927700A47C85 /* NSObject+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GKAdditions.m"; sourceTree = "<group>"; };
-		9A7E6A001225927700A47C85 /* NSString+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GKAdditions.h"; sourceTree = "<group>"; };
-		9A7E6A011225927700A47C85 /* NSString+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GKAdditions.m"; sourceTree = "<group>"; };
-		9A7E6A021225927700A47C85 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		9A7E6A031225927700A47C85 /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleton.h; sourceTree = "<group>"; };
-		9A7E6A041225927700A47C85 /* View+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+GKAdditions.h"; sourceTree = "<group>"; };
-		9A7E6A051225927700A47C85 /* View+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+GKAdditions.m"; sourceTree = "<group>"; };
+		9A7E6A6F1225B64300A47C85 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		9A7E6A701225B64300A47C85 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
+		9A7E6A711225B64300A47C85 /* GKDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDataRequest.h; sourceTree = "<group>"; };
+		9A7E6A721225B64300A47C85 /* GKDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDataRequest.m; sourceTree = "<group>"; };
+		9A7E6A731225B64300A47C85 /* GKSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKSearchController.h; sourceTree = "<group>"; };
+		9A7E6A741225B64300A47C85 /* GKSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKSearchController.m; sourceTree = "<group>"; };
+		9A7E6A751225B64300A47C85 /* NSDate+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+GKAdditions.h"; sourceTree = "<group>"; };
+		9A7E6A761225B64300A47C85 /* NSDate+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+GKAdditions.m"; sourceTree = "<group>"; };
+		9A7E6A771225B64300A47C85 /* NSObject+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GKAdditions.h"; sourceTree = "<group>"; };
+		9A7E6A781225B64300A47C85 /* NSObject+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GKAdditions.m"; sourceTree = "<group>"; };
+		9A7E6A791225B64300A47C85 /* NSString+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GKAdditions.h"; sourceTree = "<group>"; };
+		9A7E6A7A1225B64300A47C85 /* NSString+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GKAdditions.m"; sourceTree = "<group>"; };
+		9A7E6A7B1225B64300A47C85 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		9A7E6A7C1225B64300A47C85 /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleton.h; sourceTree = "<group>"; };
+		9A7E6A7D1225B64300A47C85 /* View+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+GKAdditions.h"; sourceTree = "<group>"; };
+		9A7E6A7E1225B64300A47C85 /* View+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+GKAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 			children = (
 				9A04FEB11220A05B00DAEAC1 /* Classes */,
 				9A04FEE11220A0EC00DAEAC1 /* Categories */,
-				9A7E69D11225927700A47C85 /* GKKit */,
+				9A7E6A2D1225B64300A47C85 /* GKKit */,
 				9A04FEB21220A05B00DAEAC1 /* Other Sources */,
 				9A04FEB31220A05B00DAEAC1 /* Resources */,
 				9A04FEB41220A05B00DAEAC1 /* Frameworks */,
@@ -160,25 +160,25 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		9A7E69D11225927700A47C85 /* GKKit */ = {
+		9A7E6A2D1225B64300A47C85 /* GKKit */ = {
 			isa = PBXGroup;
 			children = (
-				9A7E69F61225927700A47C85 /* common.h */,
-				9A7E69F71225927700A47C85 /* debug.h */,
-				9A7E69F81225927700A47C85 /* GKDataRequest.h */,
-				9A7E69F91225927700A47C85 /* GKDataRequest.m */,
-				9A7E69FA1225927700A47C85 /* GKSearchController.h */,
-				9A7E69FB1225927700A47C85 /* GKSearchController.m */,
-				9A7E69FC1225927700A47C85 /* NSDate+GKAdditions.h */,
-				9A7E69FD1225927700A47C85 /* NSDate+GKAdditions.m */,
-				9A7E69FE1225927700A47C85 /* NSObject+GKAdditions.h */,
-				9A7E69FF1225927700A47C85 /* NSObject+GKAdditions.m */,
-				9A7E6A001225927700A47C85 /* NSString+GKAdditions.h */,
-				9A7E6A011225927700A47C85 /* NSString+GKAdditions.m */,
-				9A7E6A021225927700A47C85 /* README */,
-				9A7E6A031225927700A47C85 /* singleton.h */,
-				9A7E6A041225927700A47C85 /* View+GKAdditions.h */,
-				9A7E6A051225927700A47C85 /* View+GKAdditions.m */,
+				9A7E6A6F1225B64300A47C85 /* common.h */,
+				9A7E6A701225B64300A47C85 /* debug.h */,
+				9A7E6A711225B64300A47C85 /* GKDataRequest.h */,
+				9A7E6A721225B64300A47C85 /* GKDataRequest.m */,
+				9A7E6A731225B64300A47C85 /* GKSearchController.h */,
+				9A7E6A741225B64300A47C85 /* GKSearchController.m */,
+				9A7E6A751225B64300A47C85 /* NSDate+GKAdditions.h */,
+				9A7E6A761225B64300A47C85 /* NSDate+GKAdditions.m */,
+				9A7E6A771225B64300A47C85 /* NSObject+GKAdditions.h */,
+				9A7E6A781225B64300A47C85 /* NSObject+GKAdditions.m */,
+				9A7E6A791225B64300A47C85 /* NSString+GKAdditions.h */,
+				9A7E6A7A1225B64300A47C85 /* NSString+GKAdditions.m */,
+				9A7E6A7B1225B64300A47C85 /* README.md */,
+				9A7E6A7C1225B64300A47C85 /* singleton.h */,
+				9A7E6A7D1225B64300A47C85 /* View+GKAdditions.h */,
+				9A7E6A7E1225B64300A47C85 /* View+GKAdditions.m */,
 			);
 			path = GKKit;
 			sourceTree = "<group>";
@@ -240,7 +240,7 @@
 				9A04FEEB1220A11100DAEAC1 /* status_icon_highlighted.png in Resources */,
 				9A04FEEC1220A11100DAEAC1 /* status_icon.png in Resources */,
 				9A04FEEF1220A12D00DAEAC1 /* Icon.icns in Resources */,
-				9A7E6A211225927700A47C85 /* README in Resources */,
+				9A7E6AAA1225B64300A47C85 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,12 +256,12 @@
 				9A04FEDE1220A0DD00DAEAC1 /* HotKeyController.m in Sources */,
 				9A04FEDF1220A0DD00DAEAC1 /* NSEvent+Additions.m in Sources */,
 				9A04FEE01220A0DD00DAEAC1 /* WebView+Additions.m in Sources */,
-				9A7E6A1C1225927700A47C85 /* GKDataRequest.m in Sources */,
-				9A7E6A1D1225927700A47C85 /* GKSearchController.m in Sources */,
-				9A7E6A1E1225927700A47C85 /* NSDate+GKAdditions.m in Sources */,
-				9A7E6A1F1225927700A47C85 /* NSObject+GKAdditions.m in Sources */,
-				9A7E6A201225927700A47C85 /* NSString+GKAdditions.m in Sources */,
-				9A7E6A221225927700A47C85 /* View+GKAdditions.m in Sources */,
+				9A7E6AA51225B64300A47C85 /* GKDataRequest.m in Sources */,
+				9A7E6AA61225B64300A47C85 /* GKSearchController.m in Sources */,
+				9A7E6AA71225B64300A47C85 /* NSDate+GKAdditions.m in Sources */,
+				9A7E6AA81225B64300A47C85 /* NSObject+GKAdditions.m in Sources */,
+				9A7E6AA91225B64300A47C85 /* NSString+GKAdditions.m in Sources */,
+				9A7E6AAB1225B64300A47C85 /* View+GKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

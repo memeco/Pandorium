@@ -26,6 +26,8 @@
     
     [HotKeyController sharedController];
     
+    //WebKitDeveloperExtras
+
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(playPauseKeyNotification) name:MediaKeyPlayPauseNotification object:nil];
     [center addObserver:self selector:@selector(nextKeyNotification) name:MediaKeyNextNotification object:nil];
@@ -62,14 +64,16 @@
     // consider using DOMDocument methods to manipulate css, 
     // since no real javascript is used, no reason to invoke JSToolKit
     [webView stringByEvaluatingJavaScriptFromString:@"                                                      \
-         var sheet = document.createElement('style');                                                       \
-         sheet.innerHTML = '#footer {display:none !important;}                                              \
-                            #container {height:661px;left:-44px;top:-27px;width:683px;}                     \
-                            #enhanced_skin_container {display:none;}                                        \
-                            body {background:none !important;}                                              \
-                            html {overflow:auto !important;}                                                \
-                           ';                                                                               \
-         document.body.appendChild(sheet);                                                                  \
+         if(document.getElementById('pandoriumStyle') == null) {                                            \
+             var style = document.createElement('style');                                                   \
+             style.setAttribute('id','pandoriumStyle');                                                     \
+             style.innerHTML = '#footer {display:none !important;}                                          \
+                                #container {height:661px;left:-44px;top:-27px;width:683px;}                 \
+                                #enhanced_skin_container {display:none;}                                    \
+                                body {background:none !important;}                                          \
+                               ';                                                                           \
+             document.body.appendChild(style);                                                              \
+         }                                                                                                  \
      "];
 }
 
