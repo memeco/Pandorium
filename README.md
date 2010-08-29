@@ -1,9 +1,9 @@
 ## Clone Instructions
 
 1. Clone
-<br />&nbsp;&nbsp;&nbsp;&nbsp;**"git clone git://github.com/gauravk92/Pandorium.git"**
+<br />&nbsp;&nbsp;&nbsp;&nbsp;**"git clone git://github.com/gauravk92/Pandorium.git"**<br />
 2. Init/Update Submodules
-<br />&nbsp;&nbsp;&nbsp;&nbsp;**"git submodule init;git submodule update"**
+<br />&nbsp;&nbsp;&nbsp;&nbsp;**"git submodule init;git submodule update"**<br />
 
 ## Build Instructions
 
