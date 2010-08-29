@@ -13,9 +13,11 @@
     NSEvent *fakeClickDown = [[NSEvent keyEventWithType:NSKeyDown keyCode:keyCode] retain];
     NSEvent *fakeClickUp = [[NSEvent keyEventWithType:NSKeyUp keyCode:keyCode] retain];
     
+    NSView *respondingView = [self hitTest:NSMakePoint(300.0, 300.0)];
+    
     [self dump];
     
-    NSView *respondingView = [self hitTest:NSMakePoint(490.0, 540.0)];
+    DLogObject(respondingView);
     
     if([respondingView isMemberOfClass:NSClassFromString(@"WebHTMLView")])
         respondingView = [(WebHTMLView*)respondingView _hitViewForEvent:fakeClickDown];

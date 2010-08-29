@@ -21,7 +21,6 @@
 		9A04FEEB1220A11100DAEAC1 /* status_icon_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEE71220A11100DAEAC1 /* status_icon_highlighted.png */; };
 		9A04FEEC1220A11100DAEAC1 /* status_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEE81220A11100DAEAC1 /* status_icon.png */; };
 		9A04FEEF1220A12D00DAEAC1 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEEE1220A12D00DAEAC1 /* Icon.icns */; };
-		9A7E6AA51225B64300A47C85 /* GKDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A721225B64300A47C85 /* GKDataRequest.m */; };
 		9A7E6AA61225B64300A47C85 /* GKSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A741225B64300A47C85 /* GKSearchController.m */; };
 		9A7E6AA71225B64300A47C85 /* NSDate+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A761225B64300A47C85 /* NSDate+GKAdditions.m */; };
 		9A7E6AA81225B64300A47C85 /* NSObject+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A781225B64300A47C85 /* NSObject+GKAdditions.m */; };
@@ -54,8 +53,6 @@
 		9A04FEEE1220A12D00DAEAC1 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Icon.icns; path = Resources/Icon.icns; sourceTree = "<group>"; };
 		9A7E6A6F1225B64300A47C85 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		9A7E6A701225B64300A47C85 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
-		9A7E6A711225B64300A47C85 /* GKDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDataRequest.h; sourceTree = "<group>"; };
-		9A7E6A721225B64300A47C85 /* GKDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDataRequest.m; sourceTree = "<group>"; };
 		9A7E6A731225B64300A47C85 /* GKSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKSearchController.h; sourceTree = "<group>"; };
 		9A7E6A741225B64300A47C85 /* GKSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKSearchController.m; sourceTree = "<group>"; };
 		9A7E6A751225B64300A47C85 /* NSDate+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+GKAdditions.h"; sourceTree = "<group>"; };
@@ -165,8 +162,6 @@
 			children = (
 				9A7E6A6F1225B64300A47C85 /* common.h */,
 				9A7E6A701225B64300A47C85 /* debug.h */,
-				9A7E6A711225B64300A47C85 /* GKDataRequest.h */,
-				9A7E6A721225B64300A47C85 /* GKDataRequest.m */,
 				9A7E6A731225B64300A47C85 /* GKSearchController.h */,
 				9A7E6A741225B64300A47C85 /* GKSearchController.m */,
 				9A7E6A751225B64300A47C85 /* NSDate+GKAdditions.h */,
@@ -256,7 +251,6 @@
 				9A04FEDE1220A0DD00DAEAC1 /* HotKeyController.m in Sources */,
 				9A04FEDF1220A0DD00DAEAC1 /* NSEvent+Additions.m in Sources */,
 				9A04FEE01220A0DD00DAEAC1 /* WebView+Additions.m in Sources */,
-				9A7E6AA51225B64300A47C85 /* GKDataRequest.m in Sources */,
 				9A7E6AA61225B64300A47C85 /* GKSearchController.m in Sources */,
 				9A7E6AA71225B64300A47C85 /* NSDate+GKAdditions.m in Sources */,
 				9A7E6AA81225B64300A47C85 /* NSObject+GKAdditions.m in Sources */,
@@ -300,7 +294,6 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = supported;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -333,7 +326,6 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Pandorium_Prefix.pch;
@@ -351,7 +343,6 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Pandorium_Prefix.pch;

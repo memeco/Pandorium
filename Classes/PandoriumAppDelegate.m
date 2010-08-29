@@ -60,9 +60,6 @@
 #pragma mark WebView delegate Methods
 
 - (void)webView:(WebView *)webView resource:(id)identifier didFinishLoadingFromDataSource:(WebDataSource *)dataSource {
-    //SEE: strips all elements away from the <object> (the flash part)
-    // consider using DOMDocument methods to manipulate css, 
-    // since no real javascript is used, no reason to invoke JSToolKit
     [webView stringByEvaluatingJavaScriptFromString:@"                                                      \
          if(document.getElementById('pandoriumStyle') == null) {                                            \
              var style = document.createElement('style');                                                   \
@@ -72,6 +69,7 @@
                                 #enhanced_skin_container {display:none;}                                    \
                                 body {background:none !important;}                                          \
                                 #advertisement {display:none !important;}                                   \
+                                html {overflow: hidden;}                                                    \
                                ';                                                                           \
              document.body.appendChild(style);                                                              \
          }                                                                                                  \
@@ -89,6 +87,7 @@
 #define DOWN_KEYCODE 125
 
 - (void)playPauseKeyNotification {
+    DLogFunc();
     [self.webView keyClickWithKeyCode:SPACE_KEYCODE];
 }
 
