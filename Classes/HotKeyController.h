@@ -33,7 +33,6 @@ extern NSString * const MediaKeyPreviousNotification;
 
 @interface HotKeyController : NSObject {
     CFMachPortRef _eventPort;
-    CFRunLoopSourceRef _runLoopSource;
 }
 
 @property(nonatomic, assign, readonly) CFMachPortRef eventPort;

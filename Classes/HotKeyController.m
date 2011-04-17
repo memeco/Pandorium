@@ -88,6 +88,7 @@ CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef 
 - (id)init {
     if(self = [super init]) {
         CFRunLoopRef runLoop;
+        CFRunLoopSourceRef runLoopSource;
 
         _eventPort = CGEventTapCreate(kCGSessionEventTap,
                                       kCGHeadInsertEventTap,
@@ -101,9 +102,9 @@ CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef 
             return self;
         }
 
-        _runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorSystemDefault, _eventPort, 0);
+        runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorSystemDefault, _eventPort, 0);
 
-        if(_runLoopSource == NULL) {
+        if(runLoopSource == NULL) {
             NSLog(@"Fatal Error: Run Loop Source could not be created");
             return self;
         }
@@ -115,14 +116,15 @@ CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef 
             return self;
         }
 
-        CFRunLoopAddSource(runLoop, _runLoopSource, kCFRunLoopCommonModes);
+        CFRunLoopAddSource(runLoop, runLoopSource, kCFRunLoopCommonModes);
+        
+        CFRelease(runLoopSource);
     }
     return self;
 }
 
 - (void)dealloc {
     CFRelease(_eventPort);
-    CFRelease(_runLoopSource);
     [super dealloc];
 }
 
