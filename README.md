@@ -1,11 +1,11 @@
-
+## Purpose
 
 ## License
 
-GPL, nothing here can be used for any commercial purposes
+GPL
 
 ## Setup/Build
 
     $ git clone git://github.com/gauravk92/Pandorium.git
-    $ git submodule update --init
+    $ git submodule update --init>    
     $ xcodebuild
