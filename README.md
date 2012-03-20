@@ -1,6 +1,6 @@
 ## What is this?
 
-**Pandorium**: The best pandora.com app for OS X.
+**Pandorium**: The best pandora.com app for Lion.
 
 ## What can I do with this?
 
