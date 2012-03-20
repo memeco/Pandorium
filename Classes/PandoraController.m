@@ -57,7 +57,7 @@
     if ([request.URL.description hasPrefix:@"https://www.pandora.com/radio/xmlrpc"] && [request.URL.description hasSuffix:@"createListener"]) {
         //DLogObject(request.URL);
         //DLogFunc();
-        LOG_GENERAL(0, @"main page detected %@", request.URL);
+        //LOG_GENERAL(0, @"main page detected %@", request.URL);
         
         NSString *cleanJSPath = [[NSBundle mainBundle] pathForResource:@"clean" ofType:@"js"];
         NSString *cleanjs = [NSString stringWithContentsOfFile:cleanJSPath encoding:NSUTF8StringEncoding error:nil];
@@ -93,7 +93,7 @@
 - (void)webView:(WebView *)sender resource:(id)identifier didFinishLoadingFromDataSource:(WebDataSource *)dataSource {
     
     
-    LOG_NETWORK(1, @"aURL: %@", dataSource.request.URL);
+    //LOG_NETWORK(1, @"aURL: %@", dataSource.request.URL);
     //NSString *cleanJSPath = [[NSBundle mainBundle] pathForResource:@"clean" ofType:@"js"];
     //NSString *cleanjs = [NSString stringWithContentsOfFile:cleanJSPath encoding:NSUTF8StringEncoding error:nil];
     //[sender stringByEvaluatingJavaScriptFromString:cleanjs];

@@ -39,12 +39,11 @@
 #pragma mark Application Management
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    [_window setDelegate:self];
+    //[_window setDelegate:self];
     
-    PandoraController *aPandoraController = [[PandoraController alloc] initWithWebView:_webView];
-    self.pandoraController = aPandoraController;
+    [GKHotKeyCenter sharedCenter];
     
-    [GKHotKeyController sharedController];
+    self.pandoraController = [[PandoraController alloc] initWithWebView:_webView];
     
     //WebKitDeveloperExtras
     

@@ -22,6 +22,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <WebKit/WebKit.h>
+#import "PandoraController.h"
+#import "WebView+GKAdditions.h"
+
+@class PandoraController;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate>
 
