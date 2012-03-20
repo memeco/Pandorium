@@ -1,0 +1,43 @@
+b#topnav
+{
+	top:0!important;
+}
+
+div.homeRightSide
+{
+	padding-left:0!important;
+}
+
+div.fxCol-cont-1
+{
+	background:none!important;
+}
+
+div.searchBox
+{
+	width:60px!important;
+}
+
+#mainContentContainer
+{
+	width:610px!important;
+}
+
+#pandoriumSearchAdd
+{
+	height:29px;
+	width:20px;
+	background:url(/img/bg_search_input.png) center right no-repeat;
+}
+
+div.searchBoxFocus
+{
+	width:120px!important;
+	-webkit-transition:width 1s ease-in-out;
+	transition:width 1s ease-in-out;
+}
+
+#pandoraRibbonContainer,div.stationContent
+{
+	display:none!important;
+}

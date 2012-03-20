@@ -7,187 +7,283 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A04FEBD1220A05B00DAEAC1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A04FEBC1220A05B00DAEAC1 /* Cocoa.framework */; };
-		9A04FEC21220A05B00DAEAC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEC01220A05B00DAEAC1 /* InfoPlist.strings */; };
-		9A04FEC41220A05B00DAEAC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04FEC31220A05B00DAEAC1 /* main.m */; };
-		9A04FEC71220A05B00DAEAC1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEC51220A05B00DAEAC1 /* MainMenu.xib */; };
-		9A04FECA1220A05B00DAEAC1 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEC81220A05B00DAEAC1 /* Credits.rtf */; };
-		9A04FECD1220A05B00DAEAC1 /* PandoriumAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04FECC1220A05B00DAEAC1 /* PandoriumAppDelegate.m */; };
-		9A04FED41220A07400DAEAC1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A04FED31220A07400DAEAC1 /* WebKit.framework */; };
-		9A04FEDE1220A0DD00DAEAC1 /* HotKeyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04FED91220A0DD00DAEAC1 /* HotKeyController.m */; };
-		9A04FEDF1220A0DD00DAEAC1 /* NSEvent+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04FEDB1220A0DD00DAEAC1 /* NSEvent+Additions.m */; };
-		9A04FEE01220A0DD00DAEAC1 /* WebView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04FEDD1220A0DD00DAEAC1 /* WebView+Additions.m */; };
-		9A04FEEA1220A11100DAEAC1 /* status_icon_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEE61220A11100DAEAC1 /* status_icon_disabled.png */; };
-		9A04FEEB1220A11100DAEAC1 /* status_icon_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEE71220A11100DAEAC1 /* status_icon_highlighted.png */; };
-		9A04FEEC1220A11100DAEAC1 /* status_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEE81220A11100DAEAC1 /* status_icon.png */; };
-		9A04FEEF1220A12D00DAEAC1 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9A04FEEE1220A12D00DAEAC1 /* Icon.icns */; };
-		9A7E6AA61225B64300A47C85 /* GKSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A741225B64300A47C85 /* GKSearchController.m */; };
-		9A7E6AA71225B64300A47C85 /* NSDate+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A761225B64300A47C85 /* NSDate+GKAdditions.m */; };
-		9A7E6AA81225B64300A47C85 /* NSObject+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A781225B64300A47C85 /* NSObject+GKAdditions.m */; };
-		9A7E6AA91225B64300A47C85 /* NSString+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A7A1225B64300A47C85 /* NSString+GKAdditions.m */; };
-		9A7E6AAA1225B64300A47C85 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9A7E6A7B1225B64300A47C85 /* README.md */; };
-		9A7E6AAB1225B64300A47C85 /* View+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7E6A7E1225B64300A47C85 /* View+GKAdditions.m */; };
+		9A4C5F73151811CC00255F96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C5F6E151811CC00255F96 /* AppDelegate.m */; };
+		9A4C5F74151811CC00255F96 /* PandoraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C5F70151811CC00255F96 /* PandoraController.m */; };
+		9A4C5F901518122C00255F96 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4C5F8F1518122C00255F96 /* ApplicationServices.framework */; };
+		9A4C5FA51518125700255F96 /* clean.css in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F971518125700255F96 /* clean.css */; };
+		9A4C5FA71518125700255F96 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F991518125700255F96 /* InfoPlist.strings */; };
+		9A4C5FA81518125700255F96 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F9B1518125700255F96 /* MainMenu.xib */; };
+		9A4C5FA91518125700255F96 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F9D1518125700255F96 /* Icon.icns */; };
+		9A4C5FAA1518125700255F96 /* prefs_appearance.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F9E1518125700255F96 /* prefs_appearance.png */; };
+		9A4C5FAB1518125700255F96 /* prefs_features.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F9F1518125700255F96 /* prefs_features.png */; };
+		9A4C5FAC1518125700255F96 /* prefs_keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5FA01518125700255F96 /* prefs_keyboard.png */; };
+		9A4C5FAE1518125700255F96 /* status_icon_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5FA21518125700255F96 /* status_icon_disabled.png */; };
+		9A4C5FAF1518125700255F96 /* status_icon_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5FA31518125700255F96 /* status_icon_highlighted.png */; };
+		9A4C5FB01518125700255F96 /* status_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5FA41518125700255F96 /* status_icon.png */; };
+		9A4C5FE6151812F700255F96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C5FE3151812F700255F96 /* main.m */; };
+		9A4C6016151817B500255F96 /* GKActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C5FF9151817B500255F96 /* GKActivityView.m */; };
+		9A4C6017151817B500255F96 /* GKGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C5FFB151817B500255F96 /* GKGradientLayer.m */; };
+		9A4C6018151817B500255F96 /* GKHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C5FFD151817B500255F96 /* GKHotKey.m */; };
+		9A4C6019151817B500255F96 /* GKHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C5FFF151817B500255F96 /* GKHotKeyCenter.m */; };
+		9A4C601A151817B500255F96 /* GKHotKeyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C6001151817B500255F96 /* GKHotKeyView.m */; };
+		9A4C601B151817B500255F96 /* GKRoundedPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C6004151817B500255F96 /* GKRoundedPageView.m */; };
+		9A4C601C151817B500255F96 /* GKSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C6006151817B500255F96 /* GKSearchController.m */; };
+		9A4C601D151817B500255F96 /* NSDate+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C6008151817B500255F96 /* NSDate+GKAdditions.m */; };
+		9A4C601E151817B500255F96 /* NSEvent+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C600A151817B500255F96 /* NSEvent+GKAdditions.m */; };
+		9A4C601F151817B500255F96 /* NSObject+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C600C151817B500255F96 /* NSObject+GKAdditions.m */; };
+		9A4C6020151817B500255F96 /* NSString+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C600E151817B500255F96 /* NSString+GKAdditions.m */; };
+		9A4C6021151817B500255F96 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C600F151817B500255F96 /* README.md */; };
+		9A4C6022151817B500255F96 /* View+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C6012151817B500255F96 /* View+GKAdditions.m */; };
+		9A4C6023151817B500255F96 /* WebView+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C6014151817B500255F96 /* WebView+GKAdditions.m */; };
+		9A98249014FF30F9003177DF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A98248F14FF30F9003177DF /* Cocoa.framework */; };
+		9A9824AE14FF30F9003177DF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9824AD14FF30F9003177DF /* SenTestingKit.framework */; };
+		9A9824AF14FF30F9003177DF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A98248F14FF30F9003177DF /* Cocoa.framework */; };
+		9A9824B714FF30F9003177DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A9824B514FF30F9003177DF /* InfoPlist.strings */; };
+		9A9824BA14FF30F9003177DF /* PandoriumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9824B914FF30F9003177DF /* PandoriumTests.m */; };
+		9A9824C515003586003177DF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9824C415003586003177DF /* WebKit.framework */; };
+		9A9824C71500358B003177DF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9824C61500358B003177DF /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9A9824B014FF30F9003177DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A98248214FF30F8003177DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A98248A14FF30F9003177DF;
+			remoteInfo = Pandorium;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		9A04FEB91220A05B00DAEAC1 /* Pandorium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pandorium.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A04FEBC1220A05B00DAEAC1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		9A04FEBE1220A05B00DAEAC1 /* Pandorium-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pandorium-Info.plist"; sourceTree = "<group>"; };
-		9A04FEBF1220A05B00DAEAC1 /* Pandorium_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pandorium_Prefix.pch; sourceTree = "<group>"; };
-		9A04FEC11220A05B00DAEAC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9A04FEC31220A05B00DAEAC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9A04FEC61220A05B00DAEAC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		9A04FEC91220A05B00DAEAC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		9A04FECB1220A05B00DAEAC1 /* PandoriumAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PandoriumAppDelegate.h; sourceTree = "<group>"; };
-		9A04FECC1220A05B00DAEAC1 /* PandoriumAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PandoriumAppDelegate.m; sourceTree = "<group>"; };
-		9A04FED31220A07400DAEAC1 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /Xcode4/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
-		9A04FED81220A0DD00DAEAC1 /* HotKeyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotKeyController.h; sourceTree = "<group>"; };
-		9A04FED91220A0DD00DAEAC1 /* HotKeyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotKeyController.m; sourceTree = "<group>"; };
-		9A04FEDA1220A0DD00DAEAC1 /* NSEvent+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEvent+Additions.h"; sourceTree = "<group>"; };
-		9A04FEDB1220A0DD00DAEAC1 /* NSEvent+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEvent+Additions.m"; sourceTree = "<group>"; };
-		9A04FEDC1220A0DD00DAEAC1 /* WebView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebView+Additions.h"; sourceTree = "<group>"; };
-		9A04FEDD1220A0DD00DAEAC1 /* WebView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebView+Additions.m"; sourceTree = "<group>"; };
-		9A04FEE61220A11100DAEAC1 /* status_icon_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon_disabled.png; path = Resources/status_icon_disabled.png; sourceTree = "<group>"; };
-		9A04FEE71220A11100DAEAC1 /* status_icon_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon_highlighted.png; path = Resources/status_icon_highlighted.png; sourceTree = "<group>"; };
-		9A04FEE81220A11100DAEAC1 /* status_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon.png; path = Resources/status_icon.png; sourceTree = "<group>"; };
-		9A04FEEE1220A12D00DAEAC1 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Icon.icns; path = Resources/Icon.icns; sourceTree = "<group>"; };
-		9A7E6A6F1225B64300A47C85 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
-		9A7E6A701225B64300A47C85 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
-		9A7E6A731225B64300A47C85 /* GKSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKSearchController.h; sourceTree = "<group>"; };
-		9A7E6A741225B64300A47C85 /* GKSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKSearchController.m; sourceTree = "<group>"; };
-		9A7E6A751225B64300A47C85 /* NSDate+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+GKAdditions.h"; sourceTree = "<group>"; };
-		9A7E6A761225B64300A47C85 /* NSDate+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+GKAdditions.m"; sourceTree = "<group>"; };
-		9A7E6A771225B64300A47C85 /* NSObject+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GKAdditions.h"; sourceTree = "<group>"; };
-		9A7E6A781225B64300A47C85 /* NSObject+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GKAdditions.m"; sourceTree = "<group>"; };
-		9A7E6A791225B64300A47C85 /* NSString+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GKAdditions.h"; sourceTree = "<group>"; };
-		9A7E6A7A1225B64300A47C85 /* NSString+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GKAdditions.m"; sourceTree = "<group>"; };
-		9A7E6A7B1225B64300A47C85 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		9A7E6A7C1225B64300A47C85 /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleton.h; sourceTree = "<group>"; };
-		9A7E6A7D1225B64300A47C85 /* View+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+GKAdditions.h"; sourceTree = "<group>"; };
-		9A7E6A7E1225B64300A47C85 /* View+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+GKAdditions.m"; sourceTree = "<group>"; };
+		9A4C5F6D151811CC00255F96 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		9A4C5F6E151811CC00255F96 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		9A4C5F6F151811CC00255F96 /* PandoraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PandoraController.h; path = Classes/PandoraController.h; sourceTree = SOURCE_ROOT; };
+		9A4C5F70151811CC00255F96 /* PandoraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PandoraController.m; path = Classes/PandoraController.m; sourceTree = SOURCE_ROOT; };
+		9A4C5F8F1518122C00255F96 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		9A4C5F971518125700255F96 /* clean.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = clean.css; path = Resources/clean.css; sourceTree = "<group>"; };
+		9A4C5F981518125700255F96 /* clean.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = clean.js; path = Resources/clean.js; sourceTree = "<group>"; };
+		9A4C5F9A1518125700255F96 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9A4C5F9C1518125700255F96 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9A4C5F9D1518125700255F96 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Icon.icns; path = Resources/Icon.icns; sourceTree = "<group>"; };
+		9A4C5F9E1518125700255F96 /* prefs_appearance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prefs_appearance.png; path = Resources/prefs_appearance.png; sourceTree = "<group>"; };
+		9A4C5F9F1518125700255F96 /* prefs_features.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prefs_features.png; path = Resources/prefs_features.png; sourceTree = "<group>"; };
+		9A4C5FA01518125700255F96 /* prefs_keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prefs_keyboard.png; path = Resources/prefs_keyboard.png; sourceTree = "<group>"; };
+		9A4C5FA11518125700255F96 /* signin.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = signin.js; path = Resources/signin.js; sourceTree = "<group>"; };
+		9A4C5FA21518125700255F96 /* status_icon_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon_disabled.png; path = Resources/status_icon_disabled.png; sourceTree = "<group>"; };
+		9A4C5FA31518125700255F96 /* status_icon_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon_highlighted.png; path = Resources/status_icon_highlighted.png; sourceTree = "<group>"; };
+		9A4C5FA41518125700255F96 /* status_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon.png; path = Resources/status_icon.png; sourceTree = "<group>"; };
+		9A4C5FE3151812F700255F96 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
+		9A4C5FE4151812F700255F96 /* Pandorium-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pandorium-Info.plist"; sourceTree = SOURCE_ROOT; };
+		9A4C5FE5151812F700255F96 /* Pandorium-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Pandorium-Prefix.pch"; path = "../../Desktop/Pandorium/Pandorium-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		9A4C5FF6151817B500255F96 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		9A4C5FF7151817B500255F96 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
+		9A4C5FF8151817B500255F96 /* GKActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKActivityView.h; sourceTree = "<group>"; };
+		9A4C5FF9151817B500255F96 /* GKActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKActivityView.m; sourceTree = "<group>"; };
+		9A4C5FFA151817B500255F96 /* GKGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKGradientLayer.h; sourceTree = "<group>"; };
+		9A4C5FFB151817B500255F96 /* GKGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKGradientLayer.m; sourceTree = "<group>"; };
+		9A4C5FFC151817B500255F96 /* GKHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKHotKey.h; sourceTree = "<group>"; };
+		9A4C5FFD151817B500255F96 /* GKHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKHotKey.m; sourceTree = "<group>"; };
+		9A4C5FFE151817B500255F96 /* GKHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKHotKeyCenter.h; sourceTree = "<group>"; };
+		9A4C5FFF151817B500255F96 /* GKHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKHotKeyCenter.m; sourceTree = "<group>"; };
+		9A4C6000151817B500255F96 /* GKHotKeyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKHotKeyView.h; sourceTree = "<group>"; };
+		9A4C6001151817B500255F96 /* GKHotKeyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKHotKeyView.m; sourceTree = "<group>"; };
+		9A4C6002151817B500255F96 /* GKKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKKit.h; sourceTree = "<group>"; };
+		9A4C6003151817B500255F96 /* GKRoundedPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKRoundedPageView.h; sourceTree = "<group>"; };
+		9A4C6004151817B500255F96 /* GKRoundedPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKRoundedPageView.m; sourceTree = "<group>"; };
+		9A4C6005151817B500255F96 /* GKSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKSearchController.h; sourceTree = "<group>"; };
+		9A4C6006151817B500255F96 /* GKSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKSearchController.m; sourceTree = "<group>"; };
+		9A4C6007151817B500255F96 /* NSDate+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+GKAdditions.h"; sourceTree = "<group>"; };
+		9A4C6008151817B500255F96 /* NSDate+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+GKAdditions.m"; sourceTree = "<group>"; };
+		9A4C6009151817B500255F96 /* NSEvent+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEvent+GKAdditions.h"; sourceTree = "<group>"; };
+		9A4C600A151817B500255F96 /* NSEvent+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEvent+GKAdditions.m"; sourceTree = "<group>"; };
+		9A4C600B151817B500255F96 /* NSObject+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GKAdditions.h"; sourceTree = "<group>"; };
+		9A4C600C151817B500255F96 /* NSObject+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GKAdditions.m"; sourceTree = "<group>"; };
+		9A4C600D151817B500255F96 /* NSString+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GKAdditions.h"; sourceTree = "<group>"; };
+		9A4C600E151817B500255F96 /* NSString+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GKAdditions.m"; sourceTree = "<group>"; };
+		9A4C600F151817B500255F96 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		9A4C6010151817B500255F96 /* singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleton.h; sourceTree = "<group>"; };
+		9A4C6011151817B500255F96 /* View+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+GKAdditions.h"; sourceTree = "<group>"; };
+		9A4C6012151817B500255F96 /* View+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+GKAdditions.m"; sourceTree = "<group>"; };
+		9A4C6013151817B500255F96 /* WebView+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebView+GKAdditions.h"; sourceTree = "<group>"; };
+		9A4C6014151817B500255F96 /* WebView+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebView+GKAdditions.m"; sourceTree = "<group>"; };
+		9A98248B14FF30F9003177DF /* Pandorium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pandorium.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A98248F14FF30F9003177DF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9A9824AC14FF30F9003177DF /* PandoriumTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PandoriumTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A9824AD14FF30F9003177DF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		9A9824B414FF30F9003177DF /* PandoriumTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PandoriumTests-Info.plist"; sourceTree = "<group>"; };
+		9A9824B614FF30F9003177DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9A9824B814FF30F9003177DF /* PandoriumTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PandoriumTests.h; sourceTree = "<group>"; };
+		9A9824B914FF30F9003177DF /* PandoriumTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PandoriumTests.m; sourceTree = "<group>"; };
+		9A9824C415003586003177DF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		9A9824C61500358B003177DF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9A04FEB61220A05B00DAEAC1 /* Frameworks */ = {
+		9A98248814FF30F9003177DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A04FEBD1220A05B00DAEAC1 /* Cocoa.framework in Frameworks */,
-				9A04FED41220A07400DAEAC1 /* WebKit.framework in Frameworks */,
+				9A4C5F901518122C00255F96 /* ApplicationServices.framework in Frameworks */,
+				9A9824C71500358B003177DF /* SystemConfiguration.framework in Frameworks */,
+				9A9824C515003586003177DF /* WebKit.framework in Frameworks */,
+				9A98249014FF30F9003177DF /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A9824A814FF30F9003177DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A9824AE14FF30F9003177DF /* SenTestingKit.framework in Frameworks */,
+				9A9824AF14FF30F9003177DF /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9A04FEAA1220A05B00DAEAC1 = {
+		9A4C5FB11518125C00255F96 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9A04FEB11220A05B00DAEAC1 /* Classes */,
-				9A04FEE11220A0EC00DAEAC1 /* Categories */,
-				9A7E6A2D1225B64300A47C85 /* GKKit */,
-				9A04FEB21220A05B00DAEAC1 /* Other Sources */,
-				9A04FEB31220A05B00DAEAC1 /* Resources */,
-				9A04FEB41220A05B00DAEAC1 /* Frameworks */,
-				9A04FEBA1220A05B00DAEAC1 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		9A04FEB11220A05B00DAEAC1 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				9A04FECB1220A05B00DAEAC1 /* PandoriumAppDelegate.h */,
-				9A04FECC1220A05B00DAEAC1 /* PandoriumAppDelegate.m */,
-				9A04FED81220A0DD00DAEAC1 /* HotKeyController.h */,
-				9A04FED91220A0DD00DAEAC1 /* HotKeyController.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		9A04FEB21220A05B00DAEAC1 /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				9A04FEEE1220A12D00DAEAC1 /* Icon.icns */,
-				9A04FEE61220A11100DAEAC1 /* status_icon_disabled.png */,
-				9A04FEE71220A11100DAEAC1 /* status_icon_highlighted.png */,
-				9A04FEE81220A11100DAEAC1 /* status_icon.png */,
-				9A04FEBF1220A05B00DAEAC1 /* Pandorium_Prefix.pch */,
-				9A04FEC31220A05B00DAEAC1 /* main.m */,
-			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		9A04FEB31220A05B00DAEAC1 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				9A04FEBE1220A05B00DAEAC1 /* Pandorium-Info.plist */,
-				9A04FEC01220A05B00DAEAC1 /* InfoPlist.strings */,
-				9A04FEC51220A05B00DAEAC1 /* MainMenu.xib */,
-				9A04FEC81220A05B00DAEAC1 /* Credits.rtf */,
+				9A4C5F971518125700255F96 /* clean.css */,
+				9A4C5F981518125700255F96 /* clean.js */,
+				9A4C5F991518125700255F96 /* InfoPlist.strings */,
+				9A4C5F9B1518125700255F96 /* MainMenu.xib */,
+				9A4C5F9D1518125700255F96 /* Icon.icns */,
+				9A4C5F9E1518125700255F96 /* prefs_appearance.png */,
+				9A4C5F9F1518125700255F96 /* prefs_features.png */,
+				9A4C5FA01518125700255F96 /* prefs_keyboard.png */,
+				9A4C5FA11518125700255F96 /* signin.js */,
+				9A4C5FA21518125700255F96 /* status_icon_disabled.png */,
+				9A4C5FA31518125700255F96 /* status_icon_highlighted.png */,
+				9A4C5FA41518125700255F96 /* status_icon.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		9A04FEB41220A05B00DAEAC1 /* Frameworks */ = {
+		9A4C5FE8151812FA00255F96 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9A04FEBC1220A05B00DAEAC1 /* Cocoa.framework */,
-				9A04FED31220A07400DAEAC1 /* WebKit.framework */,
+				9A4C5FE3151812F700255F96 /* main.m */,
+				9A4C5FE4151812F700255F96 /* Pandorium-Info.plist */,
+				9A4C5FE5151812F700255F96 /* Pandorium-Prefix.pch */,
 			);
-			name = Frameworks;
+			name = "Supporting Files";
+			path = ..;
 			sourceTree = "<group>";
 		};
-		9A04FEBA1220A05B00DAEAC1 /* Products */ = {
+		9A4C5FF4151817B500255F96 /* GKKit */ = {
 			isa = PBXGroup;
 			children = (
-				9A04FEB91220A05B00DAEAC1 /* Pandorium.app */,
+				9A4C5FF6151817B500255F96 /* common.h */,
+				9A4C5FF7151817B500255F96 /* debug.h */,
+				9A4C5FF8151817B500255F96 /* GKActivityView.h */,
+				9A4C5FF9151817B500255F96 /* GKActivityView.m */,
+				9A4C5FFA151817B500255F96 /* GKGradientLayer.h */,
+				9A4C5FFB151817B500255F96 /* GKGradientLayer.m */,
+				9A4C5FFC151817B500255F96 /* GKHotKey.h */,
+				9A4C5FFD151817B500255F96 /* GKHotKey.m */,
+				9A4C5FFE151817B500255F96 /* GKHotKeyCenter.h */,
+				9A4C5FFF151817B500255F96 /* GKHotKeyCenter.m */,
+				9A4C6000151817B500255F96 /* GKHotKeyView.h */,
+				9A4C6001151817B500255F96 /* GKHotKeyView.m */,
+				9A4C6002151817B500255F96 /* GKKit.h */,
+				9A4C6003151817B500255F96 /* GKRoundedPageView.h */,
+				9A4C6004151817B500255F96 /* GKRoundedPageView.m */,
+				9A4C6005151817B500255F96 /* GKSearchController.h */,
+				9A4C6006151817B500255F96 /* GKSearchController.m */,
+				9A4C6007151817B500255F96 /* NSDate+GKAdditions.h */,
+				9A4C6008151817B500255F96 /* NSDate+GKAdditions.m */,
+				9A4C6009151817B500255F96 /* NSEvent+GKAdditions.h */,
+				9A4C600A151817B500255F96 /* NSEvent+GKAdditions.m */,
+				9A4C600B151817B500255F96 /* NSObject+GKAdditions.h */,
+				9A4C600C151817B500255F96 /* NSObject+GKAdditions.m */,
+				9A4C600D151817B500255F96 /* NSString+GKAdditions.h */,
+				9A4C600E151817B500255F96 /* NSString+GKAdditions.m */,
+				9A4C600F151817B500255F96 /* README.md */,
+				9A4C6010151817B500255F96 /* singleton.h */,
+				9A4C6011151817B500255F96 /* View+GKAdditions.h */,
+				9A4C6012151817B500255F96 /* View+GKAdditions.m */,
+				9A4C6013151817B500255F96 /* WebView+GKAdditions.h */,
+				9A4C6014151817B500255F96 /* WebView+GKAdditions.m */,
+			);
+			path = GKKit;
+			sourceTree = "<group>";
+		};
+		9A98248014FF30F8003177DF = {
+			isa = PBXGroup;
+			children = (
+				9A98249514FF30F9003177DF /* Pandorium */,
+				9A4C5FB11518125C00255F96 /* Resources */,
+				9A4C5FF4151817B500255F96 /* GKKit */,
+				9A9824B214FF30F9003177DF /* PandoriumTests */,
+				9A98248E14FF30F9003177DF /* Frameworks */,
+				9A98248C14FF30F9003177DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A98248C14FF30F9003177DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A98248B14FF30F9003177DF /* Pandorium.app */,
+				9A9824AC14FF30F9003177DF /* PandoriumTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9A04FEE11220A0EC00DAEAC1 /* Categories */ = {
+		9A98248E14FF30F9003177DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9A04FEDA1220A0DD00DAEAC1 /* NSEvent+Additions.h */,
-				9A04FEDB1220A0DD00DAEAC1 /* NSEvent+Additions.m */,
-				9A04FEDC1220A0DD00DAEAC1 /* WebView+Additions.h */,
-				9A04FEDD1220A0DD00DAEAC1 /* WebView+Additions.m */,
+				9A4C5F8F1518122C00255F96 /* ApplicationServices.framework */,
+				9A98248F14FF30F9003177DF /* Cocoa.framework */,
+				9A9824C61500358B003177DF /* SystemConfiguration.framework */,
+				9A9824C415003586003177DF /* WebKit.framework */,
+				9A9824AD14FF30F9003177DF /* SenTestingKit.framework */,
 			);
-			name = Categories;
-			path = Classes;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9A7E6A2D1225B64300A47C85 /* GKKit */ = {
+		9A98249514FF30F9003177DF /* Pandorium */ = {
 			isa = PBXGroup;
 			children = (
-				9A7E6A6F1225B64300A47C85 /* common.h */,
-				9A7E6A701225B64300A47C85 /* debug.h */,
-				9A7E6A731225B64300A47C85 /* GKSearchController.h */,
-				9A7E6A741225B64300A47C85 /* GKSearchController.m */,
-				9A7E6A751225B64300A47C85 /* NSDate+GKAdditions.h */,
-				9A7E6A761225B64300A47C85 /* NSDate+GKAdditions.m */,
-				9A7E6A771225B64300A47C85 /* NSObject+GKAdditions.h */,
-				9A7E6A781225B64300A47C85 /* NSObject+GKAdditions.m */,
-				9A7E6A791225B64300A47C85 /* NSString+GKAdditions.h */,
-				9A7E6A7A1225B64300A47C85 /* NSString+GKAdditions.m */,
-				9A7E6A7B1225B64300A47C85 /* README.md */,
-				9A7E6A7C1225B64300A47C85 /* singleton.h */,
-				9A7E6A7D1225B64300A47C85 /* View+GKAdditions.h */,
-				9A7E6A7E1225B64300A47C85 /* View+GKAdditions.m */,
+				9A4C5F6D151811CC00255F96 /* AppDelegate.h */,
+				9A4C5F6E151811CC00255F96 /* AppDelegate.m */,
+				9A4C5F6F151811CC00255F96 /* PandoraController.h */,
+				9A4C5F70151811CC00255F96 /* PandoraController.m */,
+				9A4C5FE8151812FA00255F96 /* Supporting Files */,
 			);
-			path = GKKit;
+			path = Pandorium;
+			sourceTree = "<group>";
+		};
+		9A9824B214FF30F9003177DF /* PandoriumTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A9824B814FF30F9003177DF /* PandoriumTests.h */,
+				9A9824B914FF30F9003177DF /* PandoriumTests.m */,
+				9A9824B314FF30F9003177DF /* Supporting Files */,
+			);
+			path = PandoriumTests;
+			sourceTree = "<group>";
+		};
+		9A9824B314FF30F9003177DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A9824B414FF30F9003177DF /* PandoriumTests-Info.plist */,
+				9A9824B514FF30F9003177DF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9A04FEB81220A05B00DAEAC1 /* Pandorium */ = {
+		9A98248A14FF30F9003177DF /* Pandorium */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A04FED01220A05B00DAEAC1 /* Build configuration list for PBXNativeTarget "Pandorium" */;
+			buildConfigurationList = 9A9824BD14FF30F9003177DF /* Build configuration list for PBXNativeTarget "Pandorium" */;
 			buildPhases = (
-				9A04FEB51220A05B00DAEAC1 /* Sources */,
-				9A04FEB61220A05B00DAEAC1 /* Frameworks */,
-				9A04FEB71220A05B00DAEAC1 /* Resources */,
+				9A98248714FF30F9003177DF /* Sources */,
+				9A98248814FF30F9003177DF /* Frameworks */,
+				9A98248914FF30F9003177DF /* Resources */,
 			);
 			buildRules = (
 			);
@@ -195,186 +291,299 @@
 			);
 			name = Pandorium;
 			productName = Pandorium;
-			productReference = 9A04FEB91220A05B00DAEAC1 /* Pandorium.app */;
+			productReference = 9A98248B14FF30F9003177DF /* Pandorium.app */;
 			productType = "com.apple.product-type.application";
+		};
+		9A9824AB14FF30F9003177DF /* PandoriumTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A9824C014FF30F9003177DF /* Build configuration list for PBXNativeTarget "PandoriumTests" */;
+			buildPhases = (
+				9A9824A714FF30F9003177DF /* Sources */,
+				9A9824A814FF30F9003177DF /* Frameworks */,
+				9A9824A914FF30F9003177DF /* Resources */,
+				9A9824AA14FF30F9003177DF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A9824B114FF30F9003177DF /* PBXTargetDependency */,
+			);
+			name = PandoriumTests;
+			productName = PandoriumTests;
+			productReference = 9A9824AC14FF30F9003177DF /* PandoriumTests.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9A04FEAC1220A05B00DAEAC1 /* Project object */ = {
+		9A98248214FF30F8003177DF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = "GK Apps";
+				LastUpgradeCheck = 0430;
 			};
-			buildConfigurationList = 9A04FEAF1220A05B00DAEAC1 /* Build configuration list for PBXProject "Pandorium" */;
+			buildConfigurationList = 9A98248514FF30F8003177DF /* Build configuration list for PBXProject "Pandorium" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 9A04FEAA1220A05B00DAEAC1;
-			productRefGroup = 9A04FEBA1220A05B00DAEAC1 /* Products */;
+			mainGroup = 9A98248014FF30F8003177DF;
+			productRefGroup = 9A98248C14FF30F9003177DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9A04FEB81220A05B00DAEAC1 /* Pandorium */,
+				9A98248A14FF30F9003177DF /* Pandorium */,
+				9A9824AB14FF30F9003177DF /* PandoriumTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9A04FEB71220A05B00DAEAC1 /* Resources */ = {
+		9A98248914FF30F9003177DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A04FEC21220A05B00DAEAC1 /* InfoPlist.strings in Resources */,
-				9A04FEC71220A05B00DAEAC1 /* MainMenu.xib in Resources */,
-				9A04FECA1220A05B00DAEAC1 /* Credits.rtf in Resources */,
-				9A04FEEA1220A11100DAEAC1 /* status_icon_disabled.png in Resources */,
-				9A04FEEB1220A11100DAEAC1 /* status_icon_highlighted.png in Resources */,
-				9A04FEEC1220A11100DAEAC1 /* status_icon.png in Resources */,
-				9A04FEEF1220A12D00DAEAC1 /* Icon.icns in Resources */,
-				9A7E6AAA1225B64300A47C85 /* README.md in Resources */,
+				9A4C5FA51518125700255F96 /* clean.css in Resources */,
+				9A4C5FA71518125700255F96 /* InfoPlist.strings in Resources */,
+				9A4C5FA81518125700255F96 /* MainMenu.xib in Resources */,
+				9A4C5FA91518125700255F96 /* Icon.icns in Resources */,
+				9A4C5FAA1518125700255F96 /* prefs_appearance.png in Resources */,
+				9A4C5FAB1518125700255F96 /* prefs_features.png in Resources */,
+				9A4C5FAC1518125700255F96 /* prefs_keyboard.png in Resources */,
+				9A4C5FAE1518125700255F96 /* status_icon_disabled.png in Resources */,
+				9A4C5FAF1518125700255F96 /* status_icon_highlighted.png in Resources */,
+				9A4C5FB01518125700255F96 /* status_icon.png in Resources */,
+				9A4C6021151817B500255F96 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A9824A914FF30F9003177DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A9824B714FF30F9003177DF /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9A9824AA14FF30F9003177DF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		9A04FEB51220A05B00DAEAC1 /* Sources */ = {
+		9A98248714FF30F9003177DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A04FEC41220A05B00DAEAC1 /* main.m in Sources */,
-				9A04FECD1220A05B00DAEAC1 /* PandoriumAppDelegate.m in Sources */,
-				9A04FEDE1220A0DD00DAEAC1 /* HotKeyController.m in Sources */,
-				9A04FEDF1220A0DD00DAEAC1 /* NSEvent+Additions.m in Sources */,
-				9A04FEE01220A0DD00DAEAC1 /* WebView+Additions.m in Sources */,
-				9A7E6AA61225B64300A47C85 /* GKSearchController.m in Sources */,
-				9A7E6AA71225B64300A47C85 /* NSDate+GKAdditions.m in Sources */,
-				9A7E6AA81225B64300A47C85 /* NSObject+GKAdditions.m in Sources */,
-				9A7E6AA91225B64300A47C85 /* NSString+GKAdditions.m in Sources */,
-				9A7E6AAB1225B64300A47C85 /* View+GKAdditions.m in Sources */,
+				9A4C5F73151811CC00255F96 /* AppDelegate.m in Sources */,
+				9A4C5F74151811CC00255F96 /* PandoraController.m in Sources */,
+				9A4C5FE6151812F700255F96 /* main.m in Sources */,
+				9A4C6016151817B500255F96 /* GKActivityView.m in Sources */,
+				9A4C6017151817B500255F96 /* GKGradientLayer.m in Sources */,
+				9A4C6018151817B500255F96 /* GKHotKey.m in Sources */,
+				9A4C6019151817B500255F96 /* GKHotKeyCenter.m in Sources */,
+				9A4C601A151817B500255F96 /* GKHotKeyView.m in Sources */,
+				9A4C601B151817B500255F96 /* GKRoundedPageView.m in Sources */,
+				9A4C601C151817B500255F96 /* GKSearchController.m in Sources */,
+				9A4C601D151817B500255F96 /* NSDate+GKAdditions.m in Sources */,
+				9A4C601E151817B500255F96 /* NSEvent+GKAdditions.m in Sources */,
+				9A4C601F151817B500255F96 /* NSObject+GKAdditions.m in Sources */,
+				9A4C6020151817B500255F96 /* NSString+GKAdditions.m in Sources */,
+				9A4C6022151817B500255F96 /* View+GKAdditions.m in Sources */,
+				9A4C6023151817B500255F96 /* WebView+GKAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A9824A714FF30F9003177DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A9824BA14FF30F9003177DF /* PandoriumTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9A9824B114FF30F9003177DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A98248A14FF30F9003177DF /* Pandorium */;
+			targetProxy = 9A9824B014FF30F9003177DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		9A04FEC01220A05B00DAEAC1 /* InfoPlist.strings */ = {
+		9A4C5F991518125700255F96 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9A04FEC11220A05B00DAEAC1 /* en */,
+				9A4C5F9A1518125700255F96 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		9A04FEC51220A05B00DAEAC1 /* MainMenu.xib */ = {
+		9A4C5F9B1518125700255F96 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9A04FEC61220A05B00DAEAC1 /* en */,
+				9A4C5F9C1518125700255F96 /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		9A04FEC81220A05B00DAEAC1 /* Credits.rtf */ = {
+		9A9824B514FF30F9003177DF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9A04FEC91220A05B00DAEAC1 /* en */,
+				9A9824B614FF30F9003177DF /* en */,
 			);
-			name = Credits.rtf;
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9A04FECE1220A05B00DAEAC1 /* Debug */ = {
+		9A9824BB14FF30F9003177DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
-		9A04FECF1220A05B00DAEAC1 /* Release */ = {
+		9A9824BC14FF30F9003177DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		9A04FED11220A05B00DAEAC1 /* Debug */ = {
+		9A9824BE14FF30F9003177DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_MODEL_TUNING = G5;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Pandorium_Prefix.pch;
+				GCC_PREFIX_HEADER = "Pandorium-Prefix.pch";
 				INFOPLIST_FILE = "Pandorium-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = Pandorium;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		9A04FED21220A05B00DAEAC1 /* Release */ = {
+		9A9824BF14FF30F9003177DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_MODEL_TUNING = G5;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Pandorium_Prefix.pch;
+				GCC_PREFIX_HEADER = "Pandorium-Prefix.pch";
 				INFOPLIST_FILE = "Pandorium-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = Pandorium;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9A9824C114FF30F9003177DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pandorium.app/Contents/MacOS/Pandorium";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pandorium/Pandorium-Prefix.pch";
+				INFOPLIST_FILE = "PandoriumTests/PandoriumTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		9A9824C214FF30F9003177DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pandorium.app/Contents/MacOS/Pandorium";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pandorium/Pandorium-Prefix.pch";
+				INFOPLIST_FILE = "PandoriumTests/PandoriumTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9A04FEAF1220A05B00DAEAC1 /* Build configuration list for PBXProject "Pandorium" */ = {
+		9A98248514FF30F8003177DF /* Build configuration list for PBXProject "Pandorium" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9A04FECE1220A05B00DAEAC1 /* Debug */,
-				9A04FECF1220A05B00DAEAC1 /* Release */,
+				9A9824BB14FF30F9003177DF /* Debug */,
+				9A9824BC14FF30F9003177DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A04FED01220A05B00DAEAC1 /* Build configuration list for PBXNativeTarget "Pandorium" */ = {
+		9A9824BD14FF30F9003177DF /* Build configuration list for PBXNativeTarget "Pandorium" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9A04FED11220A05B00DAEAC1 /* Debug */,
-				9A04FED21220A05B00DAEAC1 /* Release */,
+				9A9824BE14FF30F9003177DF /* Debug */,
+				9A9824BF14FF30F9003177DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A9824C014FF30F9003177DF /* Build configuration list for PBXNativeTarget "PandoriumTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A9824C114FF30F9003177DF /* Debug */,
+				9A9824C214FF30F9003177DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9A04FEAC1220A05B00DAEAC1 /* Project object */;
+	rootObject = 9A98248214FF30F8003177DF /* Project object */;
 }

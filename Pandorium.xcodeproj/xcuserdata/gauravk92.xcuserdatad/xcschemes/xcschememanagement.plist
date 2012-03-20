@@ -4,21 +4,24 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Debug.xcscheme</key>
+		<key>Pandorium.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>Release.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>Pandorium.app</key>
-		<true/>
+		<key>9A98248A14FF30F9003177DF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9A9824AB14FF30F9003177DF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
