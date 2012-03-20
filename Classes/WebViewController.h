@@ -1,5 +1,5 @@
 //
-//  PandoraController.h
+//  WebViewController.h
 //  Pandorium
 //
 //  Created by Gaurav Khanna on 2/23/12.
@@ -23,9 +23,11 @@
 
 #import <Foundation/Foundation.h>
 #import <WebKit/WebKit.h>
+#import "IGIsolatedCookieWebView.h"
 
-@interface PandoraController : NSObject
-
+@interface WebViewController : NSObject {
+    //NSMutableArray *cookieStore;
+}
 @property (nonatomic, strong) WebView *webView;
 
 - (id)initWithWebView:(WebView*)aWebView;

@@ -23,10 +23,10 @@
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
-#import "PandoraController.h"
+#import "WebViewController.h"
 #import "WebView+GKAdditions.h"
 
-@class PandoraController;
+@class WebViewController;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate>
 
@@ -34,7 +34,7 @@
 @property (nonatomic, strong) IBOutlet WebView *webView;
 @property (nonatomic, strong) IBOutlet NSMenu *statusMenu;
 @property (nonatomic, strong) NSStatusItem *statusItem;
-@property (nonatomic, strong) PandoraController *pandoraController;
+@property (nonatomic, strong) WebViewController *webController;
 @property (nonatomic, strong) IBOutlet NSWindow *prefWindow;
 
 - (IBAction)showPandorium:(id)sender;

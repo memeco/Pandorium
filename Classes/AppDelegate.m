@@ -26,13 +26,15 @@
 #define PANDORA_EMBED_WIDTH     640.0
 #define PANDORA_EMBED_HEIGHT    630.0
 
+// w=799 h=903
+
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize statusMenu = _statusMenu;
 @synthesize statusItem = _statusItem;
 @synthesize webView = _webView;
-@synthesize pandoraController = _pandoraController;
+@synthesize webController = _webController;
 @synthesize prefWindow = _prefWindow;
 
 #pragma mark -
@@ -41,16 +43,16 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     //[_window setDelegate:self];
     
-    [GKHotKeyCenter sharedCenter];
+    self.webController = [[WebViewController alloc] initWithWebView:self.webView];
     
-    self.pandoraController = [[PandoraController alloc] initWithWebView:_webView];
+        //[GKHotKeyCenter sharedCenter];
     
     //WebKitDeveloperExtras
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(playPauseKeyNotification) name:MediaKeyPlayPauseNotification object:nil];
-    [center addObserver:self selector:@selector(nextKeyNotification) name:MediaKeyNextNotification object:nil];
-    [center addObserver:self selector:@selector(previousKeyNotification) name:MediaKeyPreviousNotification object:nil];
+    //[center addObserver:self selector:@selector(playPauseKeyNotification) name:MediaKeyPlayPauseNotification object:nil];
+    //[center addObserver:self selector:@selector(nextKeyNotification) name:MediaKeyNextNotification object:nil];
+    //[center addObserver:self selector:@selector(previousKeyNotification) name:MediaKeyPreviousNotification object:nil];
     
     /*id scroller = [[_webView subviews] lastObject];
      unsigned int count;

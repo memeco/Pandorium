@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A4C5F73151811CC00255F96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C5F6E151811CC00255F96 /* AppDelegate.m */; };
-		9A4C5F74151811CC00255F96 /* PandoraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C5F70151811CC00255F96 /* PandoraController.m */; };
+		9A4C5F74151811CC00255F96 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C5F70151811CC00255F96 /* WebViewController.m */; };
 		9A4C5F901518122C00255F96 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4C5F8F1518122C00255F96 /* ApplicationServices.framework */; };
 		9A4C5FA51518125700255F96 /* clean.css in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F971518125700255F96 /* clean.css */; };
 		9A4C5FA71518125700255F96 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F991518125700255F96 /* InfoPlist.strings */; };
@@ -57,8 +57,8 @@
 /* Begin PBXFileReference section */
 		9A4C5F6D151811CC00255F96 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		9A4C5F6E151811CC00255F96 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = SOURCE_ROOT; };
-		9A4C5F6F151811CC00255F96 /* PandoraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PandoraController.h; path = Classes/PandoraController.h; sourceTree = SOURCE_ROOT; };
-		9A4C5F70151811CC00255F96 /* PandoraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PandoraController.m; path = Classes/PandoraController.m; sourceTree = SOURCE_ROOT; };
+		9A4C5F6F151811CC00255F96 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = Classes/WebViewController.h; sourceTree = SOURCE_ROOT; };
+		9A4C5F70151811CC00255F96 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = Classes/WebViewController.m; sourceTree = SOURCE_ROOT; };
 		9A4C5F8F1518122C00255F96 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		9A4C5F971518125700255F96 /* clean.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = clean.css; path = Resources/clean.css; sourceTree = "<group>"; };
 		9A4C5F981518125700255F96 /* clean.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = clean.js; path = Resources/clean.js; sourceTree = "<group>"; };
@@ -248,8 +248,8 @@
 			children = (
 				9A4C5F6D151811CC00255F96 /* AppDelegate.h */,
 				9A4C5F6E151811CC00255F96 /* AppDelegate.m */,
-				9A4C5F6F151811CC00255F96 /* PandoraController.h */,
-				9A4C5F70151811CC00255F96 /* PandoraController.m */,
+				9A4C5F6F151811CC00255F96 /* WebViewController.h */,
+				9A4C5F70151811CC00255F96 /* WebViewController.m */,
 				9A4C5FE8151812FA00255F96 /* Supporting Files */,
 			);
 			path = Pandorium;
@@ -390,7 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A4C5F73151811CC00255F96 /* AppDelegate.m in Sources */,
-				9A4C5F74151811CC00255F96 /* PandoraController.m in Sources */,
+				9A4C5F74151811CC00255F96 /* WebViewController.m in Sources */,
 				9A4C5FE6151812F700255F96 /* main.m in Sources */,
 				9A4C6016151817B500255F96 /* GKActivityView.m in Sources */,
 				9A4C6017151817B500255F96 /* GKGradientLayer.m in Sources */,

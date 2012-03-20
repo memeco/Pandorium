@@ -1,5 +1,5 @@
 //
-//  PandoraController.m
+//  WebViewController.m
 //  Pandorium
 //
 //  Created by Gaurav Khanna on 2/23/12.
@@ -21,9 +21,12 @@
 //  along with Pandorium.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#import "PandoraController.h"
+// #mainContentContainer
+// #splash
 
-@implementation PandoraController
+#import "WebViewController.h"
+
+@implementation WebViewController
 
 @synthesize webView;
 
@@ -31,10 +34,10 @@
     self = [super init];
     if (self) {
         self.webView = aWebView;
-        [self.webView setMainFrameURL:@"https://www.pandora.com/#/account/sign-in"];
         [self.webView setFrameLoadDelegate:self];
         [self.webView setResourceLoadDelegate:self];
         [self.webView setShouldUpdateWhileOffscreen:TRUE];
+        [self.webView setMainFrameURL:@"https://www.pandora.com/#/account/sign-in"];
     }
     return self;
 }
@@ -83,7 +86,7 @@
 
 - (NSURLRequest *)webView:(WebView *)sender resource:(id)identifier willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse fromDataSource:(WebDataSource *)dataSource {
     //DLogObject(redirectResponse.URL);
-    return request;
+    
 }
 
 - (void)webView:(WebView *)sender resource:(id)identifier didReceiveResponse:(NSURLResponse *)response fromDataSource:(WebDataSource *)dataSource { 
