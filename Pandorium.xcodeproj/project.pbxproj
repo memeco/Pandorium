@@ -74,7 +74,6 @@
 		9A4C5FA41518125700255F96 /* status_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon.png; path = Resources/status_icon.png; sourceTree = "<group>"; };
 		9A4C5FE3151812F700255F96 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		9A4C5FE4151812F700255F96 /* Pandorium-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pandorium-Info.plist"; sourceTree = SOURCE_ROOT; };
-		9A4C5FE5151812F700255F96 /* Pandorium-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Pandorium-Prefix.pch"; path = "../../Desktop/Pandorium/Pandorium-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		9A4C5FF6151817B500255F96 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		9A4C5FF7151817B500255F96 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
 		9A4C5FF8151817B500255F96 /* GKActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKActivityView.h; sourceTree = "<group>"; };
@@ -116,6 +115,7 @@
 		9A9824B914FF30F9003177DF /* PandoriumTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PandoriumTests.m; sourceTree = "<group>"; };
 		9A9824C415003586003177DF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		9A9824C61500358B003177DF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9AC9FC55151819DE00B0205D /* Pandorium-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Pandorium-Prefix.pch"; path = "Pandorium/Pandorium-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,9 +164,9 @@
 		9A4C5FE8151812FA00255F96 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9AC9FC55151819DE00B0205D /* Pandorium-Prefix.pch */,
 				9A4C5FE3151812F700255F96 /* main.m */,
 				9A4C5FE4151812F700255F96 /* Pandorium-Info.plist */,
-				9A4C5FE5151812F700255F96 /* Pandorium-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			path = ..;
