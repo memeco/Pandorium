@@ -58,5 +58,5 @@ var defaultOptions = {
     cancelable: true
 }
 document.getElementsByName('email')[0].value = 'gauravk92@gmail.com';
-document.getElementsByName('password')[0].value = 'DnjjNe8G2bgHDo';
+document.getElementsByName('password')[0].value = '';
 simulate(document.getElementsByClassName('loginButton')[0], 'click');
