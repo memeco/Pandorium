@@ -1,3 +1,6 @@
 [submodule "GKKit"]
 	path = GKKit
 	url = git://github.com/gauravk92/GKKit.git
+[submodule "sskeychain"]
+	path = sskeychain
+	url = git://github.com/samsoffes/sskeychain.git

@@ -40,3 +40,26 @@ div.searchBoxFocus
 /*.outer_bg {
     margin-top: 30px !important;
 }*/
+
+b#topnav
+{
+	top:0!important;
+}
+
+#brandingBar, #adLayout, #topNav {
+display:none !important;
+}
+
+body {
+    height: 330px !important;
+    overflow:none !important;
+}
+
+#mainContainer {  
+top: -30px !important;
+height: 376px !important;
+}
+
+#main {
+top: 40px !important;
+}

@@ -23,18 +23,17 @@
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
-#import "WebViewController.h"
 #import "WebView+GKAdditions.h"
+#import "SSKeychain.h"
 
-@class WebViewController;
+#define GLOBAL_SERVICE_NAME "com.gkapps.Pandorium"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate>
 
-@property (assign) IBOutlet NSWindow *window;
-@property (nonatomic, strong) IBOutlet WebView *webView;
-@property (nonatomic, strong) IBOutlet NSMenu *statusMenu;
-@property (nonatomic, strong) NSStatusItem *statusItem;
-@property (nonatomic, strong) WebViewController *webController;
+@property (nonatomic, strong) NSWindow *window;
+@property (weak) WebView *webView;
+
+//@property (nonatomic, strong) IBOutlet NSMenu *statusMenu;
 @property (nonatomic, strong) IBOutlet NSWindow *prefWindow;
 
 - (IBAction)showPandorium:(id)sender;

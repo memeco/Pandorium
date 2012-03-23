@@ -23,55 +23,102 @@
 
 #import "AppDelegate.h"
 
-#define PANDORA_EMBED_WIDTH     640.0
-#define PANDORA_EMBED_HEIGHT    630.0
+//#define PANDORA_EMBED_WIDTH     640.0
+//#define PANDORA_EMBED_HEIGHT    630.0
 
 // w=799 h=903
+// w=582 h=373 -- signup
+// w=582 h=361
 
 @implementation AppDelegate
 
-@synthesize window = _window;
-@synthesize statusMenu = _statusMenu;
-@synthesize statusItem = _statusItem;
-@synthesize webView = _webView;
-@synthesize webController = _webController;
-@synthesize prefWindow = _prefWindow;
+@synthesize window;
+@synthesize webView;
+//@synthesize statusMenu = _statusMenu;
+@synthesize prefWindow;
 
-#pragma mark -
-#pragma mark Application Management
+#pragma mark - Application life cycle
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    //[_window setDelegate:self];
+    // TODO: Detect and auto ask for password to fix problem...no need to ask
+    //[GKHotKeyCenter sharedCenter];
     
-    self.webController = [[WebViewController alloc] initWithWebView:self.webView];
+    // 1. Detect event taps possibility
+    //      if false, then use a-scpt to enable with HUD message describing why
     
-        //[GKHotKeyCenter sharedCenter];
+    // 2. Detect state of account info storage, build appropriate frame
+    //      if false, -> signup size
+    //      if true,  -> start with window normal size
     
-    //WebKitDeveloperExtras
+    NSString *acct = [NSDef stringForKey:@"username"];
+    
+    BOOL hasLogin = acct ? TRUE : /*FALSE*/ TRUE;
+    NSRect frame = hasLogin ? NSMakeRect(0, 0, 799, 600) : NSMakeRect(0, 0, 582, 361);
+    
+    NSUInteger styleMask = NSTitledWindowMask | NSClosableWindowMask | NSMiniaturizableWindowMask | NSResizableWindowMask;
+    NSWindow *win = [[NSWindow alloc] initWithContentRect:frame styleMask:styleMask backing:NSBackingStoreBuffered defer:YES];
+    win.collectionBehavior = NSWindowCollectionBehaviorFullScreenPrimary;
+    win.hidesOnDeactivate = FALSE;
+    win.releasedWhenClosed = FALSE;
+    win.autorecalculatesKeyViewLoop = FALSE;
+    win.showsToolbarButton = FALSE;
+    win.oneShot = FALSE;
+    win.allowsToolTipsWhenApplicationIsInactive = FALSE;
+
+    WebView *webview = [[WebView alloc] initWithFrame:self.window.screen.visibleFrame];
+    webview.autoresizesSubviews = TRUE;
+    webview.autoresizingMask = NSViewNotSizable;
+    webview.focusRingType = NSFocusRingTypeDefault;
+    webview.wantsLayer = FALSE;
+    webview.resourceLoadDelegate = self;
+    webview.shouldUpdateWhileOffscreen = TRUE;
+    webview.customUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) \
+     AppleWebKit/534.53.11 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10";
+    webview.mainFrameURL = @"https://www.pandora.com/#/account/sign-in";
+
+    NSRect screenBox = win.screen.visibleFrame;
+    frame.origin.y = screenBox.origin.y + truncf((screenBox.size.height - frame.size.height) / 2);
+    frame.origin.x = screenBox.origin.x + truncf((screenBox.size.width - frame.size.width) / 2);    
+    [win setFrame:frame display:FALSE animate:FALSE];
+
+    win.contentView = webview;
+    [win orderFront:self];
+    self.window = win;
+    self.webView = webview;
+    
+
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     //[center addObserver:self selector:@selector(playPauseKeyNotification) name:MediaKeyPlayPauseNotification object:nil];
     //[center addObserver:self selector:@selector(nextKeyNotification) name:MediaKeyNextNotification object:nil];
     //[center addObserver:self selector:@selector(previousKeyNotification) name:MediaKeyPreviousNotification object:nil];
     
-    /*id scroller = [[_webView subviews] lastObject];
-     unsigned int count;
-     Method *method = class_copyMethodList([scroller class], &count);
-     int i;
-     for (i=0; i<count; i++) {
-     if (strcmp(sel_getName(method_getName(method[i])), "setScrollingEnabled:") == 0)
-     break;
-     }
-     IMP test = method_getImplementation(method[i]);
-     test(scroller, @selector(setScrollingEnabled:), NO);*/
+    //DLogObject([SSKeychain allAccounts]);
+    
+    /*
+    NSString *acct = [NSDef stringForKey:@"username"];
+    if (!acct) {
+        // ight load up signup page
+        return;
+    }
+    
+    NSString *pw = [SSKeychain passwordForService:@GLOBAL_SERVICE_NAME account:acct];
+    if (!pw) {
+        //signup pg
+        return;
+    }
+    */
+    
+    // Actually perform signup, of previously stored data
 }
 
 -(void)awakeFromNib{
-    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    [_statusItem setMenu:_statusMenu];
-    [_statusItem setImage:[NSImage imageNamed:@"status_icon"]];
-    [_statusItem setAlternateImage:[NSImage imageNamed:@"status_icon_highlighted"]];
-    [_statusItem setHighlightMode:YES];
+//    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+//    [_statusItem setMenu:_statusMenu];
+//    [_statusItem setImage:[NSImage imageNamed:@"status_icon"]];
+//    [_statusItem setAlternateImage:[NSImage imageNamed:@"status_icon_highlighted"]];
+//    [_statusItem setHighlightMode:YES];
+    
 }
 
 - (IBAction)showPandorium:(id)sender {
@@ -89,35 +136,160 @@
 }
 
 - (IBAction)activatePrefWindow:(id)sender {
-    [self.prefWindow makeKeyAndOrderFront:NSApp];
+    //[self.prefWindow makeKeyAndOrderFront:NSApp];
+    [self.prefWindow orderFront:self];
 }
 
-#pragma mark -
-#pragma mark HotKey Actions
+#pragma mark - WebView delegate Methods
 
+- (id)webView:(WebView *)sender identifierForInitialRequest:(NSURLRequest *)request fromDataSource:(WebDataSource *)dataSource {
+    DLogObject(request.URL.description);
+    
+    if ([request.URL.description isEqualToString:@"https://www.pandora.com/#/account/sign-in"]) {
+        NSString *cleanJSPath = [[NSBundle mainBundle] pathForResource:@"clean" ofType:@"js"];
+        NSString *cleanjs = [NSString stringWithContentsOfFile:cleanJSPath encoding:NSUTF8StringEncoding error:nil];
+        
+        NSString *cleanCSSPath = [[NSBundle mainBundle] pathForResource:@"clean" ofType:@"css"];
+        NSString *cleancss = [NSString stringWithContentsOfFile:cleanCSSPath encoding:NSUTF8StringEncoding error:nil];
+        
+        NSString *escapedcss = [cleancss stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
+        NSString *jsfinal = [cleanjs stringByReplacingOccurrencesOfString:@"%%CLEANCSS%%" withString:escapedcss];
+        
+        [sender stringByEvaluatingJavaScriptFromString:jsfinal];
+    }
+    
+    if ([request.URL.description isEqualToString:@"about:blank"]) {
+//        DLogObject(request.URL);
+//        DLogObject(dataSource.request.URL);
+//        NSString *controlJSPath = [[NSBundle mainBundle] pathForResource:@"signin" ofType:@"js"];
+//        NSString *contjs = [NSString stringWithContentsOfFile:controlJSPath encoding:NSUTF8StringEncoding error:nil];
+//        [sender stringByEvaluatingJavaScriptFromString:contjs];
+        
+        WebFrame *mainFrame = [self.webView mainFrame];
+            WebFrameView *frameView = [mainFrame frameView];
+            for (id subview in frameView.subviews)
+                if ([subview isKindOfClass:$(WebDynamicScrollBarsView)])
+                    [subview setVerticalScrollElasticity:NSScrollElasticityNone];
+        
+        
+    }
+    
+    //LOG_NETWORK(1, @"aURL: %@", request.URL.description);
+    
+    if ([request.URL.description hasPrefix:@"https://www.pandora.com/radio/xmlrpc"] 
+        && [request.URL.description hasSuffix:@"createListener"]) {
+//        DLogObject(request.URL);
+//        DLogFunc();
+//        LOG_GENERAL(0, @"main page detected %@", request.URL);
+        
+        //float delta = ... how much to make the window bigger or smaller ...;
+//        NSRect frame = [window frame];
+//        
+//        int w = 799;
+//        int h = 650;
+//        
+//        //frame.origin.y -= delta;
+//        //frame.size.height += delta;
+//        frame.origin.y -= (h-frame.size.height)/2;
+//        frame.origin.x -= (w-frame.size.width)/2;
+//        frame.size.height = h;
+//        frame.size.width = w;
+//        
+//        [window setFrame:frame display:YES animate:YES];
+        
+        NSRect box = self.window.frame;
+        DLogNSRect(box);
+        NSRect screenBox = self.window.screen.visibleFrame;
+        
+        box.origin.y = screenBox.origin.y + truncf((screenBox.size.height - box.size.height) / 2);
+        box.origin.x = screenBox.origin.x + truncf((screenBox.size.width - box.size.width) / 2);
+        [self.window setFrame:box display:NO animate:YES];
+        
+        NSString *cleanJSPath = [[NSBundle mainBundle] pathForResource:@"clean" ofType:@"js"];
+        NSString *cleanjs = [NSString stringWithContentsOfFile:cleanJSPath encoding:NSUTF8StringEncoding error:nil];
+        
+        NSString *cleanCSSPath = [[NSBundle mainBundle] pathForResource:@"clean" ofType:@"css"];
+        NSString *cleancss = [NSString stringWithContentsOfFile:cleanCSSPath encoding:NSUTF8StringEncoding error:nil];
+
+        NSString *escapedcss = [cleancss stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
+        NSString *jsfinal = [cleanjs stringByReplacingOccurrencesOfString:@"%%CLEANCSS%%" withString:escapedcss];
+        
+        [sender stringByEvaluatingJavaScriptFromString:jsfinal];
+        
+    }
+    //DLogObject(request.URL);
+    return nil;
+}
+
+- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
+    
+    self.webView.mainFrame.frameView.documentView.enclosingScrollView.horizontalScrollElasticity = NSScrollElasticityNone;
+    self.webView.mainFrame.frameView.documentView.enclosingScrollView.verticalScrollElasticity   = NSScrollElasticityNone;
+}
+
+- (NSURLRequest *)webView:(WebView *)sender resource:(id)identifier willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse fromDataSource:(WebDataSource *)dataSource {
+    //DLogObject(redirectResponse.URL);
+    return request;
+    
+}
+
+- (void)webView:(WebView *)sender resource:(id)identifier didReceiveResponse:(NSURLResponse *)response fromDataSource:(WebDataSource *)dataSource { 
+    //DLogObject(response.URL);
+}
+
+- (void)webView:(WebView *)sender resource:(id)identifier didFinishLoadingFromDataSource:(WebDataSource *)dataSource {
+    
+    
+    //LOG_NETWORK(1, @"aURL: %@", dataSource.request.URL);
+    //NSString *cleanJSPath = [[NSBundle mainBundle] pathForResource:@"clean" ofType:@"js"];
+    //NSString *cleanjs = [NSString stringWithContentsOfFile:cleanJSPath encoding:NSUTF8StringEncoding error:nil];
+    //[sender stringByEvaluatingJavaScriptFromString:cleanjs];
+    
+    
+    
+    
+    //DLogObject(dataSource.request.URL);
+    /*[webView stringByEvaluatingJavaScriptFromString:@"                                                      \
+     if(document.getElementById('pandoriumStyle') == null) {                                            \
+     var style = document.createElement('style');                                                   \
+     style.setAttribute('id','pandoriumStyle');                                                     \
+     style.innerHTML = '#footer {display:none !important;}                                          \
+     #container {height:661px;left:-44px;top:-27px;width:683px;}                 \
+     #enhanced_skin_container {display:none;}                                    \
+     body {background:none !important;}                                          \
+     #advertisement {display:none !important;}                                   \
+     html {overflow: hidden;}                                                    \
+     ';                                                                           \
+     document.body.appendChild(style);                                                              \
+     }                                                                                                  \
+     "];*/
+    //[webView stringByEvaluatingJavaScriptFromString:@" \
+    document.getElementsByName('email')[0].value = 'gauravk92@gmail.com'; \
+    document.getElementsByName('password')[0].value = 'DnjjNe8G2bgHDo'; \
+    document.forms[0].submit(); \
+    "];
+    //DLogObject(dataSource.request.URL);
+}
+
+#pragma mark - HotKey Actions
+
+- (void)playPauseKeyNotification {
 #define SPACE_KEYCODE 49
 #define RIGHT_KEYCODE 124
 #define PLUS_KEYCODE 24 //Shift?
 #define MINUS_KEYCODE 27
 #define UP_KEYCODE 126
 #define DOWN_KEYCODE 125
-
-- (void)playPauseKeyNotification {
     DLogFunc();
-    [self.webView keyClickWithKeyCode:SPACE_KEYCODE];
+    //[self.webView keyClickWithKeyCode:SPACE_KEYCODE];
 }
 
 - (void)nextKeyNotification {
-    [self.webView keyClickWithKeyCode:RIGHT_KEYCODE];
+    //[self.webView keyClickWithKeyCode:RIGHT_KEYCODE];
 }
 
 - (void)previousKeyNotification {
     //DLogFunc();
 }
-
-#pragma mark -
-#pragma mark Memory Management
-
-
 
 @end

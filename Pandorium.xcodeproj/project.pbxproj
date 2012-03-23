@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A28CFB9151967F20024A36B /* clean.js in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F981518125700255F96 /* clean.js */; };
+		9A28CFBA151967F40024A36B /* signin.js in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5FA11518125700255F96 /* signin.js */; };
+		9A28CFBC1519A5DB0024A36B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A28CFBB1519A5DB0024A36B /* Security.framework */; };
+		9A28CFD5151A60F20024A36B /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A28CFC4151A60F10024A36B /* SSKeychain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9A4C5F73151811CC00255F96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C5F6E151811CC00255F96 /* AppDelegate.m */; };
-		9A4C5F74151811CC00255F96 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C5F70151811CC00255F96 /* WebViewController.m */; };
 		9A4C5F901518122C00255F96 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4C5F8F1518122C00255F96 /* ApplicationServices.framework */; };
 		9A4C5FA51518125700255F96 /* clean.css in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F971518125700255F96 /* clean.css */; };
 		9A4C5FA71518125700255F96 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F991518125700255F96 /* InfoPlist.strings */; };
-		9A4C5FA81518125700255F96 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F9B1518125700255F96 /* MainMenu.xib */; };
 		9A4C5FA91518125700255F96 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F9D1518125700255F96 /* Icon.icns */; };
 		9A4C5FAA1518125700255F96 /* prefs_appearance.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F9E1518125700255F96 /* prefs_appearance.png */; };
 		9A4C5FAB1518125700255F96 /* prefs_features.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F9F1518125700255F96 /* prefs_features.png */; };
@@ -35,6 +37,8 @@
 		9A4C6021151817B500255F96 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C600F151817B500255F96 /* README.md */; };
 		9A4C6022151817B500255F96 /* View+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C6012151817B500255F96 /* View+GKAdditions.m */; };
 		9A4C6023151817B500255F96 /* WebView+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C6014151817B500255F96 /* WebView+GKAdditions.m */; };
+		9A542A57151B36D000910C77 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 9A542A56151B36D000910C77 /* COPYING */; };
+		9A6DEC09151AB57400B1F05A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A6DEC08151AB57400B1F05A /* MainMenu.xib */; };
 		9A98249014FF30F9003177DF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A98248F14FF30F9003177DF /* Cocoa.framework */; };
 		9A9824AE14FF30F9003177DF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9824AD14FF30F9003177DF /* SenTestingKit.framework */; };
 		9A9824AF14FF30F9003177DF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A98248F14FF30F9003177DF /* Cocoa.framework */; };
@@ -42,6 +46,7 @@
 		9A9824BA14FF30F9003177DF /* PandoriumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9824B914FF30F9003177DF /* PandoriumTests.m */; };
 		9A9824C515003586003177DF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9824C415003586003177DF /* WebKit.framework */; };
 		9A9824C71500358B003177DF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9824C61500358B003177DF /* SystemConfiguration.framework */; };
+		9AE4A721151C2D7500E8AA2A /* signin.css in Resources */ = {isa = PBXBuildFile; fileRef = 9AE4A720151C2D7500E8AA2A /* signin.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,15 +60,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A28CFBB1519A5DB0024A36B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9A28CFC3151A60F10024A36B /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		9A28CFC4151A60F10024A36B /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		9A4C5F6D151811CC00255F96 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		9A4C5F6E151811CC00255F96 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = SOURCE_ROOT; };
-		9A4C5F6F151811CC00255F96 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = Classes/WebViewController.h; sourceTree = SOURCE_ROOT; };
-		9A4C5F70151811CC00255F96 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = Classes/WebViewController.m; sourceTree = SOURCE_ROOT; };
 		9A4C5F8F1518122C00255F96 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		9A4C5F971518125700255F96 /* clean.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = clean.css; path = Resources/clean.css; sourceTree = "<group>"; };
 		9A4C5F981518125700255F96 /* clean.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = clean.js; path = Resources/clean.js; sourceTree = "<group>"; };
 		9A4C5F9A1518125700255F96 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9A4C5F9C1518125700255F96 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9A4C5F9D1518125700255F96 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Icon.icns; path = Resources/Icon.icns; sourceTree = "<group>"; };
 		9A4C5F9E1518125700255F96 /* prefs_appearance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prefs_appearance.png; path = Resources/prefs_appearance.png; sourceTree = "<group>"; };
 		9A4C5F9F1518125700255F96 /* prefs_features.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prefs_features.png; path = Resources/prefs_features.png; sourceTree = "<group>"; };
@@ -105,6 +110,8 @@
 		9A4C6012151817B500255F96 /* View+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+GKAdditions.m"; sourceTree = "<group>"; };
 		9A4C6013151817B500255F96 /* WebView+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebView+GKAdditions.h"; sourceTree = "<group>"; };
 		9A4C6014151817B500255F96 /* WebView+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebView+GKAdditions.m"; sourceTree = "<group>"; };
+		9A542A56151B36D000910C77 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		9A6DEC08151AB57400B1F05A /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = Resources/MainMenu.xib; sourceTree = "<group>"; };
 		9A98248B14FF30F9003177DF /* Pandorium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pandorium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A98248F14FF30F9003177DF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9A9824AC14FF30F9003177DF /* PandoriumTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PandoriumTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +123,7 @@
 		9A9824C415003586003177DF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		9A9824C61500358B003177DF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9AC9FC55151819DE00B0205D /* Pandorium-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Pandorium-Prefix.pch"; path = "Pandorium/Pandorium-Prefix.pch"; sourceTree = "<group>"; };
+		9AE4A720151C2D7500E8AA2A /* signin.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = signin.css; path = Resources/signin.css; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A28CFBC1519A5DB0024A36B /* Security.framework in Frameworks */,
 				9A4C5F901518122C00255F96 /* ApplicationServices.framework in Frameworks */,
 				9A9824C71500358B003177DF /* SystemConfiguration.framework in Frameworks */,
 				9A9824C515003586003177DF /* WebKit.framework in Frameworks */,
@@ -142,18 +151,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A28CFBD151A60F10024A36B /* sskeychain */ = {
+			isa = PBXGroup;
+			children = (
+				9A28CFC3151A60F10024A36B /* SSKeychain.h */,
+				9A28CFC4151A60F10024A36B /* SSKeychain.m */,
+			);
+			path = sskeychain;
+			sourceTree = "<group>";
+		};
 		9A4C5FB11518125C00255F96 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9A6DEC08151AB57400B1F05A /* MainMenu.xib */,
+				9A542A56151B36D000910C77 /* COPYING */,
+				9AE4A720151C2D7500E8AA2A /* signin.css */,
+				9A4C5FA11518125700255F96 /* signin.js */,
 				9A4C5F971518125700255F96 /* clean.css */,
 				9A4C5F981518125700255F96 /* clean.js */,
-				9A4C5F991518125700255F96 /* InfoPlist.strings */,
-				9A4C5F9B1518125700255F96 /* MainMenu.xib */,
+				9A6DEC07151AB56800B1F05A /* en.lproj */,
 				9A4C5F9D1518125700255F96 /* Icon.icns */,
 				9A4C5F9E1518125700255F96 /* prefs_appearance.png */,
 				9A4C5F9F1518125700255F96 /* prefs_features.png */,
 				9A4C5FA01518125700255F96 /* prefs_keyboard.png */,
-				9A4C5FA11518125700255F96 /* signin.js */,
 				9A4C5FA21518125700255F96 /* status_icon_disabled.png */,
 				9A4C5FA31518125700255F96 /* status_icon_highlighted.png */,
 				9A4C5FA41518125700255F96 /* status_icon.png */,
@@ -210,12 +230,21 @@
 			path = GKKit;
 			sourceTree = "<group>";
 		};
+		9A6DEC07151AB56800B1F05A /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				9A4C5F991518125700255F96 /* InfoPlist.strings */,
+			);
+			name = en.lproj;
+			sourceTree = "<group>";
+		};
 		9A98248014FF30F8003177DF = {
 			isa = PBXGroup;
 			children = (
 				9A98249514FF30F9003177DF /* Pandorium */,
 				9A4C5FB11518125C00255F96 /* Resources */,
 				9A4C5FF4151817B500255F96 /* GKKit */,
+				9A28CFBD151A60F10024A36B /* sskeychain */,
 				9A9824B214FF30F9003177DF /* PandoriumTests */,
 				9A98248E14FF30F9003177DF /* Frameworks */,
 				9A98248C14FF30F9003177DF /* Products */,
@@ -234,6 +263,7 @@
 		9A98248E14FF30F9003177DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A28CFBB1519A5DB0024A36B /* Security.framework */,
 				9A4C5F8F1518122C00255F96 /* ApplicationServices.framework */,
 				9A98248F14FF30F9003177DF /* Cocoa.framework */,
 				9A9824C61500358B003177DF /* SystemConfiguration.framework */,
@@ -248,8 +278,6 @@
 			children = (
 				9A4C5F6D151811CC00255F96 /* AppDelegate.h */,
 				9A4C5F6E151811CC00255F96 /* AppDelegate.m */,
-				9A4C5F6F151811CC00255F96 /* WebViewController.h */,
-				9A4C5F70151811CC00255F96 /* WebViewController.m */,
 				9A4C5FE8151812FA00255F96 /* Supporting Files */,
 			);
 			path = Pandorium;
@@ -344,17 +372,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A4C5FA51518125700255F96 /* clean.css in Resources */,
 				9A4C5FA71518125700255F96 /* InfoPlist.strings in Resources */,
-				9A4C5FA81518125700255F96 /* MainMenu.xib in Resources */,
 				9A4C5FA91518125700255F96 /* Icon.icns in Resources */,
 				9A4C5FAA1518125700255F96 /* prefs_appearance.png in Resources */,
 				9A4C5FAB1518125700255F96 /* prefs_features.png in Resources */,
 				9A4C5FAC1518125700255F96 /* prefs_keyboard.png in Resources */,
+				9A28CFB9151967F20024A36B /* clean.js in Resources */,
 				9A4C5FAE1518125700255F96 /* status_icon_disabled.png in Resources */,
 				9A4C5FAF1518125700255F96 /* status_icon_highlighted.png in Resources */,
+				9A28CFBA151967F40024A36B /* signin.js in Resources */,
+				9A4C5FA51518125700255F96 /* clean.css in Resources */,
 				9A4C5FB01518125700255F96 /* status_icon.png in Resources */,
 				9A4C6021151817B500255F96 /* README.md in Resources */,
+				9A6DEC09151AB57400B1F05A /* MainMenu.xib in Resources */,
+				9A542A57151B36D000910C77 /* COPYING in Resources */,
+				9AE4A721151C2D7500E8AA2A /* signin.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,7 +422,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A4C5F73151811CC00255F96 /* AppDelegate.m in Sources */,
-				9A4C5F74151811CC00255F96 /* WebViewController.m in Sources */,
 				9A4C5FE6151812F700255F96 /* main.m in Sources */,
 				9A4C6016151817B500255F96 /* GKActivityView.m in Sources */,
 				9A4C6017151817B500255F96 /* GKGradientLayer.m in Sources */,
@@ -405,6 +436,7 @@
 				9A4C6020151817B500255F96 /* NSString+GKAdditions.m in Sources */,
 				9A4C6022151817B500255F96 /* View+GKAdditions.m in Sources */,
 				9A4C6023151817B500255F96 /* WebView+GKAdditions.m in Sources */,
+				9A28CFD5151A60F20024A36B /* SSKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,14 +465,6 @@
 				9A4C5F9A1518125700255F96 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		9A4C5F9B1518125700255F96 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9A4C5F9C1518125700255F96 /* en */,
-			);
-			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 		9A9824B514FF30F9003177DF /* InfoPlist.strings */ = {
