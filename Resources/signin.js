@@ -2,31 +2,27 @@ function simulate(element, eventName) {
     var options = extend(defaultOptions, arguments[2] || {});
     var oEvent, eventType = null;
     
-    for (var name in eventMatchers)
-    {
-        if (eventMatchers[name].test(eventName)) { eventType = name; break; }
+    for (var name in eventMatchers) {
+        if (eventMatchers[name].test(eventName)) { 
+            eventType = name; 
+            break; 
+        }
     }
     
     if (!eventType)
         throw new SyntaxError('Only HTMLEvents and MouseEvents interfaces are supported');
     
-    if (document.createEvent)
-    {
+    if (document.createEvent) {
         oEvent = document.createEvent(eventType);
-        if (eventType == 'HTMLEvents')
-        {
+        if (eventType == 'HTMLEvents') {
             oEvent.initEvent(eventName, options.bubbles, options.cancelable);
-        }
-        else
-        {
+        } else {
             oEvent.initMouseEvent(eventName, options.bubbles, options.cancelable, document.defaultView,
                                   options.button, options.pointerX, options.pointerY, options.pointerX, options.pointerY,
                                   options.ctrlKey, options.altKey, options.shiftKey, options.metaKey, options.button, element);
         }
         element.dispatchEvent(oEvent);
-    }
-    else
-    {
+    } else {
         options.clientX = options.pointerX;
         options.clientY = options.pointerY;
         var evt = document.createEventObject();
@@ -35,13 +31,11 @@ function simulate(element, eventName) {
     }
     return element;
 }
-
 function extend(destination, source) {
     for (var property in source)
         destination[property] = source[property];
     return destination;
 }
-
 var eventMatchers = {
     'HTMLEvents': /^(?:load|unload|abort|error|select|change|submit|reset|focus|blur|resize|scroll)$/,
     'MouseEvents': /^(?:click|dblclick|mouse(?:down|up|over|move|out))$/
@@ -57,6 +51,7 @@ var defaultOptions = {
     bubbles: true,
     cancelable: true
 }
-document.getElementsByName('email')[0].value = 'gauravk92@gmail.com';
-document.getElementsByName('password')[0].value = '';
+
+document.getElementsByName('email')[0].value = '%%USERNAME%%';
+document.getElementsByName('password')[0].value = '%%PASSWORD%%';
 simulate(document.getElementsByClassName('loginButton')[0], 'click');

@@ -1,0 +1,13 @@
+#splash {
+display: block !important;
+visibility:visible !important;
+opacity: 1 !important;
+z-index: 99999;
+}
+
+#splash_spinner {
+    display:none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+}

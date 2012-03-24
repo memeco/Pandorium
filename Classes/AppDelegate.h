@@ -26,18 +26,24 @@
 #import "WebView+GKAdditions.h"
 #import "SSKeychain.h"
 
-#define GLOBAL_SERVICE_NAME "com.gkapps.Pandorium"
+#define SERVICE_NAME @"com.gkapps.Pandorium"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate>
 
 @property (nonatomic, strong) NSWindow *window;
 @property (weak) WebView *webView;
+@property (nonatomic, assign, getter=hasLogin) BOOL login;
 
 //@property (nonatomic, strong) IBOutlet NSMenu *statusMenu;
 @property (nonatomic, strong) IBOutlet NSWindow *prefWindow;
+@property (weak) IBOutlet NSTextField *userbox;
+@property (weak) IBOutlet NSSecureTextField *passbox;
+@property (weak) IBOutlet NSButton *logoutButton;
 
+- (IBAction)logoutNotification:(id)sender;
 - (IBAction)showPandorium:(id)sender;
 - (IBAction)quitPandorium:(id)sender;
 - (IBAction)activatePrefWindow:(id)sender;
+- (IBAction)activateWindow:(id)sender;
 
 @end

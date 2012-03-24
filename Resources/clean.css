@@ -1,42 +1,60 @@
-/*div.homeRightSide
-{
-	padding-left:0!important;
+b#topnav {
+    top:0!important;
 }
 
-div.fxCol-cont-1
-{
-	background:none!important;
+#main {
+    top: 33px !important;
 }
 
-div.searchBox
-{
-	width:60px!important;
+#brandingBar, #topNav, #skinTab, #promobox, .platformPromo, #footer, .contents > .info, .contextual_help_container, .tip_container {
+    display:none !important;
 }
 
-#mainContentContainer
-{
-	width:610px!important;
+.rightcolumn {
+    position: relative !important;
+    right: 20px !important;
 }
 
-#pandoriumSearchAdd
-{
-	height:29px;
-	width:20px;
-	background:url(/img/bg_search_input.png) center right no-repeat;
+body{
+    height: 600px !important;
+    width: 800px !important;
+    overflow: hidden !important;
 }
 
-div.searchBoxFocus
-{
-	width:120px!important;
-	-webkit-transition:width 1s ease-in-out;
-	transition:width 1s ease-in-out;
+div#mainContent{
+    min-height: 535px !important;
+    height: 535px !important;
+    overflow: hidden !important;
 }
 
-#pandoraRibbonContainer,div.stationContent
-{
-	display:none!important;
-}*/
+div#mainContainer, .home  {
+    min-height: 600px !important;
+    height: 600px !important;
+    overflow: hidden !important;
+}
 
-/*.outer_bg {
-    margin-top: 30px !important;
-}*/
+.stationContent {
+    min-height: 511px !important;
+    height: 511px !important;
+}
+
+.stationListHolder {
+    height: 503px !important;
+}
+
+#detailContainer {
+    height: 220px !important;
+    overflow: hidden !important;
+}
+
+.homeRightSide {
+    height: 533px !important;
+    padding-left: 0px !important;
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+}
+
+/* Right Pane Track Info Under Album Art */
+#trackInfo {
+    min-height: 0px !important;
+}
