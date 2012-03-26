@@ -22,28 +22,25 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <WebKit/WebKit.h>
-#import "WebView+GKAdditions.h"
-#import "SSKeychain.h"
+#import "WebController.h"
+#import "PrefController.h"
 
-#define SERVICE_NAME @"com.gkapps.Pandorium"
+@class PrefController, WebController;
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate>
+
+@property (weak) IBOutlet WebController *webController;
+@property (weak) IBOutlet PrefController *prefController;
 
 @property (nonatomic, strong) NSWindow *window;
-@property (weak) WebView *webView;
-@property (nonatomic, assign, getter=hasLogin) BOOL login;
 
 //@property (nonatomic, strong) IBOutlet NSMenu *statusMenu;
-@property (nonatomic, strong) IBOutlet NSWindow *prefWindow;
-@property (weak) IBOutlet NSTextField *userbox;
-@property (weak) IBOutlet NSSecureTextField *passbox;
-@property (weak) IBOutlet NSButton *logoutButton;
 
-- (IBAction)logoutNotification:(id)sender;
-- (IBAction)showPandorium:(id)sender;
-- (IBAction)quitPandorium:(id)sender;
-- (IBAction)activatePrefWindow:(id)sender;
-- (IBAction)activateWindow:(id)sender;
+
+//- (IBAction)showPandorium:(id)sender;
+//- (IBAction)quitPandorium:(id)sender;
+//- (IBAction)activatePrefWindow:(id)sender;
+//- (IBAction)activateWindow:(id)sender;
+//
 
 @end
