@@ -36,11 +36,4 @@
 
 //@property (nonatomic, strong) IBOutlet NSMenu *statusMenu;
 
-
-//- (IBAction)showPandorium:(id)sender;
-//- (IBAction)quitPandorium:(id)sender;
-//- (IBAction)activatePrefWindow:(id)sender;
-//- (IBAction)activateWindow:(id)sender;
-//
-
 @end

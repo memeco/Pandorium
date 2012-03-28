@@ -6,7 +6,9 @@
     #import <Cocoa/Cocoa.h>
     #import "GKKit.h"
     #import "SSKeychain.h"
+    #import "AppDelegate.h"
 
     #define SERVICE_NAME @"com.gkapps.Pandorium"
+
 #endif
 

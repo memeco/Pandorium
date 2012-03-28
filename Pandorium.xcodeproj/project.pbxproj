@@ -43,7 +43,9 @@
 		9A4C6021151817B500255F96 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C600F151817B500255F96 /* README.md */; };
 		9A4C6023151817B500255F96 /* WebView+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C6014151817B500255F96 /* WebView+GKAdditions.m */; };
 		9A542A57151B36D000910C77 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 9A542A56151B36D000910C77 /* COPYING */; };
+		9A8D48091521870100B824E4 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A8D48081521870100B824E4 /* Defaults.plist */; };
 		9A9280BD151E6440009803E2 /* jquery.simulate.drag-sortable.js in Resources */ = {isa = PBXBuildFile; fileRef = 9A9280BA151E6427009803E2 /* jquery.simulate.drag-sortable.js */; };
+		9A95C66C1521BAF000F18D34 /* assiactivator.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 9A95C66B1521BAF000F18D34 /* assiactivator.scpt */; };
 		9A98249014FF30F9003177DF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A98248F14FF30F9003177DF /* Cocoa.framework */; };
 		9A9824AE14FF30F9003177DF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9824AD14FF30F9003177DF /* SenTestingKit.framework */; };
 		9A9824AF14FF30F9003177DF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A98248F14FF30F9003177DF /* Cocoa.framework */; };
@@ -122,10 +124,12 @@
 		9A4C6013151817B500255F96 /* WebView+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebView+GKAdditions.h"; sourceTree = "<group>"; };
 		9A4C6014151817B500255F96 /* WebView+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebView+GKAdditions.m"; sourceTree = "<group>"; };
 		9A542A56151B36D000910C77 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		9A8D48081521870100B824E4 /* Defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = Defaults.plist; path = Resources/Defaults.plist; sourceTree = "<group>"; };
 		9A9280B2151DD7DC009803E2 /* rsplash.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = rsplash.js; path = Resources/rsplash.js; sourceTree = "<group>"; };
 		9A9280B4151DDF1D009803E2 /* rclean.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = rclean.js; path = Resources/rclean.js; sourceTree = "<group>"; };
 		9A9280B8151E6419009803E2 /* albumart.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = albumart.js; path = Resources/albumart.js; sourceTree = "<group>"; };
 		9A9280BA151E6427009803E2 /* jquery.simulate.drag-sortable.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "jquery.simulate.drag-sortable.js"; path = "jquery.simulate.drag-sortable.js/jquery.simulate.drag-sortable.js"; sourceTree = "<group>"; };
+		9A95C66B1521BAF000F18D34 /* assiactivator.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; name = assiactivator.scpt; path = Resources/assiactivator.scpt; sourceTree = "<group>"; };
 		9A98248B14FF30F9003177DF /* Pandorium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pandorium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A98248F14FF30F9003177DF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9A9824AC14FF30F9003177DF /* PandoriumTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PandoriumTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +193,8 @@
 		9A4C5FB11518125C00255F96 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9A95C66B1521BAF000F18D34 /* assiactivator.scpt */,
+				9A8D48081521870100B824E4 /* Defaults.plist */,
 				9A46722A1521083600918F2E /* en.lproj */,
 				9A9280B8151E6419009803E2 /* albumart.js */,
 				9A542A56151B36D000910C77 /* COPYING */,
@@ -426,6 +432,8 @@
 				9AE4A721151C2D7500E8AA2A /* splash.css in Resources */,
 				9A46722F1521083600918F2E /* InfoPlist.strings in Resources */,
 				9AB8C9601521099D00236AF8 /* MainMenu.xib in Resources */,
+				9A8D48091521870100B824E4 /* Defaults.plist in Resources */,
+				9A95C66C1521BAF000F18D34 /* assiactivator.scpt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

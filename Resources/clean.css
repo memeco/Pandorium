@@ -2,11 +2,15 @@ b#topnav {
     top:0!important;
 }
 
+div#topnav {
+    height: 72px !important;
+}
+
 #main {
     top: 33px !important;
 }
 
-#brandingBar, #topNav, #skinTab, #promobox, .platformPromo, #footer, .contents > .info, .contextual_help_container, .tip_container {
+#brandingBar, #topNav, #skinTab, #promobox, .platformPromo, #footer, .contents > .info, .contextual_help_container, .tip_container, .cd_icon {
     display:none !important;
 }
 
@@ -16,7 +20,7 @@ b#topnav {
 }
 
 body{
-    height: 600px !important;
+    height: 578px !important;
     width: 800px !important;
     overflow: hidden !important;
 }
@@ -27,7 +31,13 @@ div#mainContent{
     overflow: hidden !important;
 }
 
-div#mainContainer, .home  {
+div#mainContainer {
+    min-height: 578px !important;
+    height: 578px !important;
+    overflow: hidden !important;
+}
+
+.home  {
     min-height: 600px !important;
     height: 600px !important;
     overflow: hidden !important;
@@ -38,8 +48,12 @@ div#mainContainer, .home  {
     height: 511px !important;
 }
 
+.scroll-pane.vertical-only {
+    overflow: hidden !important;
+}
+
 .stationListHolder {
-    height: 503px !important;
+    height: 481px !important;
 }
 
 #detailContainer {

@@ -10,56 +10,148 @@
 
 @implementation PrefController
 
-@synthesize prefWindow;
+@synthesize window;
 @synthesize userField;
 @synthesize passField;
 @synthesize logoutButton;
+@synthesize showHideView;
+@synthesize playPauseView;
+@synthesize nextTrackView;
+//@synthesize nextStationView;
+@synthesize thumbsUpView;
+@synthesize thumbsDownView;
 @synthesize login;
 
 #pragma mark - Object life cycle
 
 - (void)awakeFromNib {
-    NSString *acct = [NSDef stringForKey:@"username"];
+    NSString *defPath = [[NSBundle mainBundle] pathForResource:@"Defaults" ofType:@"plist"];
+    NSDictionary *defDict = [NSDictionary dictionaryWithContentsOfFile:defPath];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defDict];
+    
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(hotKeyViewChange:) name:@"GKHotKeyViewChangeNotification" object:nil];
+    
+    NSString *acct = [NSDef objectForKey:@"username"];
     self.login = acct ? TRUE : FALSE;
+    
+    /*NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *archiveLocation = [documentsDirectory stringByAppendingPathComponent:@"My.ar"];
+    
+    GKHotKey *test = [[GKHotKey alloc] initWithKeyCode:49 modifierFlags:195];
+    BOOL val = [NSKeyedArchiver archiveRootObject:test toFile:archiveLocation];*/
+    
+    // TODO: mad refactoring
+    GKHotKey *showHide = [NSKeyedUnarchiver unarchiveObjectWithData:[NSDef objectForKey:@"showHideKey"]];
+    GKHotKey *playPause = [NSKeyedUnarchiver unarchiveObjectWithData:[NSDef objectForKey:@"playPauseKey"]];
+    GKHotKey *nextTrack = [NSKeyedUnarchiver unarchiveObjectWithData:[NSDef objectForKey:@"nextTrackKey"]];
+    //GKHotKey *nextStation = [NSKeyedUnarchiver unarchiveObjectWithData:[NSDef objectForKey:@"nextStationKey"]];
+    GKHotKey *thumbsUp = [NSKeyedUnarchiver unarchiveObjectWithData:[NSDef objectForKey:@"thumbsUpKey"]];
+    GKHotKey *thumbsDown = [NSKeyedUnarchiver unarchiveObjectWithData:[NSDef objectForKey:@"thumbsDownKey"]];
+    
+    if (showHide)
+        self.showHideView.hotkey = showHide;
+    if (playPause)
+        self.playPauseView.hotkey = playPause;
+    if (nextTrack)
+        self.nextTrackView.hotkey = nextTrack;
+    //if (nextStation)
+    //    self.nextStationView.hotkey = nextStation;
+    if (thumbsUp)
+        self.thumbsUpView.hotkey = thumbsUp;
+    if (thumbsDown)
+        self.thumbsDownView.hotkey = thumbsDown;
 }
 
-#pragma mark - Window life cycle
+#pragma mark - NSWindow life cycle
 
 - (IBAction)activateWindow:(id)sender {
-    //[self.prefWindow makeKeyAndOrderFront:NSApp];
-    //[self.userbox becomeFirstResponder];
-    [self.prefWindow orderFront:self];
-    //[self.userbox becomeFirstResponder];
+    [self.window orderFront:self];
+    [self.window makeKeyAndOrderFront:nil];
+}
+
+#pragma mark - NSWindow delegate methods
+
+- (void)windowDidBecomeMain:(NSNotification *)notification {
+    [self.userField becomeFirstResponder];
 }
 
 #pragma mark - Login management
 
-#pragma mark NSTextField delegate methods
+#pragma mark NSTextField delegate methods (login)
 - (void)controlTextDidEndEditing:(NSNotification *)aNotification {
-    // Fade out 
-    // says information acquired
-    NSString *username = self.userbox.stringValue;
-    NSString *password = self.passbox.stringValue;
-    DLogObject(username);
-    DLogObject(password);
-    if (!([username length] > 0 && [password length] > 0))
+    NSString *username = self.userField.stringValue;
+    NSString *password = self.passField.stringValue;
+    
+    if (!([username length] && [password length]))
         return;
+    
     [NSDef setObject:username forKey:@"username"];
-    self.login = TRUE;
-    // stores in keychain
     [SSKeychain setPassword:password forService:SERVICE_NAME account:username];
+    self.login = TRUE;
+
+    [self.userField setEnabled:NO];
+    [self.passField setEnabled:NO];
+    [self.passField setHidden:TRUE withFade:TRUE delegate:self];
     
-    //self.passbox.
+    // TODO: concurrent start moving window, and setup pandora window
     
-    //[self.passbox unlockFocus];
-    [self.userbox setEnabled:NO];
-    [self.passbox setEnabled:NO];
-    [self.passbox setHidden:TRUE withFade:TRUE delegate:self];
-    /*[NSObject scheduleRunAfterDelay:.5 forBlock:^{
-     [self.logoutButton setHidden:FALSE withFade:TRUE];
-     }];*/
+    /*NSDictionary *fadeWindow = [NSDictionary dictionaryWithObjectsAndKeys:
+                                self.window, NSViewAnimationTargetKey,
+                                NSViewAnimationFadeOutEffect, NSViewAnimationEffectKey,
+                                nil];
     
-    // concurrent start moving window, and setup pandora window
+    NSRect frm = NSMakeRect(0, 0, 500, 300);
+    NSDictionary *resizeWindow = [NSDictionary dictionaryWithObjectsAndKeys:
+                                  self.window, NSViewAnimationTargetKey,
+                                  [NSValue valueWithRect:frm], NSViewAnimationEndFrameKey,
+                                  nil];
+    
+    NSArray *animations;
+    animations = [NSArray arrayWithObjects: fadeWindow, resizeWindow, nil];
+    
+    NSViewAnimation *animation;
+    animation = [[NSViewAnimation alloc] initWithViewAnimations: animations];
+    
+    [animation setAnimationBlockingMode: NSAnimationBlocking];
+    [animation setDuration: 3];
+    
+    [animation startAnimation];*/
+    
+    [GKAppDelegate.webController activateWindow:nil];
+    
+    NSRect startFrame = self.window.frame;
+    NSRect frame = startFrame;
+    int newWindowWidth = GKAppDelegate.window.frame.size.width;
+    int spacing = 15;
+    frame.origin.x = startFrame.origin.x - round(startFrame.size.width/2) - (spacing + round(newWindowWidth/2));
+    
+    NSDictionary *resize = [NSDictionary dictionaryWithObjectsAndKeys:
+                            self.window, NSViewAnimationTargetKey,
+                            [NSValue valueWithRect:frame], NSViewAnimationEndFrameKey, nil];
+    
+    NSArray *anims = [NSArray arrayWithObject:resize];
+    
+    NSViewAnimation *vAnim = [[NSViewAnimation alloc] initWithViewAnimations:anims];
+    
+    [vAnim setAnimationBlockingMode:NSAnimationNonblocking];
+    [vAnim setAnimationCurve:NSAnimationEaseInOut];
+    [vAnim setDuration:.5];
+    [vAnim startAnimation];
+}
+
+#pragma mark Logout button action
+- (IBAction)logoutButtonActivation:(id)sender {
+    NSString *username = [NSDef objectForKey:@"username"];
+    
+    [SSKeychain deletePasswordForService:SERVICE_NAME account:username];
+    [NSDef setObject:@"" forKey:@"username"];
+    self.login = FALSE;
+    
+    [self.userField setEnabled:YES];
+    [self.passField setEnabled:YES];
+    [self.logoutButton setHidden:TRUE withFade:TRUE delegate:self];
 }
 
 #pragma mark NSAnimation delegate methods
@@ -67,16 +159,47 @@
 - (void)animationDidEnd:(NSViewAnimation *)animation {
     NSDictionary *anims = [animation.viewAnimations objectAtIndex:0];
     id target = [anims objectForKey:NSViewAnimationTargetKey];
-    if (target == self.passbox && self.logoutButton.isHidden) {
+    
+    if (target == self.passField && self.logoutButton.isHidden) { 
         [self.logoutButton setHidden:FALSE withFade:TRUE delegate:self];
+        return;
+    }
+    if (target == self.logoutButton && self.passField.isHidden 
+        && [anims objectForKey:NSViewAnimationEffectKey] == NSViewAnimationFadeOutEffect) {
+        [self.passField setHidden:FALSE withFade:TRUE delegate:self];
+        return;
     }
 }
 
-#pragma mark Logout button action
+#pragma mark - GKHotKey change notification
 
-- (IBAction)logoutButtonActivation:(id)sender {
-    
+- (void)anonConv:(NSString*)str view:(GKHotKeyView*)view {
+    if (view.hotkey)
+        [NSDef setObject:[NSKeyedArchiver archivedDataWithRootObject:view.hotkey] forKey:str];
+    else
+        [NSDef removeObjectForKey:str];
 }
 
+- (void)hotKeyViewChange:(NSNotification*)notif {
+    GKHotKeyView *view = notif.object;
+    if ([view isEqual:self.showHideView]) {
+        [self anonConv:@"showHideKey" view:view];
+    }
+    if ([view isEqual:self.playPauseView]) {
+        [self anonConv:@"playPauseKey" view:view];
+    }
+    if ([view isEqual:self.nextTrackView]) {
+        [self anonConv:@"nextTrackKey" view:view];
+    }
+    //if ([view isEqual:self.nextStationView]) {
+    //    [NSDef setObject:[NSKeyedArchiver archivedDataWithRootObject:view.hotkey] forKey:@"nextStationKey"];
+    //}
+    if ([view isEqual:self.thumbsUpView]) {
+        [self anonConv:@"thumbsUpKey" view:view];
+    }
+    if ([view isEqual:self.thumbsDownView]) {
+        [self anonConv:@"thumbsDownKey" view:view];
+    }
+}
 
 @end

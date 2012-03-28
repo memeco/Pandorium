@@ -8,21 +8,50 @@
 
 #import "WebController.h"
 
+@interface WebPreferences (PRIVATE)
+
+- (void)_setLocalStorageDatabasePath:(NSString*)str;
+- (void)setLocalStorageEnabled:(BOOL)f1;
+
+@end
+
 @implementation WebController
 
-@synthesize window;
 @synthesize webView;
 
 #pragma mark - Object life cycle
 
 - (void)awakeFromNib {
-    
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(keyDownNotification:) name:KeyboardKeyDownNotification object:nil];
+}
+
+#pragma mark - HotKey Actions
+
+- (void)keyDownNotification:(NSNotification*)notif {
+#define SPACE_KEYCODE 49
+#define RIGHT_KEYCODE 124
+#define PLUS_KEYCODE 24 //Shift?
+#define MINUS_KEYCODE 27
+#define UP_KEYCODE 126
+#define DOWN_KEYCODE 125
+    GKHotKey *key = [notif.userInfo objectForKey:@"key"];
+    if ([key isPlayKey]) {
+        DLogFunc();
+        [self.webView keyClickWithKeyCode:SPACE_KEYCODE];
+    }
+    if ([key isNextKey]) {
+        DLogFunc();
+        [self.webView keyClickWithKeyCode:RIGHT_KEYCODE];
+    }
+    //if ([key isBackKey])
+    //    [self.webController.webView keyClickWithKeyCode:
 }
 
 #pragma mark - Window life cycle
 
 - (IBAction)activateWindow:(id)sender {
-    if (!self.window) {
+    if (!GKAppDelegate.window) {
         int width = 800;
         int height = 600;
         NSRect frame = NSMakeRect(0, 0, width, height);
@@ -46,22 +75,38 @@
         webview.wantsLayer = FALSE;
         webview.frameLoadDelegate = self;
         webview.resourceLoadDelegate = self;
+        webview.policyDelegate = self;
         webview.shouldUpdateWhileOffscreen = TRUE;
         webview.customUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) \
         AppleWebKit/534.53.11 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10";
         webview.mainFrameURL = @"https://www.pandora.com/#/account/sign-in";
+        WebPreferences* prefs = webview.preferences;
+        [prefs _setLocalStorageDatabasePath:@"~/Library/Application Support/Pandorium"];
+        [prefs setLocalStorageEnabled:YES];
         
-        win.contentView = webview;
-        self.window = win;
-        self.webView = webview;
-        
-        NSRect frame = self.window.frame;
-        NSRect screenBox = self.window.screen.visibleFrame;
+        // center frame
+        NSRect screenBox = win.screen.visibleFrame;
         frame.origin.y = screenBox.origin.y + truncf((screenBox.size.height - frame.size.height) / 2);
         frame.origin.x = screenBox.origin.x + truncf((screenBox.size.width - frame.size.width) / 2);    
-        [self.window setFrame:frame display:FALSE animate:FALSE];
+        [win setFrame:frame display:FALSE animate:FALSE];
+        
+        win.contentView = webview;
+        self.webView = webview;
+        GKAppDelegate.window = win;
     }
-    [self.window orderFront:self];
+    [GKAppDelegate.window orderFront:self];
+    [GKAppDelegate.window makeKeyAndOrderFront:nil];
+}
+
+#pragma mark - NSWindow delegate methods
+
+/*- (NSApplicationPresentationOptions)window:(NSWindow *)window willUseFullScreenPresentationOptions:(NSApplicationPresentationOptions)proposedOptions {
+   TODO: turn off clean.css 
+}*/
+
+- (void)windowWillClose:(NSNotification *)aNotification {
+    //LOOK@: consider adding preference for this
+    [NSApp terminate:self];
 }
 
 #pragma mark - WebViewFrameLoad delegate methods
@@ -182,7 +227,7 @@
      //DLogObject(str3);
      }*/
     
-    if ([identifier isEqualToString:@"SplashPage"] && self.hasLogin) { // disables splash fade away
+    if ([identifier isEqualToString:@"SplashPage"] && GKAppDelegate.prefController.hasLogin) { // disables splash fade away
         NSString *splashCSSPath = [[NSBundle mainBundle] pathForResource:@"splash" ofType:@"css"];
         NSString *splashCSS = [NSString stringWithContentsOfFile:splashCSSPath encoding:NSUTF8StringEncoding error:nil];
         NSString *safeCSS = [splashCSS stringByReplacingOccurrencesOfString:@"\n" withString:@""];
@@ -197,7 +242,7 @@
         //DEnd(1);
     }
     
-    if ([identifier isEqualToString:@"SigninPage"] && self.hasLogin) { // enters login information
+    if ([identifier isEqualToString:@"SigninPage"] && GKAppDelegate.prefController.hasLogin) { // enters login information
         
     }
     
@@ -232,5 +277,24 @@
     //DLogObject(dataSource.request.URL);
 }
 
+#pragma mark - WebViewPolicy delegate methods
+/*
+- (void)webView:(WebView *)sender decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
+    DLogObject([request URL]);
+    if ([[request URL] isEqual:[NSURL URLWithString:@"https://www.pandora.com/#/account/sign-in"]] 
+        || [[request URL] isEqual:[NSURL URLWithString:@"https://www.pandora.com/#"]]
+        || [[request URL] isEqual:[NSURL URLWithString:@"about:blank"]]) {
+        // https://www.pandora.com/#!/music/artist/above+beyond
+        // https://www.pandora.com/#!/stations/play/809599613637087712
+//        // facebook https://s-static.ak.fbcdn.net/connect/xd_proxy.php#cb=f6f47c0a&origin=https%3A%2F%2Fwww.pandora.com%2Ffa31e05bc&relation=parent&transport=postmessage&frame=f1821770d4&error=unknown_user
+        [listener use];
+    } else {
+        [listener ignore];
+    }
+    if ([[request URL]) {
+        [[NSWorkspace sharedWorkspace] openURL:[request URL]];
+    }
+}
+*/
 
 @end

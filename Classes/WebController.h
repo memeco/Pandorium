@@ -14,11 +14,8 @@
 
 @interface WebController : NSObject <NSWindowDelegate>
 
-@property (weak) NSWindow *window;
-@property (weak) WebView *webView;
+@property (nonatomic, strong) WebView *webView;
 
 - (IBAction)activateWindow:(id)sender;
-
-- (void)setupWindow;
 
 @end

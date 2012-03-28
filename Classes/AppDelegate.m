@@ -32,13 +32,16 @@
 #pragma mark - Application life cycle
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    
 #ifdef DEBUG
     [NSDef registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"WebKitDeveloperExtras"]];
 #endif
     
+#ifdef DEBUG
+    [NSDef setObject:nil forKey:@"username"];
+#endif
     
-    // TODO: Detect and auto ask for password to fix problem...no need to ask
-    [GKHotKeyCenter sharedCenter];
+    // TODO: Detect and auto ask for password to fix problem...no need to as
     
     // 1. Detect event taps possibility
     //      if false, then use a-scpt to enable with HUD message describing why
@@ -46,24 +49,36 @@
     // 2. Detect state of account info storage, build appropriate frame
     //      if false, -> signup size
     //      if true,  -> start with window normal size
-#if DEBUG
-    [NSDef setObject:nil forKey:@"username"];
-#endif
     
-    if (self.prefController.hasLogin) {
-        [self.webController activateWindow:nil];
-    } else {
-        [self.prefController activateWindow:nil];
+    if (!AXAPIEnabled()) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"assiactivator" ofType:@"scpt"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        NSDictionary *error = nil;
+        NSAppleScript *scpt = [[NSAppleScript alloc] initWithContentsOfURL:url error:&error];
+        DLogObject(scpt);
+        DLogObject(error);
+        if (scpt) {
+            // act on it
+            NSDictionary *error2 = nil;
+            NSAppleEventDescriptor *event = [scpt executeAndReturnError:&error2];
+            DLogObject(event);
+            if (!event) {
+                // failure
+                return;
+            }
+        } else {
+            // failrure
+            return;
+        }
     }
     
+    [GKHotKeyCenter sharedCenter];
     
+    if (self.prefController.hasLogin)
+        [self.webController activateWindow:nil];
+    else
+        [self.prefController activateWindow:nil];
     
-    
-    
-    //NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    //[center addObserver:self selector:@selector(playPauseKeyNotification) name:MediaKeyPlayPauseNotification object:nil];
-    //[center addObserver:self selector:@selector(nextKeyNotification) name:MediaKeyNextNotification object:nil];
-    //[center addObserver:self selector:@selector(previousKeyNotification) name:MediaKeyPreviousNotification object:nil];
     
     //DLogObject([SSKeychain allAccounts]);
     
@@ -102,34 +117,5 @@
 - (IBAction)quitPandorium:(id)sender {
     [NSApp terminate:self];
 }*/
-
-- (void)windowWillClose:(NSNotification *)aNotification {
-    //LOOK@: consider adding preference for this
-    [NSApp terminate:self];
-}
-
-#pragma mark - Preference window delegate methods
-
-
-#pragma mark - HotKey Actions
-
-- (void)playPauseKeyNotification {
-#define SPACE_KEYCODE 49
-#define RIGHT_KEYCODE 124
-#define PLUS_KEYCODE 24 //Shift?
-#define MINUS_KEYCODE 27
-#define UP_KEYCODE 126
-#define DOWN_KEYCODE 125
-    //DLogFunc();
-    //[self.webView keyClickWithKeyCode:SPACE_KEYCODE];
-}
-
-- (void)nextKeyNotification {
-    //[self.webView keyClickWithKeyCode:RIGHT_KEYCODE];
-}
-
-- (void)previousKeyNotification {
-    //DLogFunc();
-}
 
 @end
