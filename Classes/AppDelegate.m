@@ -33,35 +33,23 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
-#ifdef DEBUG
+//#ifdef DEBUG
     [NSDef registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"WebKitDeveloperExtras"]];
-#endif
+//#endif
     
 #ifdef DEBUG
     [NSDef setObject:nil forKey:@"username"];
 #endif
-    
-    // TODO: Detect and auto ask for password to fix problem...no need to as
-    
-    // 1. Detect event taps possibility
-    //      if false, then use a-scpt to enable with HUD message describing why
-    
-    // 2. Detect state of account info storage, build appropriate frame
-    //      if false, -> signup size
-    //      if true,  -> start with window normal size
     
     if (!AXAPIEnabled()) {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"assiactivator" ofType:@"scpt"];
         NSURL *url = [NSURL fileURLWithPath:path];
         NSDictionary *error = nil;
         NSAppleScript *scpt = [[NSAppleScript alloc] initWithContentsOfURL:url error:&error];
-        DLogObject(scpt);
-        DLogObject(error);
         if (scpt) {
             // act on it
             NSDictionary *error2 = nil;
             NSAppleEventDescriptor *event = [scpt executeAndReturnError:&error2];
-            DLogObject(event);
             if (!event) {
                 // failure
                 return;
@@ -73,30 +61,14 @@
     }
     
     [GKHotKeyCenter sharedCenter];
-    
+#ifndef IDEA
+    [self.webController activateWindow:nil];
+#else
     if (self.prefController.hasLogin)
         [self.webController activateWindow:nil];
     else
         [self.prefController activateWindow:nil];
-    
-    
-    //DLogObject([SSKeychain allAccounts]);
-    
-    /*
-    NSString *acct = [NSDef stringForKey:@"username"];
-    if (!acct) {
-        // ight load up signup page
-        return;
-    }
-    
-    NSString *pw = [SSKeychain passwordForService:@GLOBAL_SERVICE_NAME account:acct];
-    if (!pw) {
-        //signup pg
-        return;
-    }
-    */
-    
-    // Actually perform signup, of previously stored data
+#endif
 }
 
 /*-(void)awakeFromNib{

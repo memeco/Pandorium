@@ -9,6 +9,5 @@
     #import "AppDelegate.h"
 
     #define SERVICE_NAME @"com.gkapps.Pandorium"
-
 #endif
 

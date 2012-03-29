@@ -55,3 +55,5 @@ var defaultOptions = {
 document.getElementsByName('email')[0].value = '%%USERNAME%%';
 document.getElementsByName('password')[0].value = '%%PASSWORD%%';
 simulate(document.getElementsByClassName('loginButton')[0], 'click');
+//simulate(document.getElementsByName('email')[0], 'click');
+//document.getElementsByName('email')[0].focus();

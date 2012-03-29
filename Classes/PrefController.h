@@ -27,6 +27,8 @@
 
 @property (nonatomic, assign, getter=hasLogin) BOOL login;
 
++ (NSString*)databasePath;
+
 - (IBAction)activateWindow:(id)sender;
 - (IBAction)logoutButtonActivation:(id)sender;
 

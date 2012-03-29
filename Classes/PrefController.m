@@ -24,6 +24,10 @@
 
 #pragma mark - Object life cycle
 
++ (NSString*)databasePath {
+    return [@"~/Library/Application Support/Pandorium" stringByExpandingTildeInPath];
+}
+
 - (void)awakeFromNib {
     NSString *defPath = [[NSBundle mainBundle] pathForResource:@"Defaults" ofType:@"plist"];
     NSDictionary *defDict = [NSDictionary dictionaryWithContentsOfFile:defPath];
@@ -32,8 +36,31 @@
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(hotKeyViewChange:) name:@"GKHotKeyViewChangeNotification" object:nil];
     
-    NSString *acct = [NSDef objectForKey:@"username"];
-    self.login = acct ? TRUE : FALSE;
+//#ifdef IDEA
+    NSError *err;
+    NSArray *arr = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[PrefController databasePath] error:&err];
+    if (err) {
+        // handle failure
+        return;
+    }
+    self.login = [arr count] > 3;
+//    if ([[[NSFileManager defaultManager] subpathsAtPath:[PrefController databasePath]] count] > 0) {
+//        // logged in
+        // for all the files in dir
+        DLogFunc();
+        // check
+        //isDeletableFileAtPath:
+        
+        //remove
+        //- (BOOL)removeItemAtPath:(NSString *)path error:(NSError **)error
+//    } else {
+//        // not
+//        DLogFunc();
+//    }
+//#else
+//    NSString *acct = [NSDef objectForKey:@"username"];
+//    self.login = acct ? TRUE : FALSE;
+//#endif
     
     /*NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -139,6 +166,7 @@
     [vAnim setAnimationCurve:NSAnimationEaseInOut];
     [vAnim setDuration:.5];
     [vAnim startAnimation];
+    [self.window makeKeyAndOrderFront:nil];
 }
 
 #pragma mark Logout button action
@@ -160,7 +188,8 @@
     NSDictionary *anims = [animation.viewAnimations objectAtIndex:0];
     id target = [anims objectForKey:NSViewAnimationTargetKey];
     
-    if (target == self.passField && self.logoutButton.isHidden) { 
+    if (target == self.passField && self.logoutButton.isHidden 
+        && [anims objectForKey:NSViewAnimationEffectKey] == NSViewAnimationFadeOutEffect) { 
         [self.logoutButton setHidden:FALSE withFade:TRUE delegate:self];
         return;
     }

@@ -1,4 +1,4 @@
-#splash {
+/*#splash {
 display: block !important;
 visibility:visible !important;
 opacity: 1 !important;
@@ -10,4 +10,26 @@ z-index: 99999;
     visibility: hidden !important;
     width: 0 !important;
     height: 0 !important;
+}
+*/
+/*
+#splash {
+    top: -80px !important;
+height: 428px !important;
+}
+
+div.spinnerContainer {
+    top: 253px !important;
+}*/
+
+div#brandingBar, #footer {
+    display: none !important;
+}
+
+div#mainContainer {
+    top: -30px !important;
+}
+
+div#main {
+    top: 141px !important;
 }
