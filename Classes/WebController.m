@@ -100,7 +100,7 @@
         //webview.customUserAgent = @"Mozilla/5.0 (Windows NT 6.1; Intel Mac OS X 10.6; rv:7.0.1) Gecko/20100101 Firefox/7.0.1";
         webview.mainFrameURL = @"https://www.pandora.com/#/account/sign-in";
         WebPreferences* prefs = webview.preferences;
-        [prefs _setLocalStorageDatabasePath:[PrefController databasePath]];
+        [prefs _setLocalStorageDatabasePath:[PrefController localStoragePath]];
         [prefs setLocalStorageEnabled:YES];
         
         // center frame
@@ -152,7 +152,7 @@
         NSString *finalJS = [splashJS stringByReplacingOccurrencesOfString:@"%%CSS%%" withString:safeCSS];
         
         //DStart(1);
-        [self.webView stringByEvaluatingJavaScriptFromString:finalJS];
+        //[self.webView stringByEvaluatingJavaScriptFromString:finalJS];
         
     }
 
@@ -180,7 +180,7 @@
 #pragma mark - WebViewResourceLoad delegate methods
 
 - (id)webView:(WebView *)sender identifierForInitialRequest:(NSURLRequest *)request fromDataSource:(WebDataSource *)dataSource {
-    DLogObject(request.URL.description);
+    //DLogObject(request.URL.description);
     
     /*if ([request.URL.description isEqualToString:@"https://www.pandora.com/#/account/sign-in"]) {
         return @"InitialPage";
@@ -212,7 +212,7 @@
         NSString *escapedcss = [cleancss stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
         NSString *jsfinal = [js stringByReplacingOccurrencesOfString:@"%%CSS%%" withString:escapedcss];
         
-        [self.webView stringByEvaluatingJavaScriptFromString:jsfinal];
+        //[self.webView stringByEvaluatingJavaScriptFromString:jsfinal];
 //#endif
 #ifdef MANUAL_SIGNIN
         NSString *signinPath = [[NSBundle mainBundle] pathForResource:@"signin" ofType:@"js"];

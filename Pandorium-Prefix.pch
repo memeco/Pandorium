@@ -7,6 +7,7 @@
     #import "GKKit.h"
     #import "SSKeychain.h"
     #import "AppDelegate.h"
+    #import <sqlite3.h>
 
     #define SERVICE_NAME @"com.gkapps.Pandorium"
 #endif

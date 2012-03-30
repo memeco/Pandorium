@@ -24,8 +24,16 @@
 
 #pragma mark - Object life cycle
 
-+ (NSString*)databasePath {
++ (NSString*)localStoragePath {
     return [@"~/Library/Application Support/Pandorium" stringByExpandingTildeInPath];
+}
+
++ (NSString*)databasePath {
+    return [[PrefController localStoragePath] stringByAppendingString:@"/https_www.pandora.com_0.localstorage"];
+}
+
++ (int)loginStorageLength {
+    return 415;
 }
 
 - (void)awakeFromNib {
@@ -37,13 +45,7 @@
     [center addObserver:self selector:@selector(hotKeyViewChange:) name:@"GKHotKeyViewChangeNotification" object:nil];
     
 //#ifdef IDEA
-    NSError *err;
-    NSArray *arr = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[PrefController databasePath] error:&err];
-    if (err) {
-        // handle failure
-        return;
-    }
-    self.login = [arr count] > 3;
+    
 //    if ([[[NSFileManager defaultManager] subpathsAtPath:[PrefController databasePath]] count] > 0) {
 //        // logged in
         // for all the files in dir
@@ -94,7 +96,34 @@
 #pragma mark - NSWindow life cycle
 
 - (IBAction)activateWindow:(id)sender {
-    [self.window orderFront:self];
+    NSString *path = [PrefController databasePath];
+    sqlite3 *db;
+    BOOL log;
+    if ([NSMgr fileExistsAtPath:path]) {
+        if (sqlite3_open([path UTF8String], &db) == SQLITE_OK) {
+            const char *sql = [@"SELECT * FROM \"ItemTable\" WHERE key='jStorage'" UTF8String];
+            sqlite3_stmt *statement;
+            int bytes;
+            
+            if (sqlite3_prepare_v2(db, sql, -1, &statement, NULL) == SQLITE_OK) {
+                int result = sqlite3_step(statement);
+                if (result == SQLITE_ROW) {
+                    sqlite3_column_text(statement, 1);
+                    bytes = sqlite3_column_bytes(statement, 1);
+                    log = bytes > [PrefController loginStorageLength];
+                } else
+                    log = NO;
+            }
+            sqlite3_finalize(statement);
+        } else {
+            // TODO: failure, delete and try again
+        }
+    } else
+        log = NO;
+    sqlite3_close(db);
+    
+    self.login = log;
+    self.logoutButton.enabled = log;
     [self.window makeKeyAndOrderFront:nil];
 }
 
@@ -104,7 +133,23 @@
     [self.userField becomeFirstResponder];
 }
 
+#ifndef LOGIN
+
 #pragma mark - Login management
+
+- (IBAction)logoutButtonActivation:(id)sender {
+    NSString *path = [PrefController localStoragePath];
+    if ([NSMgr fileExistsAtPath:path] && [NSMgr isDeletableFileAtPath:path]) {
+        NSError *err;
+        [NSMgr removeItemAtPath:path error:&err];
+        if (err) {
+            // TODO: maybe alert an error occured
+        }
+    }
+    [GKAppDelegate.webController.webView reloadFromOrigin:nil];
+}
+
+#else
 
 #pragma mark NSTextField delegate methods (login)
 - (void)controlTextDidEndEditing:(NSNotification *)aNotification {
@@ -199,6 +244,7 @@
         return;
     }
 }
+#endif
 
 #pragma mark - GKHotKey change notification
 

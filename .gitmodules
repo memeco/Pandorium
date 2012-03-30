@@ -1,9 +1,6 @@
 [submodule "GKKit"]
 	path = GKKit
 	url = git://github.com/gauravk92/GKKit.git
-[submodule "sskeychain"]
-	path = sskeychain
-	url = git://github.com/samsoffes/sskeychain.git
 [submodule "jquery.simulate.drag-sortable.js"]
 	path = jquery.simulate.drag-sortable.js
 	url = git://github.com/mattheworiordan/jquery.simulate.drag-sortable.js.git

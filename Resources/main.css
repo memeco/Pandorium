@@ -4,6 +4,8 @@
 }
 */
 
+
+
 div#topnav {
 display: block !important;
 height: 72px !important;
@@ -111,6 +113,10 @@ div.info, div.buttons, div.shareButton {
     overflow: visible !important;
     display: block !important;
 }*/
+
+div.nowplaying > div.info {
+    width: 242px !important;
+}
 
 div.contents > div.info {
     display: none !important;

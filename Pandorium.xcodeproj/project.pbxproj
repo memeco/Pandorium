@@ -13,7 +13,6 @@
 		9A2036A3151FD29400B75431 /* signin.js in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5FA11518125700255F96 /* signin.js */; };
 		9A2036A4151FD29500B75431 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F981518125700255F96 /* main.js */; };
 		9A28CFBC1519A5DB0024A36B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A28CFBB1519A5DB0024A36B /* Security.framework */; };
-		9A28CFD5151A60F20024A36B /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A28CFC4151A60F10024A36B /* SSKeychain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9A467225152105C200918F2E /* PrefController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A467224152105C200918F2E /* PrefController.m */; };
 		9A467229152105DD00918F2E /* WebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A467228152105DD00918F2E /* WebController.m */; };
 		9A46722F1521083600918F2E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A46722B1521083600918F2E /* InfoPlist.strings */; };
@@ -41,6 +40,7 @@
 		9A4C6021151817B500255F96 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C600F151817B500255F96 /* README.md */; };
 		9A4C6023151817B500255F96 /* WebView+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4C6014151817B500255F96 /* WebView+GKAdditions.m */; };
 		9A542A57151B36D000910C77 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 9A542A56151B36D000910C77 /* COPYING */; };
+		9A5866C215251B4200B74001 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5866C115251B4200B74001 /* libsqlite3.dylib */; };
 		9A6921CE1522C1F600D541B6 /* login.css in Resources */ = {isa = PBXBuildFile; fileRef = 9A6921CC1522C1F500D541B6 /* login.css */; };
 		9A6921D01522C4BA00D541B6 /* login.js in Resources */ = {isa = PBXBuildFile; fileRef = 9A6921CD1522C1F600D541B6 /* login.js */; };
 		9A8D48091521870100B824E4 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A8D48081521870100B824E4 /* Defaults.plist */; };
@@ -72,8 +72,6 @@
 		9A20369C151FD0E100B75431 /* View+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+GKAdditions.h"; sourceTree = "<group>"; };
 		9A20369D151FD0E100B75431 /* View+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+GKAdditions.m"; sourceTree = "<group>"; };
 		9A28CFBB1519A5DB0024A36B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		9A28CFC3151A60F10024A36B /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
-		9A28CFC4151A60F10024A36B /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		9A467223152105C200918F2E /* PrefController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefController.h; path = Classes/PrefController.h; sourceTree = SOURCE_ROOT; };
 		9A467224152105C200918F2E /* PrefController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrefController.m; path = Classes/PrefController.m; sourceTree = SOURCE_ROOT; };
 		9A467227152105DD00918F2E /* WebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebController.h; path = Classes/WebController.h; sourceTree = SOURCE_ROOT; };
@@ -124,6 +122,7 @@
 		9A4C6013151817B500255F96 /* WebView+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebView+GKAdditions.h"; sourceTree = "<group>"; };
 		9A4C6014151817B500255F96 /* WebView+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebView+GKAdditions.m"; sourceTree = "<group>"; };
 		9A542A56151B36D000910C77 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		9A5866C115251B4200B74001 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/local/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		9A6921CC1522C1F500D541B6 /* login.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = login.css; path = Resources/login.css; sourceTree = "<group>"; };
 		9A6921CD1522C1F600D541B6 /* login.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = login.js; path = Resources/login.js; sourceTree = "<group>"; };
 		9A8D48081521870100B824E4 /* Defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = Defaults.plist; path = Resources/Defaults.plist; sourceTree = "<group>"; };
@@ -151,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A5866C215251B4200B74001 /* libsqlite3.dylib in Frameworks */,
 				9A28CFBC1519A5DB0024A36B /* Security.framework in Frameworks */,
 				9A4C5F901518122C00255F96 /* ApplicationServices.framework in Frameworks */,
 				9A9824C71500358B003177DF /* SystemConfiguration.framework in Frameworks */,
@@ -171,15 +171,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9A28CFBD151A60F10024A36B /* sskeychain */ = {
-			isa = PBXGroup;
-			children = (
-				9A28CFC3151A60F10024A36B /* SSKeychain.h */,
-				9A28CFC4151A60F10024A36B /* SSKeychain.m */,
-			);
-			path = sskeychain;
-			sourceTree = "<group>";
-		};
 		9A46722A1521083600918F2E /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,7 +271,6 @@
 				9A4C5FB11518125C00255F96 /* Resources */,
 				9A4C5FF4151817B500255F96 /* GKKit */,
 				9A9280BC151E6432009803E2 /* jQueryDrag */,
-				9A28CFBD151A60F10024A36B /* sskeychain */,
 				9A9824B214FF30F9003177DF /* PandoriumTests */,
 				9A98248E14FF30F9003177DF /* Frameworks */,
 				9A98248C14FF30F9003177DF /* Products */,
@@ -299,6 +289,7 @@
 		9A98248E14FF30F9003177DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A5866C115251B4200B74001 /* libsqlite3.dylib */,
 				9A28CFBB1519A5DB0024A36B /* Security.framework */,
 				9A4C5F8F1518122C00255F96 /* ApplicationServices.framework */,
 				9A98248F14FF30F9003177DF /* Cocoa.framework */,
@@ -481,7 +472,6 @@
 				9A4C601F151817B500255F96 /* NSObject+GKAdditions.m in Sources */,
 				9A4C6020151817B500255F96 /* NSString+GKAdditions.m in Sources */,
 				9A4C6023151817B500255F96 /* WebView+GKAdditions.m in Sources */,
-				9A28CFD5151A60F20024A36B /* SSKeychain.m in Sources */,
 				9A20369E151FD0E100B75431 /* View+GKAdditions.m in Sources */,
 				9A467225152105C200918F2E /* PrefController.m in Sources */,
 				9A467229152105DD00918F2E /* WebController.m in Sources */,
