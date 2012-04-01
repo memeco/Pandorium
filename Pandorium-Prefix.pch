@@ -4,10 +4,10 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
-    #import "GKKit.h"
-    #import "SSKeychain.h"
-    #import "AppDelegate.h"
     #import <sqlite3.h>
+    #import "GKKit.h"
+
+    #import "AppDelegate.h"
 
     #define SERVICE_NAME @"com.gkapps.Pandorium"
 #endif

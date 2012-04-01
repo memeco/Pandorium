@@ -30,6 +30,7 @@
 + (NSString*)localStoragePath;
 + (NSString*)databasePath;
 
+- (void)registerHotKeys;
 - (IBAction)activateWindow:(id)sender;
 - (IBAction)logoutButtonActivation:(id)sender;
 

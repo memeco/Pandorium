@@ -8,6 +8,9 @@
 
 #import "PrefController.h"
 
+#define NSDefObject(key) \
+
+
 @implementation PrefController
 
 @synthesize window;
@@ -40,44 +43,16 @@
     NSString *defPath = [[NSBundle mainBundle] pathForResource:@"Defaults" ofType:@"plist"];
     NSDictionary *defDict = [NSDictionary dictionaryWithContentsOfFile:defPath];
     [[NSUserDefaults standardUserDefaults] registerDefaults:defDict];
-    
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(hotKeyViewChange:) name:@"GKHotKeyViewChangeNotification" object:nil];
-    
-//#ifdef IDEA
-    
-//    if ([[[NSFileManager defaultManager] subpathsAtPath:[PrefController databasePath]] count] > 0) {
-//        // logged in
-        // for all the files in dir
-        DLogFunc();
-        // check
-        //isDeletableFileAtPath:
-        
-        //remove
-        //- (BOOL)removeItemAtPath:(NSString *)path error:(NSError **)error
-//    } else {
-//        // not
-//        DLogFunc();
-//    }
-//#else
-//    NSString *acct = [NSDef objectForKey:@"username"];
-//    self.login = acct ? TRUE : FALSE;
-//#endif
-    
-    /*NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *archiveLocation = [documentsDirectory stringByAppendingPathComponent:@"My.ar"];
-    
-    GKHotKey *test = [[GKHotKey alloc] initWithKeyCode:49 modifierFlags:195];
-    BOOL val = [NSKeyedArchiver archiveRootObject:test toFile:archiveLocation];*/
+
+    [NSNtf addObserver:self selector:@selector(hotKeyViewChange:) name:GKHotKeyViewChangeNotification object:nil];
     
     // TODO: mad refactoring
-    GKHotKey *showHide = [NSKeyedUnarchiver unarchiveObjectWithData:[NSDef objectForKey:@"showHideKey"]];
-    GKHotKey *playPause = [NSKeyedUnarchiver unarchiveObjectWithData:[NSDef objectForKey:@"playPauseKey"]];
-    GKHotKey *nextTrack = [NSKeyedUnarchiver unarchiveObjectWithData:[NSDef objectForKey:@"nextTrackKey"]];
-    //GKHotKey *nextStation = [NSKeyedUnarchiver unarchiveObjectWithData:[NSDef objectForKey:@"nextStationKey"]];
-    GKHotKey *thumbsUp = [NSKeyedUnarchiver unarchiveObjectWithData:[NSDef objectForKey:@"thumbsUpKey"]];
-    GKHotKey *thumbsDown = [NSKeyedUnarchiver unarchiveObjectWithData:[NSDef objectForKey:@"thumbsDownKey"]];
+    GKHotKey *showHide = NSDefObj(@"showHideKey");
+    GKHotKey *playPause = NSDefObj(@"playPauseKey");
+    GKHotKey *nextTrack = NSDefObj(@"nextTrackKey");
+    //GKHotKey *nextStation = NSDefObj(@"nextStationKey");
+    GKHotKey *thumbsUp = NSDefObj(@"thumbsUpKey");
+    GKHotKey *thumbsDown = NSDefObj(@"thumbsDownKey");
     
     if (showHide)
         self.showHideView.hotkey = showHide;
@@ -91,11 +66,71 @@
         self.thumbsUpView.hotkey = thumbsUp;
     if (thumbsDown)
         self.thumbsDownView.hotkey = thumbsDown;
+    
+}
+
+- (void)registerHotKeys {
+#define SPACE_KEYCODE 49
+#define RIGHT_KEYCODE 124
+#define PLUS_KEYCODE 24 //Shift? 32
+#define MINUS_KEYCODE 27 //Shift? 35
+#define UP_KEYCODE 126
+#define DOWN_KEYCODE 125
+#define TAB_KEYCODE 56
+#define SHIFT_KEYCODE 64
+    
+    [GKHotKeyCenter registerHandler:^(GKHotKey *key, int state) {
+        WebView *view = GKAppDelegate.webController.webView;
+       
+        // TODO: mad refactoring
+        GKHotKey *showHide = NSDefObj(@"showHideKey");
+        GKHotKey *playPause = NSDefObj(@"playPauseKey");
+        GKHotKey *nextTrack = NSDefObj(@"nextTrackKey");
+        //GKHotKey *nextStation = NSDefObj(@"nextStationKey");
+        GKHotKey *thumbsUp = NSDefObj(@"thumbsUpKey");
+        GKHotKey *thumbsDown = NSDefObj(@"thumbsDownKey");
+        
+        //DLogObject(ke
+        
+        DLogObject(showHide);
+        if ([key isEqual:showHide]) {
+            if (!state) {
+                if ([NSApp isHidden]) {
+                    [NSApp activateIgnoringOtherApps:YES];
+                } else {
+                    [NSApp hide:nil];
+                }
+            }
+            return YES;
+        }
+        if ([key isEqual:playPause]) {
+            if (!state)
+                [view keyClickWithKeyCode:SPACE_KEYCODE];
+            return YES;
+        }
+        if ([key isEqual:nextTrack]) {
+            if (!state)
+                [view keyClickWithKeyCode:RIGHT_KEYCODE];
+            return YES;
+        }
+        if ([key isEqual:thumbsUp]) {
+            if (!state)
+                [view keyClickWithKeyCode:PLUS_KEYCODE modifier:SHIFT_KEYCODE];
+            return YES;
+        }
+        if ([key isEqual:thumbsDown]) {
+            if (!state)
+                [view keyClickWithKeyCode:MINUS_KEYCODE modifier:SHIFT_KEYCODE];
+            return YES;
+        }
+        return NO;
+    }];
 }
 
 #pragma mark - NSWindow life cycle
 
 - (IBAction)activateWindow:(id)sender {
+
     NSString *path = [PrefController databasePath];
     sqlite3 *db;
     BOOL log;
@@ -123,7 +158,8 @@
     sqlite3_close(db);
     
     self.login = log;
-    self.logoutButton.enabled = log;
+    self.logoutButton.enabled = YES;
+    //self.logoutButton.enabled = log;
     [self.window makeKeyAndOrderFront:nil];
 }
 
@@ -133,7 +169,7 @@
     [self.userField becomeFirstResponder];
 }
 
-#ifndef LOGIN
+#ifndef PREFERENCE_LOGIN
 
 #pragma mark - Login management
 
@@ -146,7 +182,10 @@
             // TODO: maybe alert an error occured
         }
     }
-    [GKAppDelegate.webController.webView reloadFromOrigin:nil];
+    GKAppDelegate.window.releasedWhenClosed = YES;
+    [GKAppDelegate.window close];
+    GKAppDelegate.window = nil;
+    [GKAppDelegate.webController activateWindow:nil];
 }
 
 #else

@@ -37,10 +37,6 @@
     [NSDef registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"WebKitDeveloperExtras"]];
 //#endif
     
-#ifdef DEBUG
-    [NSDef setObject:nil forKey:@"username"];
-#endif
-    
     if (!AXAPIEnabled()) {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"assiactivator" ofType:@"scpt"];
         NSURL *url = [NSURL fileURLWithPath:path];
@@ -62,6 +58,7 @@
     
     [GKHotKeyCenter sharedCenter];
 #ifndef IDEA
+    [self.prefController registerHotKeys];
     [self.webController activateWindow:nil];
 #else
     if (self.prefController.hasLogin)

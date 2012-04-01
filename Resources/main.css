@@ -1,8 +1,4 @@
-/*b#topnav {
-    display: block !important;
-    top:0!important;
-}
-*/
+
 
 
 
@@ -11,11 +7,11 @@ display: block !important;
 height: 72px !important;
 }
 
-#main {
+/*#main {
     top: 33px !important;
-}
+}*/
 
-#brandingBar, #skinTab, #promobox, div.toastContainer, .platformPromo, #footer, .contextual_help_container, div.tip_container, .cd_icon, div#videoContainer, #ad_container, div#brandingBar, #footer {
+#brandingBar, #skinTab, #promobox, .platformPromo, #footer, .contextual_help_container, div.tip_container, .cd_icon, div#videoPlayerContainer, #ad_container, div#brandingBar, #footer {
     display:none !important;
 }
 
@@ -37,8 +33,8 @@ div#mainContent{
 }
 
 div#mainContainer {
-    min-height: 578px !important;
-    height: 578px !important;
+    min-height: 608px !important;
+    height: 608px !important;
     overflow: hidden !important;
 }
 
@@ -75,6 +71,10 @@ div.homeRightSide {
     overflow-y: scroll !important;
 }
 
+div#mainContentContainer.contentContainer {
+    top: -57px !important;
+}
+
 div#adLayout, div#mainContentContainer {
     width: 800px !important;
 }
@@ -84,6 +84,7 @@ div.slidesForeground {
 }
 
 div.skinContainer {
+    top: -30px !important;
     height: 578px !important;
 }
 
@@ -116,8 +117,20 @@ div.info, div.buttons, div.shareButton {
 
 div.nowplaying > div.info {
     width: 242px !important;
+    margin-right: 5px !important;
 }
 
 div.contents > div.info {
     display: none !important;
+}
+
+div#shuffleIcon {
+    overflow: visible !important;
+    background-position: 49px 3px !important;
+    width: 100% !important;
+}
+
+.stationListItem .stationName .stationNameText, #shuffleIcon {
+    padding-left: 2px !important;
+    width: 174px !important;
 }

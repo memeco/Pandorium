@@ -19,41 +19,7 @@
 
 @synthesize webView;
 
-#pragma mark - Object life cycle
-
-- (void)awakeFromNib {
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(keyDownNotification:) name:KeyboardKeyDownNotification object:nil];
-}
-
-#pragma mark - HotKey Actions
-
-- (void)keyDownNotification:(NSNotification*)notif {
-#define SPACE_KEYCODE 49
-#define RIGHT_KEYCODE 124
-#define PLUS_KEYCODE 24 //Shift?
-#define MINUS_KEYCODE 27
-#define UP_KEYCODE 126
-#define DOWN_KEYCODE 125
-#define TAB_KEYCODE 56
-    GKHotKey *key = [notif.userInfo objectForKey:@"key"];
-    if ([key isPlayKey]) {
-        DLogFunc();
-        [self.webView keyClickWithKeyCode:SPACE_KEYCODE];
-    }
-    if ([key isNextKey]) {
-        DLogFunc();
-        [self.webView keyClickWithKeyCode:RIGHT_KEYCODE];
-    }
-    //if ([key isBackKey])
-    //    [self.webController.webView keyClickWithKeyCode:
-}
-
 #pragma mark - NSWindow setup methods
-
-//- (NSRect)manuallyCalculatedFrame {
-//    return GKAppDelegate.prefController.login ? NSMakeRect(0, 0, 800, 600) : NSMakeRect(0, 0, 584, 370);
-//}
 
 - (void)setupWindowScrolling {
     WebFrame *mainFrame = [self.webView mainFrame];
@@ -73,7 +39,9 @@
 
 - (IBAction)activateWindow:(id)sender {
     if (!GKAppDelegate.window) {
-        NSRect frame = NSMakeRect(0, 0, 800, 600);
+        int width = 800;
+        int height = 600;
+        NSRect frame = NSMakeRect(0, 0, width, height);
         NSUInteger styleMask = NSTitledWindowMask | NSClosableWindowMask | NSMiniaturizableWindowMask | NSResizableWindowMask;
         NSWindow *win = [[NSWindow alloc] initWithContentRect:frame styleMask:styleMask backing:NSBackingStoreBuffered defer:YES];
         win.collectionBehavior = NSWindowCollectionBehaviorFullScreenPrimary;
@@ -82,8 +50,9 @@
         win.autorecalculatesKeyViewLoop = FALSE;
         win.showsToolbarButton = FALSE;
         win.oneShot = FALSE;
-//        win.minSize = NSMakeSize(width, height);
-//        win.maxSize = NSMakeSize(width, height);
+        win.minSize = NSMakeSize(width, height);
+        win.maxSize = NSMakeSize(width, height);
+        win.delegate = self;
         win.title = @"Pandorium";
         win.allowsToolTipsWhenApplicationIsInactive = FALSE;
         
@@ -99,6 +68,7 @@
         webview.customUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/534.53.11 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10";
         //webview.customUserAgent = @"Mozilla/5.0 (Windows NT 6.1; Intel Mac OS X 10.6; rv:7.0.1) Gecko/20100101 Firefox/7.0.1";
         webview.mainFrameURL = @"https://www.pandora.com/#/account/sign-in";
+        
         WebPreferences* prefs = webview.preferences;
         [prefs _setLocalStorageDatabasePath:[PrefController localStoragePath]];
         [prefs setLocalStorageEnabled:YES];
@@ -114,9 +84,9 @@
         GKAppDelegate.window = win;
     }
     //[GKAppDelegate.window makeMainWindow];
-    [GKAppDelegate.window orderFront:self];
-    [self setupWindowScrolling];
-    //[GKAppDelegate.window makeKeyAndOrderFront:nil];
+    //[GKAppDelegate.window orderFront:self];
+    //[self setupWindowScrolling];
+    [GKAppDelegate.window makeKeyAndOrderFront:nil];
 }
 
 #pragma mark - NSWindow delegate methods
@@ -136,20 +106,20 @@
     //DLogObject(frame);
     //DLogFunc();
 }*/
-
+#ifdef IDEA
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
 //    DLogObject(frame.name);
 //    DLogFunc();
 //    DLogObject(frame.DOMDocument.title);
     
     if ([frame.name isEqualToString:@"google_adwords_frame"]) {
-        NSString *splashCSSPath = [[NSBundle mainBundle] pathForResource:@"splash" ofType:@"css"];
-        NSString *splashCSS = [NSString stringWithContentsOfFile:splashCSSPath encoding:NSUTF8StringEncoding error:nil];
-        NSString *safeCSS = [splashCSS stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        NSString *cssPath = [[NSBundle mainBundle] pathForResource:@"login" ofType:@"css"];
+        NSString *css = [NSString stringWithContentsOfFile:cssPath encoding:NSUTF8StringEncoding error:nil];
+        NSString *safeCSS = [css stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         
-        NSString *splashPath = [[NSBundle mainBundle] pathForResource:@"splash" ofType:@"js"];
-        NSString *splashJS = [NSString stringWithContentsOfFile:splashPath encoding:NSUTF8StringEncoding error:nil];
-        NSString *finalJS = [splashJS stringByReplacingOccurrencesOfString:@"%%CSS%%" withString:safeCSS];
+        NSString *jsPath = [[NSBundle mainBundle] pathForResource:@"login" ofType:@"js"];
+        NSString *js = [NSString stringWithContentsOfFile:splashPath encoding:NSUTF8StringEncoding error:nil];
+        NSString *finalJS = [js stringByReplacingOccurrencesOfString:@"%%CSS%%" withString:safeCSS];
         
         //DStart(1);
         //[self.webView stringByEvaluatingJavaScriptFromString:finalJS];
@@ -166,7 +136,7 @@
         }];
     }*/
 }
-
+#endif
 /*- (void)webView:(WebView *)sender willPerformClientRedirectToURL:(NSURL *)URL delay:(NSTimeInterval)seconds fireDate:(NSDate *)date forFrame:(WebFrame *)frame {
     //DLogObject(URL);
     //DLogINT(seconds);
@@ -180,6 +150,7 @@
 #pragma mark - WebViewResourceLoad delegate methods
 
 - (id)webView:(WebView *)sender identifierForInitialRequest:(NSURLRequest *)request fromDataSource:(WebDataSource *)dataSource {
+    [self setupWindowScrolling];
     //DLogObject(request.URL.description);
     
     /*if ([request.URL.description isEqualToString:@"https://www.pandora.com/#/account/sign-in"]) {
@@ -200,9 +171,8 @@
     
     // trigger login page style
     if ([request.URL.description isEqualToString:@"about:blank"]) {
-        [self setupWindowScrolling];
         
-//#ifdef IDEA
+#ifdef IDEA
         NSString *jsPath = [[NSBundle mainBundle] pathForResource:@"login" ofType:@"js"];
         NSString *js = [NSString stringWithContentsOfFile:jsPath encoding:NSUTF8StringEncoding error:nil];
         
@@ -212,8 +182,8 @@
         NSString *escapedcss = [cleancss stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
         NSString *jsfinal = [js stringByReplacingOccurrencesOfString:@"%%CSS%%" withString:escapedcss];
         
-        //[self.webView stringByEvaluatingJavaScriptFromString:jsfinal];
-//#endif
+        [self.webView stringByEvaluatingJavaScriptFromString:jsfinal];
+#endif
 #ifdef MANUAL_SIGNIN
         NSString *signinPath = [[NSBundle mainBundle] pathForResource:@"signin" ofType:@"js"];
         NSString *signinJS = [NSString stringWithContentsOfFile:signinPath encoding:NSUTF8StringEncoding error:nil];
@@ -330,23 +300,24 @@
 //}
 
 #pragma mark - WebViewPolicy delegate methods
-/*
+
 - (void)webView:(WebView *)sender decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
-    DLogObject([request URL]);
-    if ([[request URL] isEqual:[NSURL URLWithString:@"https://www.pandora.com/#/account/sign-in"]] 
-        || [[request URL] isEqual:[NSURL URLWithString:@"https://www.pandora.com/#"]]
-        || [[request URL] isEqual:[NSURL URLWithString:@"about:blank"]]) {
-        // https://www.pandora.com/#!/music/artist/above+beyond
-        // https://www.pandora.com/#!/stations/play/809599613637087712
-//        // facebook https://s-static.ak.fbcdn.net/connect/xd_proxy.php#cb=f6f47c0a&origin=https%3A%2F%2Fwww.pandora.com%2Ffa31e05bc&relation=parent&transport=postmessage&frame=f1821770d4&error=unknown_user
+    NSURL *url = [request URL];
+    NSString *str = [url absoluteString];
+    //DLogObject(url);
+    if ([url.host hasSuffix:@"pandora.com"] || url.host.length == 0) {
+        if ([str hasPrefix:@"https://www.pandora.com/#!/music"] ||
+            [str hasPrefix:@"https://www.pandora.com/#/stations/edit"] ||
+            [str hasPrefix:@"https://www.pandora.com/#!/stations/edit"] ||
+            [str hasPrefix:@"https://www.pandora.com/#!/genres"]) {
+            [listener ignore];
+            //[NSApp openURL:url];
+            return;
+        }
         [listener use];
-    } else {
-        [listener ignore];
+        return;
     }
-    if ([[request URL]) {
-        [[NSWorkspace sharedWorkspace] openURL:[request URL]];
-    }
+    [listener ignore];
 }
-*/
 
 @end

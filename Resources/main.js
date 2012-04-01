@@ -4,11 +4,8 @@ if(document.getElementById('pandoriumStyle') === null) {
     style.innerHTML = "%%CSS%%";
     document.body.appendChild(style);
 }
-var oldstyle = document.getElementById('pandoriumLoginStyle');
+var oldstyle = document.getElementById('loginStyle');
 if (oldstyle !== null) {
     oldstyle.parentElement.removeChild(oldstyle);
 }
-var oldstyle = document.getElementById('splashStyle');
-if (oldstyle !== null) {
-    oldstyle.parentElement.removeChild(oldstyle);
-}
+document.getElementsByName('email')[0].focus();

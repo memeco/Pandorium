@@ -1,10 +1,6 @@
-if(document.getElementById('pandoriumLoginStyle') === null) {
+if(document.getElementById('loginStyle') === null) {
     var style = document.createElement('style');
-    style.setAttribute('id','pandoriumLoginStyle');
-    style.innerHTML = "%%CSS%%";
+    style.setAttribute('id','loginStyle');
+    style.innerHTML = '%%CSS%%';
     document.body.appendChild(style);
-}
-var oldstyle = document.getElementById('splashStyle');
-if (oldstyle !== null) {
-    oldstyle.parentElement.removeChild(oldstyle);
 }
