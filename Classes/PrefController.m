@@ -166,7 +166,15 @@
 #pragma mark - NSWindow delegate methods
 
 - (void)windowDidBecomeMain:(NSNotification *)notification {
-    [self.userField becomeFirstResponder];
+    //[self.logoutButton becomeFirstResponder];
+}
+
+- (void)windowDidResignMain:(NSNotification *)notification {
+    [self.showHideView resignFirstResponder];
+    [self.playPauseView resignFirstResponder];
+    [self.nextTrackView resignFirstResponder];
+    [self.thumbsUpView resignFirstResponder];
+    [self.thumbsDownView resignFirstResponder];
 }
 
 #ifndef PREFERENCE_LOGIN
