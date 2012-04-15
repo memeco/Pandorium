@@ -12,6 +12,8 @@
 		9A2036A1151FD29100B75431 /* login.js in Resources */ = {isa = PBXBuildFile; fileRef = 9AE4A72C151C352C00E8AA2A /* login.js */; };
 		9A2036A3151FD29400B75431 /* signin.js in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5FA11518125700255F96 /* signin.js */; };
 		9A2036A4151FD29500B75431 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F981518125700255F96 /* main.js */; };
+		9A20526A1536C55300A66833 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2052691536C55300A66833 /* QuartzCore.framework */; };
+		9A20526E1536CA0200A66833 /* HUDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20526D1536CA0200A66833 /* HUDController.m */; };
 		9A28CFBC1519A5DB0024A36B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A28CFBB1519A5DB0024A36B /* Security.framework */; };
 		9A467225152105C200918F2E /* PrefController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A467224152105C200918F2E /* PrefController.m */; };
 		9A467229152105DD00918F2E /* WebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A467228152105DD00918F2E /* WebController.m */; };
@@ -69,6 +71,9 @@
 /* Begin PBXFileReference section */
 		9A20369C151FD0E100B75431 /* View+GKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+GKAdditions.h"; sourceTree = "<group>"; };
 		9A20369D151FD0E100B75431 /* View+GKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+GKAdditions.m"; sourceTree = "<group>"; };
+		9A2052691536C55300A66833 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9A20526C1536CA0200A66833 /* HUDController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HUDController.h; path = Classes/HUDController.h; sourceTree = SOURCE_ROOT; };
+		9A20526D1536CA0200A66833 /* HUDController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HUDController.m; path = Classes/HUDController.m; sourceTree = SOURCE_ROOT; };
 		9A28CFBB1519A5DB0024A36B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9A467223152105C200918F2E /* PrefController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefController.h; path = Classes/PrefController.h; sourceTree = SOURCE_ROOT; };
 		9A467224152105C200918F2E /* PrefController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrefController.m; path = Classes/PrefController.m; sourceTree = SOURCE_ROOT; };
@@ -139,14 +144,6 @@
 		9AC9FC55151819DE00B0205D /* Pandorium-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Pandorium-Prefix.pch"; path = "Pandorium/Pandorium-Prefix.pch"; sourceTree = "<group>"; };
 		9AE4A720151C2D7500E8AA2A /* login.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = login.css; path = Resources/login.css; sourceTree = "<group>"; };
 		9AE4A72C151C352C00E8AA2A /* login.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = login.js; path = Resources/login.js; sourceTree = "<group>"; };
-		9AE729E01536C020003644E1 /* ISHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ISHAppDelegate.h; path = isHUD/isHUD/ISHAppDelegate.h; sourceTree = "<group>"; };
-		9AE729E11536C020003644E1 /* ISHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ISHAppDelegate.m; path = isHUD/isHUD/ISHAppDelegate.m; sourceTree = "<group>"; };
-		9AE729E21536C020003644E1 /* ISHAppDelegate+.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ISHAppDelegate+.h"; path = "isHUD/isHUD/ISHAppDelegate+.h"; sourceTree = "<group>"; };
-		9AE729E31536C020003644E1 /* ISHAppDelegate+HotKey.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ISHAppDelegate+HotKey.m"; path = "isHUD/isHUD/ISHAppDelegate+HotKey.m"; sourceTree = "<group>"; };
-		9AE729E41536C020003644E1 /* ISHDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ISHDefaults.h; path = isHUD/isHUD/ISHDefaults.h; sourceTree = "<group>"; };
-		9AE729E51536C020003644E1 /* ISHKeyCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ISHKeyCode.h; path = isHUD/isHUD/ISHKeyCode.h; sourceTree = "<group>"; };
-		9AE729E61536C020003644E1 /* ISHPreferencesWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ISHPreferencesWindowController.h; path = isHUD/isHUD/ISHPreferencesWindowController.h; sourceTree = "<group>"; };
-		9AE729E71536C020003644E1 /* ISHPreferencesWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ISHPreferencesWindowController.m; path = isHUD/isHUD/ISHPreferencesWindowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A20526A1536C55300A66833 /* QuartzCore.framework in Frameworks */,
 				9A5866C215251B4200B74001 /* libsqlite3.dylib in Frameworks */,
 				9A28CFBC1519A5DB0024A36B /* Security.framework in Frameworks */,
 				9A4C5F901518122C00255F96 /* ApplicationServices.framework in Frameworks */,
@@ -273,7 +271,6 @@
 				9A4C5FB11518125C00255F96 /* Resources */,
 				9A4C5FF4151817B500255F96 /* GKKit */,
 				9A9280BC151E6432009803E2 /* jQueryDrag */,
-				9AE729E91536C026003644E1 /* isHUD */,
 				9A9824B214FF30F9003177DF /* PandoriumTests */,
 				9A98248E14FF30F9003177DF /* Frameworks */,
 				9A98248C14FF30F9003177DF /* Products */,
@@ -292,6 +289,7 @@
 		9A98248E14FF30F9003177DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A2052691536C55300A66833 /* QuartzCore.framework */,
 				9A5866C115251B4200B74001 /* libsqlite3.dylib */,
 				9A28CFBB1519A5DB0024A36B /* Security.framework */,
 				9A4C5F8F1518122C00255F96 /* ApplicationServices.framework */,
@@ -312,6 +310,8 @@
 				9A467224152105C200918F2E /* PrefController.m */,
 				9A467227152105DD00918F2E /* WebController.h */,
 				9A467228152105DD00918F2E /* WebController.m */,
+				9A20526C1536CA0200A66833 /* HUDController.h */,
+				9A20526D1536CA0200A66833 /* HUDController.m */,
 				9A4C5FE8151812FA00255F96 /* Supporting Files */,
 			);
 			path = Pandorium;
@@ -334,21 +334,6 @@
 				9A9824B514FF30F9003177DF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9AE729E91536C026003644E1 /* isHUD */ = {
-			isa = PBXGroup;
-			children = (
-				9AE729E01536C020003644E1 /* ISHAppDelegate.h */,
-				9AE729E11536C020003644E1 /* ISHAppDelegate.m */,
-				9AE729E21536C020003644E1 /* ISHAppDelegate+.h */,
-				9AE729E31536C020003644E1 /* ISHAppDelegate+HotKey.m */,
-				9AE729E41536C020003644E1 /* ISHDefaults.h */,
-				9AE729E51536C020003644E1 /* ISHKeyCode.h */,
-				9AE729E61536C020003644E1 /* ISHPreferencesWindowController.h */,
-				9AE729E71536C020003644E1 /* ISHPreferencesWindowController.m */,
-			);
-			name = isHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,6 +477,7 @@
 				9A467225152105C200918F2E /* PrefController.m in Sources */,
 				9A467229152105DD00918F2E /* WebController.m in Sources */,
 				9AB8C95F1521098000236AF8 /* AppDelegate.m in Sources */,
+				9A20526E1536CA0200A66833 /* HUDController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

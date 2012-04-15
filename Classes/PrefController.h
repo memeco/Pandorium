@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
 #import "GKHotKeyView.h"
+#import "HUDController.h"
 
 @class SSKeychain, GKHotKeyView;
 

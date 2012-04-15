@@ -66,6 +66,8 @@
     else
         [self.prefController activateWindow:nil];
 #endif
+    
+    //[[HUDController sharedController] fadeInHud];
 }
 
 /*-(void)awakeFromNib{

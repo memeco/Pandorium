@@ -25,6 +25,7 @@
 @synthesize thumbsDownView;
 @synthesize login;
 
+
 #pragma mark - Object life cycle
 
 + (NSString*)localStoragePath {
@@ -104,18 +105,24 @@
             return YES;
         }
         if ([key isEqual:playPause]) {
-            if (!state)
+            if (!state) {
+                [[HUDController sharedController] fadeInHudKey:key];
                 [view keyClickWithKeyCode:SPACE_KEYCODE];
+            }
             return YES;
         }
         if ([key isEqual:nextTrack]) {
-            if (!state)
+            if (!state) {
+                [[HUDController sharedController] fadeInHudKey:key];
                 [view keyClickWithKeyCode:RIGHT_KEYCODE];
+            }
             return YES;
         }
         if ([key isEqual:thumbsUp]) {
-            if (!state)
+            if (!state) {
+                [[HUDController sharedController] fadeInHudKey:key];
                 [view keyClickWithKeyCode:PLUS_KEYCODE modifier:SHIFT_KEYCODE];
+            }
             return YES;
         }
         if ([key isEqual:thumbsDown]) {
