@@ -294,7 +294,7 @@ MAKE_SINGLETON(HUDController, sharedController)
             [self.isName setFrame:labelFrame];
         }
         
-        NSRect r = [nsStr boundingRectWithSize:self.isName.frame.size options:0];
+        //NSRect r = [nsStr boundingRectWithSize:self.isName.frame.size options:0];
         /*if (key.isPlayKey) {
             CGRect labelFrame = [self.isName frame];
             labelFrame.origin.y = HUD_VERTICAL_MARGIN + 25;
@@ -304,7 +304,7 @@ MAKE_SINGLETON(HUDController, sharedController)
         
         [self.isName.textStorage setAttributedString:nsStr];
         
-        DLogFLOAT(r.size.height);
+        //DLogFLOAT(r.size.height);
 #endif
         
         
