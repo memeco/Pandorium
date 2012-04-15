@@ -2,5 +2,4 @@
 - (TEXT "P")(Drop Shadow)
 - (BG)(Inner Shadow)
 - (BG)(Outer Glow)
-- (BG)(Inner Glow)
 - (BG)(Bevel And Emboss)
