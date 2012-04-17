@@ -11,7 +11,7 @@ height: 72px !important;
     top: 33px !important;
 }*/
 
-#brandingBar, #skinTab, #promobox, .platformPromo, #footer, .contextual_help_container, div.tip_container, .cd_icon, div#videoPlayerContainer, #ad_container, div#brandingBar, #footer {
+#brandingBar, #skinTab, #promobox, .platformPromo, .contextual_help_container, div.tip_container, .cd_icon, div#videoPlayerContainer, #ad_container, #footer, div.contents > div.info, div.welcome_content > p.firstLine, div.btn_content > div.signin {
     display:none !important;
 }
 
@@ -118,10 +118,6 @@ div.info, div.buttons, div.shareButton {
 div.nowplaying > div.info {
     width: 242px !important;
     margin-right: 5px !important;
-}
-
-div.contents > div.info {
-    display: none !important;
 }
 
 div#shuffleIcon {
