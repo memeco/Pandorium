@@ -130,3 +130,42 @@ div#shuffleIcon {
     padding-left: 2px !important;
     width: 174px !important;
 }
+
+/* ADJUSTING ALBUM ART SIZE */
+div#currentSlideArrow {
+margin-right: 218px !important; 
+}
+
+div.slidesBackground > div {
+    height: 457px !important;
+}
+
+div.slidesForeground > div.slides {
+    height: 450px !important;
+    margin-top: -481px !important;
+}
+
+div.slides > div.stationSlides {
+    width: 2859px !important;
+    left: -1800px !important;
+}
+
+div.stationSlides > div.slide {
+    height: 450px !important;
+    width: 450px !important;
+}
+
+div.stationSlides > div.slide > img {
+    height: 135px !important;
+    width: 360px !important;
+    right: 509px !important;
+}
+
+div.stationSlides > div.slide > div > img {
+    width: 450px !important;
+    height: 450px !important;
+}
+
+div#trackInfo {
+    display: none !important;
+}

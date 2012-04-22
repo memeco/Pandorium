@@ -305,7 +305,7 @@
 - (void)webView:(WebView *)sender decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
     NSURL *url = [request URL];
     NSString *str = [url absoluteString];
-    //DLogObject(url);
+    DLogObject(url);
     if ([url.host hasSuffix:@"pandora.com"] || url.host.length == 0) {
         if ([str hasPrefix:@"https://www.pandora.com/#!/music"] ||
             [str hasPrefix:@"https://www.pandora.com/#/stations/edit"] ||

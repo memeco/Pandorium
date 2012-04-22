@@ -96,7 +96,7 @@
         DLogObject(showHide);
         if ([key isEqual:showHide]) {
             if (!state) {
-                if ([NSApp isHidden]) {
+                if (![[NSWorkspace sharedWorkspace].frontmostApplication.bundleIdentifier isEqualToString:[NSBundle mainBundle].bundleIdentifier]) {
                     [NSApp activateIgnoringOtherApps:YES];
                 } else {
                     [NSApp hide:nil];
