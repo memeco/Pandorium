@@ -28,9 +28,9 @@
         if ([subview isKindOfClass:$(WebDynamicScrollBarsView)]) {
             [subview setVerticalScrollElasticity:NSScrollElasticityNone];
             [subview setHorizontalScrollElasticity:NSScrollElasticityNone];
-            [subview setAutohidesScrollers:YES];
-            [[subview horizontalScroller] setScrollerStyle:NSScrollerStyleOverlay];
-            [[subview verticalScroller] setScrollerStyle:NSScrollerStyleOverlay];
+            //[subview setAutohidesScrollers:YES];
+            //[[subview horizontalScroller] setScrollerStyle:NSScrollerStyleOverlay];
+            //[[subview verticalScroller] setScrollerStyle:NSScrollerStyleOverlay];
         }
     }
 }
@@ -86,7 +86,7 @@
     }
     //[GKAppDelegate.window makeMainWindow];
     //[GKAppDelegate.window orderFront:self];
-    //[self setupWindowScrolling];
+    [self setupWindowScrolling];
     [GKAppDelegate.window makeKeyAndOrderFront:nil];
 }
 

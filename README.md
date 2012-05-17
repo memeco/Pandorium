@@ -1,6 +1,6 @@
 ## What is this?
 
-**Pandorium**: The best pandora.com app for Lion.
+**Pandorium**: The best pandora.com app for OS X.
 
 ## What can I do with this?
 
@@ -13,11 +13,14 @@ Purchase a cheap version conveniently on the [Mac App Store](http://itunes.apple
 ## Changelog
 
 ### 2.1:
-- Growl Support
-- Defaulted large album art
-- Fixed page linking bug
-- Fixed play/pause no response bug
-- Fixed show/hide inverse bug
++ Growl Support
++ Defaulted large album art
++ Cleaned up info pane below album art -
+- Fixed navigating away trap bug
+- Fixed media key not respond bug
+- Fixed window appearing with hud bug
+- Fixed show/hide inverse bug -
+- Fixed scrollbar bug -
 
 ### 2.0:
-- Pandora HTML5 Support
++ Pandora HTML5 Support
