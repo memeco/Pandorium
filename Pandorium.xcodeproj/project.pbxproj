@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		9A20369E151FD0E100B75431 /* View+GKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20369D151FD0E100B75431 /* View+GKAdditions.m */; };
 		9A2036A0151FD28500B75431 /* albumart.js in Resources */ = {isa = PBXBuildFile; fileRef = 9A9280B8151E6419009803E2 /* albumart.js */; };
-		9A2036A1151FD29100B75431 /* login.js in Resources */ = {isa = PBXBuildFile; fileRef = 9AE4A72C151C352C00E8AA2A /* login.js */; };
-		9A2036A3151FD29400B75431 /* signin.js in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5FA11518125700255F96 /* signin.js */; };
 		9A2036A4151FD29500B75431 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 9A4C5F981518125700255F96 /* main.js */; };
 		9A20526A1536C55300A66833 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2052691536C55300A66833 /* QuartzCore.framework */; };
 		9A20526E1536CA0200A66833 /* HUDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A20526D1536CA0200A66833 /* HUDController.m */; };
@@ -44,7 +42,6 @@
 		9A542A57151B36D000910C77 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 9A542A56151B36D000910C77 /* COPYING */; };
 		9A5866C215251B4200B74001 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5866C115251B4200B74001 /* libsqlite3.dylib */; };
 		9A8D48091521870100B824E4 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A8D48081521870100B824E4 /* Defaults.plist */; };
-		9A9280BD151E6440009803E2 /* jquery.simulate.drag-sortable.js in Resources */ = {isa = PBXBuildFile; fileRef = 9A9280BA151E6427009803E2 /* jquery.simulate.drag-sortable.js */; };
 		9A95C66C1521BAF000F18D34 /* assiactivator.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 9A95C66B1521BAF000F18D34 /* assiactivator.scpt */; };
 		9A98249014FF30F9003177DF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A98248F14FF30F9003177DF /* Cocoa.framework */; };
 		9A9824AE14FF30F9003177DF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9824AD14FF30F9003177DF /* SenTestingKit.framework */; };
@@ -55,7 +52,6 @@
 		9A9824C71500358B003177DF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9824C61500358B003177DF /* SystemConfiguration.framework */; };
 		9AB8C95F1521098000236AF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB8C95D1521096500236AF8 /* AppDelegate.m */; };
 		9AB8C9601521099D00236AF8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A46722D1521083600918F2E /* MainMenu.xib */; };
-		9AE4A721151C2D7500E8AA2A /* login.css in Resources */ = {isa = PBXBuildFile; fileRef = 9AE4A720151C2D7500E8AA2A /* login.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +85,6 @@
 		9A4C5F9E1518125700255F96 /* prefs_appearance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prefs_appearance.png; path = Resources/prefs_appearance.png; sourceTree = "<group>"; };
 		9A4C5F9F1518125700255F96 /* prefs_features.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prefs_features.png; path = Resources/prefs_features.png; sourceTree = "<group>"; };
 		9A4C5FA01518125700255F96 /* prefs_keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prefs_keyboard.png; path = Resources/prefs_keyboard.png; sourceTree = "<group>"; };
-		9A4C5FA11518125700255F96 /* signin.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = signin.js; path = Resources/signin.js; sourceTree = "<group>"; };
 		9A4C5FA21518125700255F96 /* status_icon_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon_disabled.png; path = Resources/status_icon_disabled.png; sourceTree = "<group>"; };
 		9A4C5FA31518125700255F96 /* status_icon_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon_highlighted.png; path = Resources/status_icon_highlighted.png; sourceTree = "<group>"; };
 		9A4C5FA41518125700255F96 /* status_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon.png; path = Resources/status_icon.png; sourceTree = "<group>"; };
@@ -128,7 +123,6 @@
 		9A5866C115251B4200B74001 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/local/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		9A8D48081521870100B824E4 /* Defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = Defaults.plist; path = Resources/Defaults.plist; sourceTree = "<group>"; };
 		9A9280B8151E6419009803E2 /* albumart.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = albumart.js; path = Resources/albumart.js; sourceTree = "<group>"; };
-		9A9280BA151E6427009803E2 /* jquery.simulate.drag-sortable.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "jquery.simulate.drag-sortable.js"; path = "jquery.simulate.drag-sortable.js/jquery.simulate.drag-sortable.js"; sourceTree = "<group>"; };
 		9A95C66B1521BAF000F18D34 /* assiactivator.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; name = assiactivator.scpt; path = Resources/assiactivator.scpt; sourceTree = "<group>"; };
 		9A98248B14FF30F9003177DF /* Pandorium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pandorium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A98248F14FF30F9003177DF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -142,8 +136,6 @@
 		9A9824C61500358B003177DF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9AB8C95D1521096500236AF8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = SOURCE_ROOT; wrapsLines = 1; };
 		9AC9FC55151819DE00B0205D /* Pandorium-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Pandorium-Prefix.pch"; path = "Pandorium/Pandorium-Prefix.pch"; sourceTree = "<group>"; };
-		9AE4A720151C2D7500E8AA2A /* login.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = login.css; path = Resources/login.css; sourceTree = "<group>"; };
-		9AE4A72C151C352C00E8AA2A /* login.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = login.js; path = Resources/login.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,9 +183,6 @@
 				9A46722A1521083600918F2E /* en.lproj */,
 				9A9280B8151E6419009803E2 /* albumart.js */,
 				9A542A56151B36D000910C77 /* COPYING */,
-				9AE4A720151C2D7500E8AA2A /* login.css */,
-				9AE4A72C151C352C00E8AA2A /* login.js */,
-				9A4C5FA11518125700255F96 /* signin.js */,
 				9A4C5F971518125700255F96 /* main.css */,
 				9A4C5F981518125700255F96 /* main.js */,
 				9A4C5F9D1518125700255F96 /* Icon.icns */,
@@ -256,21 +245,12 @@
 			path = GKKit;
 			sourceTree = "<group>";
 		};
-		9A9280BC151E6432009803E2 /* jQueryDrag */ = {
-			isa = PBXGroup;
-			children = (
-				9A9280BA151E6427009803E2 /* jquery.simulate.drag-sortable.js */,
-			);
-			name = jQueryDrag;
-			sourceTree = "<group>";
-		};
 		9A98248014FF30F8003177DF = {
 			isa = PBXGroup;
 			children = (
 				9A98249514FF30F9003177DF /* Pandorium */,
 				9A4C5FB11518125C00255F96 /* Resources */,
 				9A4C5FF4151817B500255F96 /* GKKit */,
-				9A9280BC151E6432009803E2 /* jQueryDrag */,
 				9A9824B214FF30F9003177DF /* PandoriumTests */,
 				9A98248E14FF30F9003177DF /* Frameworks */,
 				9A98248C14FF30F9003177DF /* Products */,
@@ -411,17 +391,13 @@
 				9A4C5FAA1518125700255F96 /* prefs_appearance.png in Resources */,
 				9A2036A4151FD29500B75431 /* main.js in Resources */,
 				9A4C5FAB1518125700255F96 /* prefs_features.png in Resources */,
-				9A2036A1151FD29100B75431 /* login.js in Resources */,
 				9A4C5FAC1518125700255F96 /* prefs_keyboard.png in Resources */,
 				9A4C5FAE1518125700255F96 /* status_icon_disabled.png in Resources */,
-				9A2036A3151FD29400B75431 /* signin.js in Resources */,
 				9A4C5FAF1518125700255F96 /* status_icon_highlighted.png in Resources */,
 				9A4C5FA51518125700255F96 /* main.css in Resources */,
 				9A4C5FB01518125700255F96 /* status_icon.png in Resources */,
 				9A4C6021151817B500255F96 /* README.md in Resources */,
 				9A542A57151B36D000910C77 /* COPYING in Resources */,
-				9A9280BD151E6440009803E2 /* jquery.simulate.drag-sortable.js in Resources */,
-				9AE4A721151C2D7500E8AA2A /* login.css in Resources */,
 				9A46722F1521083600918F2E /* InfoPlist.strings in Resources */,
 				9AB8C9601521099D00236AF8 /* MainMenu.xib in Resources */,
 				9A8D48091521870100B824E4 /* Defaults.plist in Resources */,
