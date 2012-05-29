@@ -24,6 +24,11 @@
 @synthesize thumbsUpView;
 @synthesize thumbsDownView;
 @synthesize login;
+@synthesize showHideKey;
+@synthesize nextTrackKey;
+@synthesize playPauseKey;
+@synthesize thumbsUpKey;
+@synthesize thumbsDownKey;
 
 
 #pragma mark - Object life cycle
@@ -48,25 +53,35 @@
     [NSNtf addObserver:self selector:@selector(hotKeyViewChange:) name:GKHotKeyViewChangeNotification object:nil];
     
     // TODO: mad refactoring
-    GKHotKey *showHide = NSDefObj(@"showHideKey");
-    GKHotKey *playPause = NSDefObj(@"playPauseKey");
-    GKHotKey *nextTrack = NSDefObj(@"nextTrackKey");
+    self.showHideKey = NSDefObj(@"showHideKey");
+    self.playPauseKey = NSDefObj(@"playPauseKey");
+    self.nextTrackKey = NSDefObj(@"nextTrackKey");
     //GKHotKey *nextStation = NSDefObj(@"nextStationKey");
-    GKHotKey *thumbsUp = NSDefObj(@"thumbsUpKey");
-    GKHotKey *thumbsDown = NSDefObj(@"thumbsDownKey");
+    self.thumbsUpKey = NSDefObj(@"thumbsUpKey");
+    self.thumbsDownKey = NSDefObj(@"thumbsDownKey");
     
-    if (showHide)
-        self.showHideView.hotkey = showHide;
-    if (playPause)
-        self.playPauseView.hotkey = playPause;
-    if (nextTrack)
-        self.nextTrackView.hotkey = nextTrack;
+    if (self.showHideKey) {
+        self.showHideView.hotkey = self.showHideKey;
+        //[[GKHotKeyCenter sharedCenter] registerKey:self.showHideKey];
+    }
+    if (self.playPauseKey) {
+        self.playPauseView.hotkey = self.playPauseKey;
+        //[[GKHotKeyCenter sharedCenter] registerKey:self.playPauseKey];
+    }
+    if (self.nextTrackKey) {
+        self.nextTrackView.hotkey = self.nextTrackKey;
+        //[[GKHotKeyCenter sharedCenter] registerKey:self.nextTrackKey];
+    }
     //if (nextStation)
     //    self.nextStationView.hotkey = nextStation;
-    if (thumbsUp)
-        self.thumbsUpView.hotkey = thumbsUp;
-    if (thumbsDown)
-        self.thumbsDownView.hotkey = thumbsDown;
+    if (self.thumbsUpKey) {
+        self.thumbsUpView.hotkey = self.thumbsUpKey;
+        //[[GKHotKeyCenter sharedCenter] registerKey:self.thumbsUpKey];
+    }
+    if (self.thumbsUpKey) {
+        self.thumbsDownView.hotkey = self.thumbsDownKey;
+        //[[GKHotKeyCenter sharedCenter] registerKey:self.thumbsDownKey];
+    }
     
 }
 
@@ -84,17 +99,17 @@
         WebView *view = GKAppDelegate.webController.webView;
        
         // TODO: mad refactoring
-        GKHotKey *showHide = NSDefObj(@"showHideKey");
-        GKHotKey *playPause = NSDefObj(@"playPauseKey");
-        GKHotKey *nextTrack = NSDefObj(@"nextTrackKey");
+        //GKHotKey *showHide = NSDefObj(@"showHideKey");
+        //GKHotKey *playPause = NSDefObj(@"playPauseKey");
+        //GKHotKey *nextTrack = NSDefObj(@"nextTrackKey");
         //GKHotKey *nextStation = NSDefObj(@"nextStationKey");
-        GKHotKey *thumbsUp = NSDefObj(@"thumbsUpKey");
-        GKHotKey *thumbsDown = NSDefObj(@"thumbsDownKey");
+        //GKHotKey *thumbsUp = NSDefObj(@"thumbsUpKey");
+        //GKHotKey *thumbsDown = NSDefObj(@"thumbsDownKey");
         
         //DLogObject(ke
         
-        DLogObject(showHide);
-        if ([key isEqual:showHide]) {
+        //DLogObject(showHide);
+        if ([key isEqual:self.showHideKey]) {
             if (!state) {
                 if (![[NSWorkspace sharedWorkspace].frontmostApplication.bundleIdentifier isEqualToString:[NSBundle mainBundle].bundleIdentifier]) {
                     [NSApp activateIgnoringOtherApps:YES];
@@ -104,28 +119,28 @@
             }
             return YES;
         }
-        if ([key isEqual:playPause]) {
+        if ([key isEqual:self.playPauseKey]) {
             if (!state) {
                 [[HUDController sharedController] fadeInHudKey:key];
                 [view keyClickWithKeyCode:SPACE_KEYCODE];
             }
             return YES;
         }
-        if ([key isEqual:nextTrack]) {
+        if ([key isEqual:self.nextTrackKey]) {
             if (!state) {
                 [[HUDController sharedController] fadeInHudKey:key];
                 [view keyClickWithKeyCode:RIGHT_KEYCODE];
             }
             return YES;
         }
-        if ([key isEqual:thumbsUp]) {
+        if ([key isEqual:self.thumbsUpKey]) {
             if (!state) {
                 [[HUDController sharedController] fadeInHudKey:key];
                 [view keyClickWithKeyCode:PLUS_KEYCODE modifier:SHIFT_KEYCODE];
             }
             return YES;
         }
-        if ([key isEqual:thumbsDown]) {
+        if ([key isEqual:self.thumbsDownKey]) {
             if (!state)
                 [view keyClickWithKeyCode:MINUS_KEYCODE modifier:SHIFT_KEYCODE];
             return YES;
@@ -313,21 +328,26 @@
     GKHotKeyView *view = notif.object;
     if ([view isEqual:self.showHideView]) {
         [self anonConv:@"showHideKey" view:view];
+        //self.showHideKey = view.hotkey;
     }
     if ([view isEqual:self.playPauseView]) {
         [self anonConv:@"playPauseKey" view:view];
+        //self.playPauseKey = view.hotkey;
     }
     if ([view isEqual:self.nextTrackView]) {
         [self anonConv:@"nextTrackKey" view:view];
+        //self.nextTrackKey = view.hotkey;
     }
     //if ([view isEqual:self.nextStationView]) {
     //    [NSDef setObject:[NSKeyedArchiver archivedDataWithRootObject:view.hotkey] forKey:@"nextStationKey"];
     //}
     if ([view isEqual:self.thumbsUpView]) {
         [self anonConv:@"thumbsUpKey" view:view];
+        //self.thumbsUpKey = view.hotkey;
     }
     if ([view isEqual:self.thumbsDownView]) {
         [self anonConv:@"thumbsDownKey" view:view];
+        //self.thumbsDownKey = view.hotkey;
     }
 }
 

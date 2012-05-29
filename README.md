@@ -21,6 +21,7 @@ Purchase a cheap version conveniently on the [Mac App Store](http://itunes.apple
 - Fixed window appearing with hud bug
 - Fixed show/hide inverse bug -
 - Fixed scrollbar bug -
+- Fixed high cpu usage bug
 
 ### 2.0:
 + Pandora HTML5 Support

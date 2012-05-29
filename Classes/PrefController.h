@@ -29,6 +29,12 @@
 
 @property (nonatomic, assign, getter=hasLogin) BOOL login;
 
+@property (nonatomic, strong) GKHotKey *showHideKey;
+@property (nonatomic, strong) GKHotKey *playPauseKey;
+@property (nonatomic, strong) GKHotKey *nextTrackKey;
+@property (nonatomic, strong) GKHotKey *thumbsUpKey;
+@property (nonatomic, strong) GKHotKey *thumbsDownKey;
+
 + (NSString*)localStoragePath;
 + (NSString*)databasePath;
 
