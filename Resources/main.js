@@ -9,3 +9,7 @@ if (oldstyle !== null) {
     oldstyle.parentElement.removeChild(oldstyle);
 }
 document.getElementsByName('email')[0].focus();
+
+$('#trackInfo .slideDrag').mousedown(function(ev) {
+    $('#trackInfo .slideDragHandle').trigger(ev);
+});

@@ -51,11 +51,11 @@
         win.showsToolbarButton = FALSE;
         win.oneShot = FALSE;
         win.minSize = NSMakeSize(width, height);
-        win.maxSize = NSMakeSize(width, height);
+        //win.maxSize = NSMakeSize(width, height);
         win.delegate = self;
         win.title = @"Pandorium";
         win.allowsToolTipsWhenApplicationIsInactive = FALSE;
-        
+
         WebView *webview = [[WebView alloc] initWithFrame:win.screen.visibleFrame];
         webview.autoresizesSubviews = TRUE;
         webview.autoresizingMask = NSViewNotSizable;
@@ -65,23 +65,28 @@
         webview.resourceLoadDelegate = self;
         webview.policyDelegate = self;
         webview.shouldUpdateWhileOffscreen = TRUE;
-        webview.customUserAgent = @"Opera/9.80 (Windows NT 6.1; U; es-ES) Presto/2.9.181 Version/12.00"; // Opera
+        //webview.customUserAgent = @"Opera/9.80 (Windows NT 6.1; U; es-ES) Presto/2.9.181 Version/12.00"; // Opera
         //webview.customUserAgent = @"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0"; // MSIE9
-        // Safari: @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/534.53.11 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10";
-        // Chrome: @"Mozilla/5.0 (Windows NT 6.1; Intel Mac OS X 10.6; rv:7.0.1) Gecko/20100101 Firefox/7.0.1";
+        //webview.customUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/534.53.11 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10"; // SAFARI
+        //webview.customUserAgent = @"Mozilla/5.0 (Windows NT 6.1; Intel Mac OS X 10.6; rv:7.0.1) Gecko/20100101 Firefox/7.0.1"; // CHROME
+        //webview.customUserAgent = @"Mozilla/5.0 (Windows NT 6.1; rv:11.0) Gecko/20100101 Firefox/11.0"; // FIREFOX
+
+        //----------- TEST
+        webview.customUserAgent = @"Mozilla/5.0 (Windows NT 6.1; rv:11.0) Gecko/20100101 Firefox/11.0"; // SAFARI
+        //webview.customUserAgent = @"Mozilla/5.0 (Windows NT 6.1; rv:11.0) WebKit/550.53.11 (KHTML, like Gecko) Version/5.1.3";
         webview.mainFrameURL = @"https://www.pandora.com";
-        
+
         WebPreferences* prefs = webview.preferences;
         [prefs _setLocalStorageDatabasePath:[PrefController localStoragePath]];
         [prefs setLocalStorageEnabled:YES];
         [prefs setPlugInsEnabled:NO];
-        
+
         // center frame
         NSRect screenBox = win.screen.visibleFrame;
         frame.origin.y = screenBox.origin.y + truncf((screenBox.size.height - frame.size.height) / 2);
-        frame.origin.x = screenBox.origin.x + truncf((screenBox.size.width - frame.size.width) / 2);    
+        frame.origin.x = screenBox.origin.x + truncf((screenBox.size.width - frame.size.width) / 2);
         [win setFrame:frame display:FALSE animate:FALSE];
-        
+
         win.contentView = webview;
         self.webView = webview;
         GKAppDelegate.window = win;
@@ -95,7 +100,7 @@
 #pragma mark - NSWindow delegate methods
 
 /*- (NSApplicationPresentationOptions)window:(NSWindow *)window willUseFullScreenPresentationOptions:(NSApplicationPresentationOptions)proposedOptions {
-   TODO: turn off clean.css 
+   TODO: turn off clean.css
 }*/
 
 - (void)windowWillClose:(NSNotification *)aNotification {
@@ -114,25 +119,25 @@
 //    DLogObject(frame.name);
 //    DLogFunc();
 //    DLogObject(frame.DOMDocument.title);
-    
+
     if ([frame.name isEqualToString:@"google_adwords_frame"]) {
         NSString *cssPath = [[NSBundle mainBundle] pathForResource:@"login" ofType:@"css"];
         NSString *css = [NSString stringWithContentsOfFile:cssPath encoding:NSUTF8StringEncoding error:nil];
         NSString *safeCSS = [css stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-        
+
         NSString *jsPath = [[NSBundle mainBundle] pathForResource:@"login" ofType:@"js"];
         NSString *js = [NSString stringWithContentsOfFile:splashPath encoding:NSUTF8StringEncoding error:nil];
         NSString *finalJS = [js stringByReplacingOccurrencesOfString:@"%%CSS%%" withString:safeCSS];
-        
+
         //DStart(1);
         //[self.webView stringByEvaluatingJavaScriptFromString:finalJS];
-        
+
     }
 
     /*if ([frame.name isEqualToString:@""]) {
-        
+
     }*/
-    
+
     /*if ([[frame.DOMDocument.title componentsSeparatedByString:@"Pandora"] count] > 1) {
         [NSObject scheduleRunAfterDelay:2.0 forBlock:^{
             [self.webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByName('email')[0].focus();"];
@@ -155,36 +160,36 @@
 - (id)webView:(WebView *)sender identifierForInitialRequest:(NSURLRequest *)request fromDataSource:(WebDataSource *)dataSource {
     [self setupWindowScrolling];
     //DLogObject(request.URL.description);
-    
+
     /*if ([request.URL.description isEqualToString:@"https://www.pandora.com"]) {
         return @"InitialPage";
     }
-    
+
     if ([[request.URL.description componentsSeparatedByString:@"script.combined.js"] count]) {
         //return @"SplashPage";
     }
-    
+
     if ([[request.URL.description componentsSeparatedByString:@"compiled.css"] count] > 1) {
         //return @"SplashPage";
     }
-    
+
     if ([request.URL.description isEqualToString:@"https://www.pandora.com/img/player-controls/progress-middle.png"]) {
         //return @"InitialPage";
     }*/
-    
+
     // trigger login page style
     if ([request.URL.description isEqualToString:@"about:blank"]) {
-        
+
 #ifdef IDEA
         NSString *jsPath = [[NSBundle mainBundle] pathForResource:@"login" ofType:@"js"];
         NSString *js = [NSString stringWithContentsOfFile:jsPath encoding:NSUTF8StringEncoding error:nil];
-        
+
         NSString *cssPath = [[NSBundle mainBundle] pathForResource:@"login" ofType:@"css"];
         NSString *cleancss = [NSString stringWithContentsOfFile:cssPath encoding:NSUTF8StringEncoding error:nil];
-        
+
         NSString *escapedcss = [cleancss stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
         NSString *jsfinal = [js stringByReplacingOccurrencesOfString:@"%%CSS%%" withString:escapedcss];
-        
+
         [self.webView stringByEvaluatingJavaScriptFromString:jsfinal];
 #endif
 #ifdef MANUAL_SIGNIN
@@ -197,24 +202,24 @@
         [self.webView stringByEvaluatingJavaScriptFromString:passMod];
 #endif
     }
-    
+
     // trigger logged-in style
-    if (([request.URL.description hasPrefix:@"https://www.pandora.com/radio/xmlrpc"] 
-        && [request.URL.description hasSuffix:@"createListener"]) 
+    if (([request.URL.description hasPrefix:@"https://www.pandora.com/radio/xmlrpc"]
+        && [request.URL.description hasSuffix:@"createListener"])
         || [request.URL.description hasPrefix:@"http://www.pandora.com/radio/jsonp"]) {
 //        NSString *rsplashJSPath = [[NSBundle mainBundle] pathForResource:@"rsplash" ofType:@"js"];
 //        NSString *rsplashjs = [NSString stringWithContentsOfFile:rsplashJSPath encoding:NSUTF8StringEncoding error:nil];
 //        [self.webView stringByEvaluatingJavaScriptFromString:rsplashjs];
-        
+
         NSString *mainJSPath = [[NSBundle mainBundle] pathForResource:@"main" ofType:@"js"];
         NSString *mainjs = [NSString stringWithContentsOfFile:mainJSPath encoding:NSUTF8StringEncoding error:nil];
-        
+
         NSString *mainCSSPath = [[NSBundle mainBundle] pathForResource:@"main" ofType:@"css"];
         NSString *maincss = [NSString stringWithContentsOfFile:mainCSSPath encoding:NSUTF8StringEncoding error:nil];
-        
+
         NSString *escapedcss = [maincss stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
         NSString *jsfinal = [mainjs stringByReplacingOccurrencesOfString:@"%%CSS%%" withString:escapedcss];
-        
+
         [self.webView stringByEvaluatingJavaScriptFromString:jsfinal];
 //#ifdef IDEA
 //        NSRect box = NSMakeRect(0, 0, 800, 600);
@@ -230,10 +235,10 @@
 /*- (NSURLRequest *)webView:(WebView *)sender resource:(id)identifier willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse fromDataSource:(WebDataSource *)dataSource {
     //DLogObject(redirectResponse.URL);
     return request;
-    
+
 }
 
-- (void)webView:(WebView *)sender resource:(id)identifier didReceiveResponse:(NSURLResponse *)response fromDataSource:(WebDataSource *)dataSource { 
+- (void)webView:(WebView *)sender resource:(id)identifier didReceiveResponse:(NSURLResponse *)response fromDataSource:(WebDataSource *)dataSource {
     //DLogObject(response.URL);
 }*/
 
@@ -241,44 +246,44 @@
 //    /*if ([identifier isEqualToString:@"InitialPage"]) { // adjusts splash in signup window size
 //     NSString *cleanJSPath = [[NSBundle mainBundle] pathForResource:@"clean" ofType:@"js"];
 //     NSString *cleanjs = [NSString stringWithContentsOfFile:cleanJSPath encoding:NSUTF8StringEncoding error:nil];
-//     
+//
 //     NSString *cleanCSSPath = [[NSBundle mainBundle] pathForResource:@"clean" ofType:@"css"];
 //     NSString *cleancss = [NSString stringWithContentsOfFile:cleanCSSPath encoding:NSUTF8StringEncoding error:nil];
-//     
+//
 //     NSString *escapedcss = [cleancss stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
 //     NSString *jsfinal = [cleanjs stringByReplacingOccurrencesOfString:@"%%CSS%%" withString:escapedcss];
-//     
+//
 //     NSString *str3 = [sender stringByEvaluatingJavaScriptFromString:jsfinal];
 //     //DLogObject(str3);
 //     }*/
-//    
+//
 //    if ([identifier isEqualToString:@"SplashPage"] && GKAppDelegate.prefController.hasLogin) { // disables splash fade away
 ////        NSString *splashCSSPath = [[NSBundle mainBundle] pathForResource:@"splash" ofType:@"css"];
 ////        NSString *splashCSS = [NSString stringWithContentsOfFile:splashCSSPath encoding:NSUTF8StringEncoding error:nil];
 ////        NSString *safeCSS = [splashCSS stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-////        
+////
 ////        NSString *splashPath = [[NSBundle mainBundle] pathForResource:@"splash" ofType:@"js"];
 ////        NSString *splashJS = [NSString stringWithContentsOfFile:splashPath encoding:NSUTF8StringEncoding error:nil];
 ////        NSString *finalJS = [splashJS stringByReplacingOccurrencesOfString:@"%%CSS%%" withString:safeCSS];
-////        
+////
 ////        //DStart(1);
 ////        NSString *str = [self.webView stringByEvaluatingJavaScriptFromString:finalJS];
 //        //DLogObject(str);
 //        //DEnd(1);
 //    }
-//    
+//
 //    if ([identifier isEqualToString:@"SigninPage"] && GKAppDelegate.prefController.hasLogin) { // enters login information
-//        
+//
 //    }
-//    
+//
 //    //LOG_NETWORK(1, @"aURL: %@", dataSource.request.URL);
 //    //NSString *cleanJSPath = [[NSBundle mainBundle] pathForResource:@"clean" ofType:@"js"];
 //    //NSString *cleanjs = [NSString stringWithContentsOfFile:cleanJSPath encoding:NSUTF8StringEncoding error:nil];
 //    //[sender stringByEvaluatingJavaScriptFromString:cleanjs];
-//    
-//    
-//    
-//    
+//
+//
+//
+//
 //    //DLogObject(dataSource.request.URL);
 //    /*[webView stringByEvaluatingJavaScriptFromString:@"                                                      \
 //     if(document.getElementById('pandoriumStyle') == null) {                                            \
@@ -307,7 +312,6 @@
 - (void)webView:(WebView *)sender decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
     NSURL *url = [request URL];
     NSString *str = [url absoluteString];
-    DLogObject(url);
     if ([url.host hasSuffix:@"pandora.com"] || url.host.length == 0) {
         if ([str hasPrefix:@"https://www.pandora.com/#!/music"] ||
             [str hasPrefix:@"https://www.pandora.com/#/stations/edit"] ||
@@ -317,6 +321,7 @@
             //[NSApp openURL:url];
             return;
         }
+        DLogObject(str);
         [listener use];
         return;
     }

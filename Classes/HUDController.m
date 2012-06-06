@@ -189,7 +189,7 @@ MAKE_SINGLETON(HUDController, sharedController)
     }
     
     fadingOut = NO;
-    DLogObject(self.window);
+    //DLogObject(self.window);
     [self.window orderFrontRegardless];
     
     [CATransaction begin];
@@ -202,7 +202,7 @@ MAKE_SINGLETON(HUDController, sharedController)
 }
 
 - (void)fadeInHudKey:(GKHotKey*)key {
-    DLogObject(key.symbolicString);
+    //DLogObject(key.symbolicString);
     
     CGFloat fontSize = 102;
     NSFont *textFont = [NSFont fontWithName:@"Webdings" size:fontSize];

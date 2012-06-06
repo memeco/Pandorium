@@ -1,11 +1,14 @@
-div#topnav {
-    display: block !important;
-    height: 72px !important;
+/************************/
+/* PULL UP SPLASH IMAGE */
+/************************/
+
+div#mainContentContainer.contentContainer {
+    top: -57px !important;
 }
 
-/*#main {
-    top: 33px !important;
-}*/
+/***********************/
+/* HIDE EXTRA ELEMENTS */
+/***********************/
 
 #brandingBar,
 #skinTab,
@@ -22,10 +25,36 @@ div.btn_content > div.signin {
     display:none !important;
 }
 
+/**************************/
+/* FIX TOPNAV ACTIVE AREA */
+/**************************/
+
+div#topnav {
+    display: block !important;
+    height: 72px !important;
+}
+
+/************************/
+/* FIX TOPNAV SONG INFO */
+/************************/
+
 .rightcolumn {
     position: relative !important;
     right: 20px !important;
 }
+
+/***************************************/
+/* HIDE MENU BAR DIRECTLY BELOW TOPNAV */
+/***************************************/
+
+div.skinContainer {
+    top: -30px !important;
+    height: 578px !important;
+}
+
+/*********************/
+/* FIXED WINDOW SIZE */
+/*********************/
 
 body {
     height: 578px !important;
@@ -60,26 +89,12 @@ div#mainContainer {
     overflow: hidden !important;
 }
 
-.stationListHolder {
-    height: 481px !important;
-}
-
-/*#detailContainer {
-    height: 220px !important;
-    overflow: hidden !important;
-}*/
-
 div.homeRightSide {
-    /*height: 533px !important;*/
     height: 511px !important;
     width: 610px !important;
     padding-left: 0px !important;
     overflow-x: hidden !important;
     overflow-y: scroll !important;
-}
-
-div#mainContentContainer.contentContainer {
-    top: -57px !important;
 }
 
 div#adLayout, div#mainContentContainer {
@@ -90,43 +105,18 @@ div.slidesForeground {
     width: 600px !important;
 }
 
-div.skinContainer {
-    top: -30px !important;
-    height: 578px !important;
+.stationListHolder {
+    height: 481px !important;
 }
-
-/*div.info > div {
-    float: right !important;
-    width: 265px !important;
-}*/
-
-div#track_menu_dd {
-    left: 574px !important;
-}
-
-/*
-div.buttons > div.buyButton,
-div.info > :not(:first-child) {
-    display: none !important;
-}
-
-div.buttons > div.shareButton {
-    display: block !important;
-    float: right !important;
-}
-
-div.info,
-div.buttons,
-div.shareButton {
-    overflow: visible !important;
-    display: block !important;
-}*/
 
 div.nowplaying > div.info {
     width: 242px !important;
     margin-right: 5px !important;
 }
 
+div#track_menu_dd {
+    left: 574px !important;
+}
 
 /************************/
 /* ADJUST PLAYLIST VIEW */
