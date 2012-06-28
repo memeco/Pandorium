@@ -566,12 +566,11 @@
 		9A9824BF14FF30F9003177DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Gaurav Khanna";
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pandorium-Prefix.pch";
 				INFOPLIST_FILE = "Pandorium-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "C6B21091-8754-4C81-A002-5CD4EA4717DC";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};

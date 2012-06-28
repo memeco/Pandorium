@@ -66,14 +66,15 @@
         webview.policyDelegate = self;
         webview.shouldUpdateWhileOffscreen = TRUE;
         //webview.customUserAgent = @"Opera/9.80 (Windows NT 6.1; U; es-ES) Presto/2.9.181 Version/12.00"; // Opera
-        //webview.customUserAgent = @"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0"; // MSIE9
+        //webview.customUserAgent = @"Opera/9.80 (Windows NT 6.1; U; es-ES) Presto/2.9.181 Version/12.00";
+        webview.customUserAgent = @"Mozilla/5.0 (compatible; Windows NT 6.1; Trident/5.0)"; // MSIE9
         //webview.customUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/534.53.11 (KHTML, like Gecko) Version/5.1.3 Safari/534.53.10"; // SAFARI
-        //webview.customUserAgent = @"Mozilla/5.0 (Windows NT 6.1; Intel Mac OS X 10.6; rv:7.0.1) Gecko/20100101 Firefox/7.0.1"; // CHROME
+        //webview.customUserAgent = @"Mozilla/5.0 (Windows NT 6.1; Intel Mac OS X 10.6; rv:7.0.1) Gecko/20100101 Firefox/7.0.1"; // opera
         //webview.customUserAgent = @"Mozilla/5.0 (Windows NT 6.1; rv:11.0) Gecko/20100101 Firefox/11.0"; // FIREFOX
 
         //----------- TEST
-        webview.customUserAgent = @"Mozilla/5.0 (Windows NT 6.1; rv:11.0) Gecko/20100101 Firefox/11.0"; // SAFARI
-        //webview.customUserAgent = @"Mozilla/5.0 (Windows NT 6.1; rv:11.0) WebKit/550.53.11 (KHTML, like Gecko) Version/5.1.3";
+        //webview.customUserAgent = @"Mozilla/5.0 (Windows NT 6.1; rv:11.0) Gecko/20100101 Firefox/11.0"; // SAFARI
+        //webview.customUserAgent = @"Mozilla/5.0 (Windows NT 6.1; rv:11.0) WebKit/550.53.11 (KHTML, like Gecko) Version/5.1.3"; //chrome
         webview.mainFrameURL = @"https://www.pandora.com";
 
         WebPreferences* prefs = webview.preferences;

@@ -21,7 +21,8 @@ div#videoPlayerContainer,
 #ad_container,
 #footer,
 div.welcome_content > p.firstLine,
-div.btn_content > div.signin {
+div.btn_content > div.signin,
+div.ribbonContent {
     display:none !important;
 }
 
@@ -32,6 +33,7 @@ div.btn_content > div.signin {
 div#topnav {
     display: block !important;
     height: 72px !important;
+    top: 0 !important;
 }
 
 /************************/
