@@ -10,21 +10,24 @@ This is [**free**](http://www.gnu.org/philosophy/philosophy.html) software; [**f
 
 Purchase a cheap version conveniently on the [**Mac App Store**](http://itunes.apple.com/us/app/pandorium/id515800066?mt=12).
 
+## TODO:
+
+- Fix navigating away trap bug
+- Growl Support
+- Default large album art
+
 ## Changelog
 
-### 2.1:
-// Growl Support
-// Defaulted large album art
-+ Cleaned up album art info pane
-// Fixed navigating away trap bug
-// Fixed media key not respond bug
+### 2.0.1:
+
+- Cleaned up album art info pane
+- Fixed media key not responding once bug
 - Fixed Album Art size handle bug
 - Fixed window appearing with hud bug
 - Fixed show/hide inverse action bug
 - Fixed no scrollbar bug
 - Fixed Fullscreen window bug
 - Misc. bug fixes
-// Fixed high cpu usage bug
 
 
 ### 2.0:

@@ -96,7 +96,7 @@
 #define SHIFT_KEYCODE 64
     
     [GKHotKeyCenter registerHandler:^(GKHotKey *key, int state) {
-        WebView *view = GKAppDelegate.webController.webView;
+        WebView *view = [GKAppDelegate webController].webView;
        
         // TODO: mad refactoring
         //GKHotKey *showHide = NSDefObj(@"showHideKey");
@@ -212,10 +212,10 @@
             // TODO: maybe alert an error occured
         }
     }
-    GKAppDelegate.window.releasedWhenClosed = YES;
-    [GKAppDelegate.window close];
-    GKAppDelegate.window = nil;
-    [GKAppDelegate.webController activateWindow:nil];
+    [GKAppDelegate window].releasedWhenClosed = YES;
+    [[GKAppDelegate window] close];
+    [GKAppDelegate setWindow:nil];
+    [[GKAppDelegate webController] activateWindow:nil];
 }
 
 #else

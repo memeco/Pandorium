@@ -38,7 +38,7 @@
 #pragma mark - Window life cycle
 
 - (IBAction)activateWindow:(id)sender {
-    if (!GKAppDelegate.window) {
+    if (![GKAppDelegate window]) {
         int width = 800;
         int height = 600;
         NSRect frame = NSMakeRect(0, 0, width, height);
@@ -90,12 +90,12 @@
 
         win.contentView = webview;
         self.webView = webview;
-        GKAppDelegate.window = win;
+        [GKAppDelegate setWindow:win];
     }
     //[GKAppDelegate.window makeMainWindow];
     //[GKAppDelegate.window orderFront:self];
     [self setupWindowScrolling];
-    [GKAppDelegate.window makeKeyAndOrderFront:nil];
+    [[GKAppDelegate window] makeKeyAndOrderFront:nil];
 }
 
 #pragma mark - NSWindow delegate methods
